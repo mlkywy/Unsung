@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    Rigidbody2D rb;
+    [SerializeField] Rigidbody2D rb;
     public float speed;
+    float vertical;
+    bool isLadder = false;
+    bool isClimbing = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,14 +19,55 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        MoveHorizontal();
+        MoveVertical();
     }
 
-    void Move() 
+    void FixedUpdate()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float moveBy = x * speed;
+        if (isClimbing) 
+        {
+            rb.gravityScale = 0f;
+            rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
+        } 
+        else 
+        {
+            rb.gravityScale = 4f;
+        }
+    }
+
+    // horizontal movement for walking
+    void MoveHorizontal() 
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float moveBy = horizontal * speed;
         rb.velocity = new Vector2(moveBy, rb.velocity.y);
-        Debug.Log(x);
+    }
+
+    // vertical movement for climbing
+    void MoveVertical()
+    {
+        vertical = Input.GetAxisRaw("Vertical");
+        if (isLadder && Mathf.Abs(vertical) > 0f || isLadder && rb.velocity.y != 0)
+        {
+            isClimbing = true;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision) 
+    {
+        if (collision.CompareTag("Ladder"))
+        {
+            isLadder = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ladder"))
+        {
+            isLadder = false;
+            isClimbing = false;
+        }
     }
 }

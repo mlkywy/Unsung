@@ -36,7 +36,7 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    // horizontal movement for walking
+    // walking
     void MoveHorizontal() 
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -44,7 +44,7 @@ public class CharacterMovement : MonoBehaviour
         rb.velocity = new Vector2(moveBy, rb.velocity.y);
     }
 
-    // vertical movement for climbing
+    // climbing
     void MoveVertical()
     {
         vertical = Input.GetAxisRaw("Vertical");
@@ -54,6 +54,7 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    // climbing logic
     void OnTriggerEnter2D(Collider2D collision) 
     {
         if (collision.CompareTag("Ladder"))

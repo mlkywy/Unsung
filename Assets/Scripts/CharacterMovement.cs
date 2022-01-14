@@ -9,6 +9,8 @@ public class CharacterMovement : MonoBehaviour
     float vertical;
     bool isLadder = false;
     bool isClimbing = false;
+    public bool allowJump = false;
+    [SerializeField] float jumpForce;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,8 @@ public class CharacterMovement : MonoBehaviour
     {
         MoveHorizontal();
         MoveVertical();
+        
+        if (allowJump) Jump();
     }
 
     void FixedUpdate()
@@ -54,6 +58,7 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    // ladder logic
     void OnTriggerEnter2D(Collider2D collision) 
     {
         if (collision.CompareTag("Ladder"))
@@ -68,6 +73,14 @@ public class CharacterMovement : MonoBehaviour
         {
             isLadder = false;
             isClimbing = false;
+        }
+    }
+
+    void Jump()
+    {
+        if(Input.GetButtonDown("Jump")) 
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 }

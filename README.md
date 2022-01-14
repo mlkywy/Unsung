@@ -16,7 +16,8 @@
 
 ## Unsung
 
-Spring Capstone 2022. My objective for this project is to create a side-scroller RPG within Unity2D to showcase growth in game development, programming/software development, and artistic ability. 
+Spring Capstone 2022. My objective for this project is to create a side-scroller RPG within Unity2D to showcase growth in game development, programming/software development, and artistic ability. To keep the scope of this project realistic, I will work on a short first chapter of the game’s story featuring
+the chosen ‘hero’ for a playable demo.
 
 Goals for the Semester:
 

@@ -10,10 +10,14 @@ public class PlayerMovement : MonoBehaviour
     bool isLadder = false;
     bool isClimbing = false;
 
+    public Animator animator;
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -43,16 +47,19 @@ public class PlayerMovement : MonoBehaviour
         float moveBy = horizontal * speed;
         rb.velocity = new Vector2(moveBy, rb.velocity.y);
 
+        // walk animation
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
+
         // flip the character
         Vector3 playerScale = transform.localScale;
-        if (horizontal < 0) {
+        if (horizontal < 0f) {
             playerScale.x = -1;
         }
 
-        if (horizontal > 0) {
+        if (horizontal > 0f) {
             playerScale.x = 1;
         }
-        
+
         transform.localScale = playerScale;
     }
 
@@ -60,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     void MoveVertical()
     {
         vertical = Input.GetAxisRaw("Vertical");
-        if (isLadder && Mathf.Abs(vertical) > 0f || isLadder && rb.velocity.y != 0)
+        if (isLadder && Mathf.Abs(vertical) > 0f || isLadder && rb.velocity.y != 0f)
         {
             isClimbing = true;
         }

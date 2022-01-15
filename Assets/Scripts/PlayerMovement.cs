@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         else 
         {
             rb.gravityScale = 4f;
+            animator.SetBool("IsClimbing", false);
         }
     }
 

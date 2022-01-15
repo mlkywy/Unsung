@@ -42,6 +42,18 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float moveBy = horizontal * speed;
         rb.velocity = new Vector2(moveBy, rb.velocity.y);
+
+        // flip the character
+        Vector3 playerScale = transform.localScale;
+        if (horizontal < 0) {
+            playerScale.x = -1;
+        }
+
+        if (horizontal > 0) {
+            playerScale.x = 1;
+        }
+        
+        transform.localScale = playerScale;
     }
 
     // climbing

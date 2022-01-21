@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.gravityScale = 0f;
             rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
-            Debug.Log("Colliding.");
+            // Debug.Log("Colliding.");
         } 
         else 
         {

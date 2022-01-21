@@ -719,8 +719,8 @@ Camera:
   m_GameObject: {fileID: 918470219}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.130874, g: 0.14234753, b: 0.16037738, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1006,8 +1006,6 @@ MonoBehaviour:
   frame:
   - {fileID: 1606798709}
   - {fileID: 2056813351}
-  startButton: {fileID: 1239083470}
-  ES: {fileID: 245292190}
 --- !u!1 &1323770096
 GameObject:
   m_ObjectHideFlags: 0

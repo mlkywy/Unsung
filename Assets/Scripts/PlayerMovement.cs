@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
 
+    public bool allowJump = false;
+    [SerializeField] float jumpForce;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
         {
           animator.SetFloat("IsClimbing", 0f);
         }
+
+        if (allowJump) Jump();
     }
 
     void FixedUpdate()
@@ -42,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.gravityScale = 0f;
             rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
-            // Debug.Log("Colliding.");
         } 
         else 
         {
@@ -99,6 +103,15 @@ public class PlayerMovement : MonoBehaviour
         {
             isLadder = false;
             isClimbing = false;
+        }
+    }
+
+    // jumping logic
+    void Jump()
+    {
+        if (Input.GetButtonDown("Jump")) 
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 }

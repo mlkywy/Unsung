@@ -25,6 +25,15 @@ public class PlayerMovement : MonoBehaviour
     {
         MoveHorizontal();
         MoveVertical();
+
+        if (isClimbing && rb.velocity.y != 0f)
+        {
+          animator.SetFloat("IsClimbing", Mathf.Abs(vertical));
+        }
+        else 
+        {
+          animator.SetFloat("IsClimbing", 0f);
+        }
     }
 
     void FixedUpdate()
@@ -33,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.gravityScale = 0f;
             rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
+            Debug.Log("Colliding.");
         } 
         else 
         {
@@ -69,7 +79,8 @@ public class PlayerMovement : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         if (isLadder && Mathf.Abs(vertical) > 0f || isLadder && rb.velocity.y != 0f)
         {
-            isClimbing = true;
+            isClimbing = true; 
+            Debug.Log("Climbing.");
         }
     }
 

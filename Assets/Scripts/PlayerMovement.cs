@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
 
+    [SerializeField] float jumpForce;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
         {
           animator.SetFloat("IsClimbing", 0f);
         }
+
+        Jump();
     }
 
     void FixedUpdate()
@@ -99,6 +103,15 @@ public class PlayerMovement : MonoBehaviour
         {
             isLadder = false;
             isClimbing = false;
+        }
+    }
+
+    // jumping logic
+    void Jump()
+    {
+        if (Input.GetButtonDown("Jump")) 
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 }

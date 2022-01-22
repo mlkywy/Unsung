@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     bool isLadder = false;
     bool isClimbing = false;
 
+    bool allowJump = true;
     public Animator animator;
 
     [SerializeField] float jumpForce;
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         MoveHorizontal();
         MoveVertical();
+        if (allowJump) Jump();
 
         if (isClimbing && rb.velocity.y != 0f)
         {
@@ -37,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
           animator.SetFloat("IsClimbing", 0f);
         }
 
-        Jump();
+        
     }
 
     void FixedUpdate()

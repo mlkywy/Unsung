@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlatformHandler : MonoBehaviour
 {
     [SerializeField] PlatformEffector2D effector;
-    public float waitTime = 0.5f;
+    [SerializeField] bool collider;
 
     // Start is called before the first frame update
     void Start()
@@ -16,31 +16,34 @@ public class PlatformHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.DownArrow))
+        if (collider && Input.GetKeyDown(KeyCode.S) || collider && Input.GetKeyDown(KeyCode.DownArrow))
         {
-            waitTime = 0.5f;
+            effector.rotationalOffset = 180f;
+            effector.surfaceArc = 210f;
+            StartCoroutine(Wait());
         }
+    }
 
-
-
-        if (Input.GetKey(KeyCode.DownArrow))
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
-            if (waitTime <= 0)
-            {
-                effector.rotationalOffset = 180f;
-                effector.surfaceArc = 210f;
-                waitTime = 0.5f;
-            } 
-            else 
-            {
-                waitTime -= Time.deltaTime;
-            }
+           collider = true;
         }
+    }
 
-        if (Input.GetButtonDown("Jump")) 
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
-            effector.rotationalOffset = 0f;
-            effector.surfaceArc = 150f;
+           collider = false;
         }
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.25f);
+        effector.rotationalOffset = 0f;
+        effector.surfaceArc = 150f;
     }
 }

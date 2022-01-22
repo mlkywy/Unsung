@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 152428343}
   - component: {fileID: 152428342}
   - component: {fileID: 152428341}
+  - component: {fileID: 152428347}
   m_Layer: 0
   m_Name: Platform2
   m_TagString: Platform
@@ -395,6 +396,20 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &152428347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152428339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0c7a9d415e53c49b5ce2b3eaf8a676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effector: {fileID: 0}
+  collider: 0
 --- !u!1 &434927026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,6 +2011,7 @@ GameObject:
   - component: {fileID: 732936786}
   - component: {fileID: 732936787}
   - component: {fileID: 732936791}
+  - component: {fileID: 732936792}
   m_Layer: 0
   m_Name: Platform0
   m_TagString: Platform
@@ -2273,6 +2289,20 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 0
+--- !u!114 &732936792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732936784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0c7a9d415e53c49b5ce2b3eaf8a676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effector: {fileID: 0}
+  collider: 0
 --- !u!1 &1092102121
 GameObject:
   m_ObjectHideFlags: 0
@@ -4335,6 +4365,7 @@ GameObject:
   - component: {fileID: 1338375685}
   - component: {fileID: 1338375684}
   - component: {fileID: 1338375683}
+  - component: {fileID: 1338375689}
   m_Layer: 0
   m_Name: Platform1
   m_TagString: Platform
@@ -4592,6 +4623,20 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1338375689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338375681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0c7a9d415e53c49b5ce2b3eaf8a676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effector: {fileID: 0}
+  collider: 0
 --- !u!1 &2009713684
 GameObject:
   m_ObjectHideFlags: 0

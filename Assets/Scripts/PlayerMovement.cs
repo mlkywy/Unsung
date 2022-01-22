@@ -38,8 +38,6 @@ public class PlayerMovement : MonoBehaviour
         {
           animator.SetFloat("IsClimbing", 0f);
         }
-
-        
     }
 
     void FixedUpdate()

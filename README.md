@@ -35,11 +35,6 @@ Goals for the Semester:
 * Music assets/soundtracks if custom
   * mp3/wav format
 
-## Progress - Week 1
-
-https://user-images.githubusercontent.com/91434717/149610816-6988d9f8-ac6b-4b94-9f12-2430b650df31.mp4
-
-
 ## Progress - Week 2
 
 https://user-images.githubusercontent.com/91434717/150629069-da78f16b-b8cd-4315-bea0-4bfcb7250536.mp4

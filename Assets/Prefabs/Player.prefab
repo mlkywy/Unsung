@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  speed: 5
+  speed: 4
   animator: {fileID: 0}
   jumpForce: 10
 --- !u!95 &918695129537893018

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 13e02ab6982176f4f85b2eacd175e08b
+guid: 4a4165b673074dd469f5d76081008b51
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Silver
+  - Munro Small
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

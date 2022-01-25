@@ -5,8 +5,6 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     bool playerInRange;
-
-    [Header("Ink JSON")]
     [SerializeField] TextAsset inkJSON;
 
 

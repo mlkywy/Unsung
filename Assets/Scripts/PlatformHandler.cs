@@ -7,11 +7,13 @@ public class PlatformHandler : MonoBehaviour
     [SerializeField] PlatformEffector2D effector;
     [SerializeField] bool collider;
 
+
     // Start is called before the first frame update
     void Start()
     {
         effector = GetComponent<PlatformEffector2D>();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -24,6 +26,7 @@ public class PlatformHandler : MonoBehaviour
         }
     }
 
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -32,6 +35,7 @@ public class PlatformHandler : MonoBehaviour
         }
     }
 
+
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -39,6 +43,7 @@ public class PlatformHandler : MonoBehaviour
            collider = false;
         }
     }
+
 
     IEnumerator Wait()
     {

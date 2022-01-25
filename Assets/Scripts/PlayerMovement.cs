@@ -16,14 +16,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         MoveHorizontal();
@@ -40,19 +39,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
     void FixedUpdate()
     {
         if (isClimbing) 
         {
             rb.gravityScale = 0f;
             rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
-            // Debug.Log("Colliding.");
         } 
         else 
         {
             rb.gravityScale = 4f;
         }
     }
+
 
     // walking
     void MoveHorizontal() 
@@ -77,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = playerScale;
     }
 
+
     // climbing
     void MoveVertical()
     {
@@ -88,23 +89,26 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
     // climbing logic
-    void OnTriggerEnter2D(Collider2D collision) 
+    void OnTriggerEnter2D(Collider2D collider) 
     {
-        if (collision.CompareTag("Ladder"))
+        if (collider.CompareTag("Ladder"))
         {
             isLadder = true;
         }
     }
 
-    void OnTriggerExit2D(Collider2D collision)
+
+    void OnTriggerExit2D(Collider2D collider)
     {
-        if (collision.CompareTag("Ladder"))
+        if (collider.CompareTag("Ladder"))
         {
             isLadder = false;
             isClimbing = false;
         }
     }
+
 
     // jumping logic
     void Jump()
@@ -118,6 +122,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+    // enable jump with coroutine to avoid double jumping
     IEnumerator EnableJump()
     {
         yield return new WaitForSeconds(0.5f);

@@ -8,13 +8,13 @@ public class MenuManager : MonoBehaviour
     public GameObject[] frame;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         frame[1].SetActive(false);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.anyKeyDown && frame[0].activeInHierarchy)
         {

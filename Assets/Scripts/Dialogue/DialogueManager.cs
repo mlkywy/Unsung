@@ -9,24 +9,24 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     [Header("Dialogue UI")]
-    [SerializeField] GameObject dialoguePanel;
-    [SerializeField] TextMeshProUGUI dialogueText;
+    [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private TextMeshProUGUI dialogueText;
 
-    [SerializeField] GameObject namePanel;
-    [SerializeField] GameObject NPCPortrait;
-    [SerializeField] TMP_Text NPCName;
+    [SerializeField] private GameObject namePanel;
+    [SerializeField] private GameObject NPCPortrait;
+    [SerializeField] private TMP_Text NPCName;
 
     [Header("Choices UI")]
-    [SerializeField] GameObject[] choices;
-    TextMeshProUGUI[] choicesText;
+    [SerializeField] private GameObject[] choices;
+    private TextMeshProUGUI[] choicesText;
 
-    Story currentStory;
+    private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
 
-    static DialogueManager instance;
+    private static DialogueManager instance;
 
 
-    void Awake()
+    private void Awake()
     {
         if (instance != null)
         {
@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    void Start()
+    private void Start()
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -63,7 +63,7 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    void Update()
+    private void Update()
     {
         // return right away if dialogue is not playing
         if (!dialogueIsPlaying) return;
@@ -106,7 +106,7 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    void ExitDialogueMode()
+    private void ExitDialogueMode()
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -119,7 +119,7 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    void ContinueStory()
+    private void ContinueStory()
     {
         if (currentStory.canContinue)
         {
@@ -137,7 +137,7 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    void DisplayChoices()
+    private void DisplayChoices()
     {
         List<Choice> currentChoices = currentStory.currentChoices;
 
@@ -166,12 +166,11 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    IEnumerator SelectFirstChoice()
+    private IEnumerator SelectFirstChoice()
     {
         // event system requires that we clear it first, then wait for at least one frame before setting current selected object
         EventSystem.current.SetSelectedGameObject(null);
         yield return new WaitForEndOfFrame();
         EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
-        Debug.Log("Set object in event system.");
-    }
+    } 
 }

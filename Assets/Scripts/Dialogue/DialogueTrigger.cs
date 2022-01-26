@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    bool playerInRange;
-    [SerializeField] TextAsset inkJSON;
-    [SerializeField] new string name;
-    [SerializeField] Sprite portrait;
+    private bool playerInRange;
+    [SerializeField] private TextAsset inkJSON;
+    [SerializeField] private new string name;
+    [SerializeField] private Sprite portrait;
 
 
-    void Awake()
+    private void Awake()
     {
         playerInRange = false;
     }
 
 
-    void Update()
+    private void Update()
     {
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
@@ -29,7 +29,7 @@ public class DialogueTrigger : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))
         {
@@ -39,7 +39,7 @@ public class DialogueTrigger : MonoBehaviour
     }
 
 
-     void OnTriggerExit2D(Collider2D collider)
+    private void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))
         {

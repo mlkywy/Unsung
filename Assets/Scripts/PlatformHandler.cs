@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PlatformHandler : MonoBehaviour
 {
-    [SerializeField] PlatformEffector2D effector;
-    [SerializeField] new bool collider;
+    [SerializeField] private PlatformEffector2D effector;
+    [SerializeField] private new bool collider;
 
 
-    void Start()
+    private void Start()
     {
         effector = GetComponent<PlatformEffector2D>();
     }
 
 
-    void Update()
+    private void Update()
     {
         if (collider && Input.GetKeyDown(KeyCode.S) || collider && Input.GetKeyDown(KeyCode.DownArrow))
         {
@@ -25,7 +25,7 @@ public class PlatformHandler : MonoBehaviour
     }
 
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -34,7 +34,7 @@ public class PlatformHandler : MonoBehaviour
     }
 
 
-    void OnCollisionExit2D(Collision2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -43,7 +43,7 @@ public class PlatformHandler : MonoBehaviour
     }
 
 
-    IEnumerator Wait()
+    private IEnumerator Wait()
     {
         yield return new WaitForSeconds(0.25f);
         effector.rotationalOffset = 0f;

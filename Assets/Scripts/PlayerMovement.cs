@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rb;
+    [SerializeField] private Rigidbody2D rb;
     public float speed;
-    float vertical;
+    private float vertical;
     
-    bool isLadder = false;
-    bool isClimbing = false;
-    bool allowJump = true;
+    private bool isLadder = false;
+    private bool isClimbing = false;
+    private bool allowJump = true;
 
     public Animator animator;
 
-    [SerializeField] float jumpForce;
+    [SerializeField] private float jumpForce;
 
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
 
-    void Update()
+    private void Update()
     {
         // freeze player if dialogue is playing
         if (DialogueManager.GetInstance().dialogueIsPlaying)
@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
         MoveHorizontal();
         MoveVertical();
-        
+
         if (allowJump) Jump();
 
         if (isClimbing && rb.velocity.y != 0f)
@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (isClimbing) 
         {
@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     // walking
-    void MoveHorizontal() 
+    private void MoveHorizontal() 
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float moveBy = horizontal * speed;
@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     // climbing
-    void MoveVertical()
+    private void MoveVertical()
     {
         vertical = Input.GetAxisRaw("Vertical");
         if (isLadder && Mathf.Abs(vertical) > 0f || isLadder && rb.velocity.y != 0f)
@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     // climbing logic
-    void OnTriggerEnter2D(Collider2D collider) 
+    private void OnTriggerEnter2D(Collider2D collider) 
     {
         if (collider.CompareTag("Ladder"))
         {
@@ -109,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    void OnTriggerExit2D(Collider2D collider)
+    private void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.CompareTag("Ladder"))
         {
@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     // jumping logic
-    void Jump()
+    private void Jump()
     {
         if (Input.GetButtonDown("Jump")) 
         {
@@ -133,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     // enable jump with coroutine to avoid double jumping
-    IEnumerator EnableJump()
+    private IEnumerator EnableJump()
     {
         yield return new WaitForSeconds(0.5f);
         allowJump = true;

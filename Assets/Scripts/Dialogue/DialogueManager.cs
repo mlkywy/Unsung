@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Ink.Runtime;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
     [Header("Dialogue UI")]
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] TextMeshProUGUI dialogueText;
+    [SerializeField] GameObject namePanel;
+    [SerializeField] GameObject NPCPortrait;
+    [SerializeField] TMP_Text NPCName;
 
     Story currentStory;
     bool dialogueIsPlaying;
@@ -37,6 +41,9 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        namePanel.SetActive(false);
+        NPCName.text = "";
+        NPCPortrait.SetActive(false);
     }
 
 
@@ -54,11 +61,22 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    public void EnterDialogueMode(TextAsset inkJSON)
+    public void EnterDialogueMode(TextAsset inkJSON, string name, Sprite portrait)
     {
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+
+        if (name.Length > 0) 
+        {
+            namePanel.SetActive(true);
+            NPCName.text = name;
+        }
+        if (portrait)
+        {
+            NPCPortrait.SetActive(true);
+            NPCPortrait.GetComponent<Image>().sprite = portrait;
+        }
 
         ContinueStory();
     }
@@ -68,6 +86,9 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        namePanel.SetActive(false);
+        NPCName.text = "";
+        NPCPortrait.SetActive(false);
         dialogueText.text = "";
     }
 

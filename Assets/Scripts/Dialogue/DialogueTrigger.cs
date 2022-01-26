@@ -6,6 +6,8 @@ public class DialogueTrigger : MonoBehaviour
 {
     bool playerInRange;
     [SerializeField] TextAsset inkJSON;
+    [SerializeField] string name;
+    [SerializeField] Sprite portrait;
 
 
     void Awake()
@@ -20,7 +22,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON, name, portrait);
                 Debug.Log(inkJSON.text);
             }
         }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.UI;
@@ -160,5 +161,17 @@ public class DialogueManager : MonoBehaviour
         {
             choices[i].gameObject.SetActive(false);
         }
+
+        StartCoroutine(SelectFirstChoice());
+    }
+
+
+    IEnumerator SelectFirstChoice()
+    {
+        // event system requires that we clear it first, then wait for at least one frame before setting current selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        yield return new WaitForEndOfFrame();
+        EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
+        Debug.Log("Set object in event system.");
     }
 }

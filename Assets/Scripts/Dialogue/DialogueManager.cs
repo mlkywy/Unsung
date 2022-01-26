@@ -146,6 +146,8 @@ public class DialogueManager : MonoBehaviour
 
         canContinueToNextLine = false;
 
+        bool isAddingRichTextTag = false;
+
         // display each letter one at a time
         foreach (char letter in line.ToCharArray())
         {
@@ -155,9 +157,22 @@ public class DialogueManager : MonoBehaviour
             //     Debug.Log("Skip text.");
             //     break;
             // } 
-                
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+
+            // check for rich text tag, if found, add without waiting
+            if (letter == '<' || isAddingRichTextTag)
+            {
+                isAddingRichTextTag = true;
+                dialogueText.text += letter;
+                if (letter == '>')
+                {
+                    isAddingRichTextTag = false;
+                }
+            }
+            else
+            {
+                dialogueText.text += letter;
+                yield return new WaitForSeconds(typingSpeed);
+            } 
         }
 
         // actions to take after the entire line is finished displaying

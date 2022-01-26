@@ -18,8 +18,9 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (playerInRange)
         {
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKeyDown(KeyCode.E))
             {
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
                 Debug.Log(inkJSON.text);
             }
         }
@@ -41,6 +42,7 @@ public class DialogueTrigger : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             playerInRange = false;
+            Debug.Log("Player left range.");
         }
     }
 }

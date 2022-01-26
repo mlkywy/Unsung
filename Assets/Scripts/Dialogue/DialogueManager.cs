@@ -88,6 +88,10 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        // make text dialogue span width of dialogue panel when there is no portrait
+        dialogueText.GetComponent<RectTransform>().localPosition = new Vector3(0f, 0.9f, 0f);
+        dialogueText.GetComponent<RectTransform>().sizeDelta = new Vector2(250f, 32f);
+
         ContinueStory();
     }
 
@@ -100,10 +104,6 @@ public class DialogueManager : MonoBehaviour
 
         namePanel.SetActive(false);
         portraitFrame.SetActive(false);
-
-        // make text dialogue span width of dialogue panel when there is no portrait
-        dialogueText.GetComponent<RectTransform>().localPosition = new Vector3(0f, 0.9f, 0f);
-        dialogueText.GetComponent<RectTransform>().sizeDelta = new Vector2(250f, 32f);
     }
 
 

@@ -552,7 +552,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 399188498497540162, guid: eed97a1bce092dd4cb634a9276df3b0e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eed97a1bce092dd4cb634a9276df3b0e, type: 3}
 --- !u!4 &213752547 stripped
 Transform:
@@ -1069,6 +1070,129 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &493599424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 493599425}
+  - component: {fileID: 493599428}
+  - component: {fileID: 493599427}
+  - component: {fileID: 493599426}
+  m_Layer: 0
+  m_Name: Flower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &493599425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493599424}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.5, y: -0.49999997, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1280032103}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &493599426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493599424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474f860be0f8cf64e8e8eacdc9976f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkJSON: {fileID: 4900000, guid: 9bacd9e6a1305584caf48e95492bd660, type: 3}
+--- !u!61 &493599427
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493599424}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.010392427, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3810601, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &493599428
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493599424}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -2321690284387495630, guid: 431805799a5dac241a1858bd4d1b847e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &495390006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,6 +1241,7 @@ MonoBehaviour:
   displayNameText: {fileID: 1833911561}
   portraitAnimator: {fileID: 1726796505}
   namePanel: {fileID: 1745494592}
+  portraitFrame: {fileID: 1726796501}
   choices:
   - {fileID: 538274032}
   - {fileID: 1581082415}
@@ -3141,7 +3266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474f860be0f8cf64e8e8eacdc9976f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: f1f3b31b7b12f0b449aff5e120278e6d, type: 3}
+  inkJSON: {fileID: 4900000, guid: 23b584a22be21694daf430881dd82f32, type: 3}
 --- !u!1 &1033457283 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399188498497540165, guid: eed97a1bce092dd4cb634a9276df3b0e, type: 3}
@@ -3159,7 +3284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474f860be0f8cf64e8e8eacdc9976f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: 7e5889830deed5240b6b867dd2448a44, type: 3}
+  inkJSON: {fileID: 4900000, guid: 7fb8d8ada8f70544397be552966d6ed0, type: 3}
 --- !u!1 &1092102121
 GameObject:
   m_ObjectHideFlags: 0
@@ -5495,6 +5620,7 @@ Transform:
   - {fileID: 7402664723965102308}
   - {fileID: 1766358658}
   - {fileID: 213752547}
+  - {fileID: 493599425}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6997,7 +7123,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 399188498497540165, guid: eed97a1bce092dd4cb634a9276df3b0e, type: 3}
       propertyPath: m_Name
-      value: NPC
+      value: NPC1
       objectReference: {fileID: 0}
     - target: {fileID: 399188498497540166, guid: eed97a1bce092dd4cb634a9276df3b0e, type: 3}
       propertyPath: m_RootOrder
@@ -7043,7 +7169,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 399188498497540162, guid: eed97a1bce092dd4cb634a9276df3b0e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eed97a1bce092dd4cb634a9276df3b0e, type: 3}
 --- !u!1001 &918695129443606391
 PrefabInstance:

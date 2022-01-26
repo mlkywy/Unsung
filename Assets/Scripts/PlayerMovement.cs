@@ -26,8 +26,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // freeze player if dialogue is playing
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+            Debug.Log("Player frozen.");
+        }
+
         MoveHorizontal();
         MoveVertical();
+        
         if (allowJump) Jump();
 
         if (isClimbing && rb.velocity.y != 0f)

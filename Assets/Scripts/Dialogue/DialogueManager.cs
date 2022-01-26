@@ -10,13 +10,13 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] TextMeshProUGUI dialogueText;
-    
+
     [SerializeField] GameObject namePanel;
     [SerializeField] GameObject NPCPortrait;
     [SerializeField] TMP_Text NPCName;
 
     Story currentStory;
-    bool dialogueIsPlaying;
+    public bool dialogueIsPlaying { get; private set; }
 
     static DialogueManager instance;
 

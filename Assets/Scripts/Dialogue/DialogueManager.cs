@@ -31,6 +31,7 @@ public class DialogueManager : MonoBehaviour
 
     private Coroutine displayLineCoroutine;
     private bool canContinueToNextLine = false;
+    private bool submitButtonPressedThisFrame = false;
 
     // tags
     private const string SPEAKER_TAG = "speaker";
@@ -77,15 +78,23 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+
+        if (Input.GetButtonDown("Submit"))
+        {
+            submitButtonPressedThisFrame = true;
+        }
+
         // return right away if dialogue is not playing
         if (!dialogueIsPlaying) return;
 
         // continue to next line of dialogue when player input is made
-        if (canContinueToNextLine && 
-            Input.GetButtonDown("Submit") && 
-            currentStory.currentChoices.Count == 0)
+        if (canContinueToNextLine
+            && submitButtonPressedThisFrame
+            && currentStory.currentChoices.Count == 0)
         {
+            submitButtonPressedThisFrame = false;
             ContinueStory();
+            Debug.Log("Continue story.");
         }
     }
 
@@ -154,12 +163,13 @@ public class DialogueManager : MonoBehaviour
         // display each letter one at a time
         foreach (char letter in line.ToCharArray())
         {
-            // if (Input.GetButtonDown("Submit"))
-            // {
-            //     dialogueText.maxVisibleCharacters = line.Length;
-            //     Debug.Log("Skip text.");
-            //     break;
-            // } 
+            if (submitButtonPressedThisFrame)
+            {
+                submitButtonPressedThisFrame = false;
+                dialogueText.maxVisibleCharacters = line.Length;
+                Debug.Log("Skip text.");
+                break;
+            } 
 
             // check for rich text tag, if found, add without waiting
             if (letter == '<' || isAddingRichTextTag)
@@ -174,7 +184,8 @@ public class DialogueManager : MonoBehaviour
             {
                 dialogueText.maxVisibleCharacters++;
                 yield return new WaitForSeconds(typingSpeed);
-            } 
+            }
+            yield return null; 
         }
 
         // actions to take after the entire line is finished displaying

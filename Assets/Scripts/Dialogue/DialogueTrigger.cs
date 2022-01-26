@@ -17,7 +17,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetButtonDown("Interact"))
             {
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
                 Debug.Log(inkJSON.text);

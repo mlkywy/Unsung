@@ -16,7 +16,7 @@ public class PlatformHandler : MonoBehaviour
 
     private void Update()
     {
-        if (collider && Input.GetKeyDown(KeyCode.S) || collider && Input.GetKeyDown(KeyCode.DownArrow))
+        if (collider && Input.GetButtonDown("Down"))
         {
             effector.rotationalOffset = 180f;
             effector.surfaceArc = 210f;

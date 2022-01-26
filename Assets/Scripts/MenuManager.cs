@@ -7,13 +7,13 @@ public class MenuManager : MonoBehaviour
 {
     public GameObject[] frame;
 
-    // Start is called before the first frame update
+
     private void Start()
     {
         frame[1].SetActive(false);
     }
 
-    // Update is called once per frame
+    
     private void Update()
     {
         if (Input.anyKeyDown && frame[0].activeInHierarchy)
@@ -29,10 +29,12 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
 
     public void QuitGame() 
     {

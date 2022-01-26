@@ -139,8 +139,9 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator DisplayLine(string line)
     {
-        // empty the dialogue text
-        dialogueText.text = "";
+        // set the text to the full line, but set the visible characters to 0
+        dialogueText.text = line;
+        dialogueText.maxVisibleCharacters = 0;
 
         // hide items while text is playing
         continueIcon.SetActive(false);
@@ -155,7 +156,7 @@ public class DialogueManager : MonoBehaviour
         {
             // if (Input.GetButtonDown("Submit"))
             // {
-            //     dialogueText.text = line;
+            //     dialogueText.maxVisibleCharacters = line.Length;
             //     Debug.Log("Skip text.");
             //     break;
             // } 
@@ -164,7 +165,6 @@ public class DialogueManager : MonoBehaviour
             if (letter == '<' || isAddingRichTextTag)
             {
                 isAddingRichTextTag = true;
-                dialogueText.text += letter;
                 if (letter == '>')
                 {
                     isAddingRichTextTag = false;
@@ -172,7 +172,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                dialogueText.text += letter;
+                dialogueText.maxVisibleCharacters++;
                 yield return new WaitForSeconds(typingSpeed);
             } 
         }

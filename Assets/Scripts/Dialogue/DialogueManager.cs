@@ -41,6 +41,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        
         namePanel.SetActive(false);
         NPCName.text = "";
         NPCPortrait.SetActive(false);
@@ -86,10 +87,12 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        dialogueText.text = "";
+
         namePanel.SetActive(false);
         NPCName.text = "";
         NPCPortrait.SetActive(false);
-        dialogueText.text = "";
+        
     }
 
 

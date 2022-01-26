@@ -18,7 +18,7 @@ public class DialogueTrigger : MonoBehaviour
 
     void Update()
     {
-        if (playerInRange)
+        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {

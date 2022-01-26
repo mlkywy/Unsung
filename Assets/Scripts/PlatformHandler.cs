@@ -8,14 +8,12 @@ public class PlatformHandler : MonoBehaviour
     [SerializeField] new bool collider;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         effector = GetComponent<PlatformEffector2D>();
     }
 
 
-    // Update is called once per frame
     void Update()
     {
         if (collider && Input.GetKeyDown(KeyCode.S) || collider && Input.GetKeyDown(KeyCode.DownArrow))

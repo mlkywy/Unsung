@@ -7,10 +7,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     public float speed;
     float vertical;
+    
     bool isLadder = false;
     bool isClimbing = false;
-
     bool allowJump = true;
+
     public Animator animator;
 
     [SerializeField] float jumpForce;

@@ -8,9 +8,13 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    [Header("Dialogue UI")]
+    [Header("Parameters")]
+    [SerializeField] private float typingSpeed = 0.04f;
+
+    [Header("Text UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private GameObject continueIcon;
 
     [Header("Speaker UI")]
     [SerializeField] private TextMeshProUGUI displayNameText;
@@ -25,11 +29,14 @@ public class DialogueManager : MonoBehaviour
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
 
-    private static DialogueManager instance;
+    private Coroutine displayLineCoroutine;
+    private bool canContinueToNextLine = false;
 
     // tags
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
+
+    private static DialogueManager instance;
 
 
     private void Awake()
@@ -74,10 +81,9 @@ public class DialogueManager : MonoBehaviour
         if (!dialogueIsPlaying) return;
 
         // continue to next line of dialogue when player input is made
-        if (Input.GetButtonDown("Submit"))
+        if (canContinueToNextLine && Input.GetButtonDown("Submit"))
         {
             ContinueStory();
-            Debug.Log("Continue story.");
         }
     }
 
@@ -111,11 +117,13 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
-            // set text for current dialogue line
-            dialogueText.text = currentStory.Continue();
+            if (displayLineCoroutine != null)
+            {
+                StopCoroutine(displayLineCoroutine);
+            }
 
-            // display choices, if any, for this dialogue line
-            DisplayChoices();
+            // set text for current dialogue line
+            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
 
             // handle tags
             HandleTags(currentStory.currentTags);
@@ -123,8 +131,40 @@ public class DialogueManager : MonoBehaviour
         else
         {
             ExitDialogueMode();
-            Debug.Log("No more story.");
         }
+    }
+
+
+    private IEnumerator DisplayLine(string line)
+    {
+        // empty the dialogue text
+        dialogueText.text = "";
+
+        // hide items while text is playing
+        continueIcon.SetActive(false);
+        HideChoices();
+
+        canContinueToNextLine = false;
+
+        // display each letter one at a time
+        foreach (char letter in line.ToCharArray())
+        {
+            // if (Input.GetButtonDown("Submit"))
+            // {
+            //     dialogueText.text = line;
+            //     Debug.Log("Skip text.");
+            //     break;
+            // } 
+                
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        // actions to take after the entire line is finished displaying
+        continueIcon.SetActive(true);
+        DisplayChoices();
+
+        canContinueToNextLine = true;
     }
 
 
@@ -147,10 +187,12 @@ public class DialogueManager : MonoBehaviour
             switch (tagKey)
             {
                 case SPEAKER_TAG:
+                    // set name panel and name text
                     namePanel.SetActive(true);
                     displayNameText.text = tagValue;
                     break;
                 case PORTRAIT_TAG:
+                    // set portrait frame and portrait
                     portraitFrame.SetActive(true);
                     portraitAnimator.Play(tagValue);
                     // text dialogue makes room for portrait when there is one
@@ -161,6 +203,15 @@ public class DialogueManager : MonoBehaviour
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
                     break;
             }
+        }
+    }
+
+
+    private void HideChoices()
+    {
+        foreach (GameObject choiceButton in choices)
+        {
+            choiceButton.SetActive(false);
         }
     }
 
@@ -205,6 +256,9 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
-        currentStory.ChooseChoiceIndex(choiceIndex);
+        if (canContinueToNextLine)
+        {
+            currentStory.ChooseChoiceIndex(choiceIndex);
+        }
     } 
 }

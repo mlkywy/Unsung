@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlatformHandler : MonoBehaviour
 {
     [SerializeField] PlatformEffector2D effector;
-    [SerializeField] bool collider;
+    [SerializeField] new bool collider;
 
 
     // Start is called before the first frame update

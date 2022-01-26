@@ -41,7 +41,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
-        
+
         namePanel.SetActive(false);
         NPCName.text = "";
         NPCPortrait.SetActive(false);
@@ -68,6 +68,10 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        // make text dialogue span width of dialogue panel when there is no portrait
+        dialogueText.GetComponent<RectTransform>().localPosition = new Vector3(0f, 0.9f, 0f);
+        dialogueText.GetComponent<RectTransform>().sizeDelta = new Vector2(250f, 32f);
+
         if (name.Length > 0) 
         {
             namePanel.SetActive(true);
@@ -77,6 +81,10 @@ public class DialogueManager : MonoBehaviour
         {
             NPCPortrait.SetActive(true);
             NPCPortrait.GetComponent<Image>().sprite = portrait;
+
+            // text dialogue makes room for portrait when there is one
+            dialogueText.GetComponent<RectTransform>().localPosition = new Vector3(15.3f, 0.9f, 0f);
+            dialogueText.GetComponent<RectTransform>().sizeDelta = new Vector2(200f, 32f);
         }
 
         ContinueStory();

@@ -6,7 +6,7 @@ public class DialogueTrigger : MonoBehaviour
 {
     bool playerInRange;
     [SerializeField] TextAsset inkJSON;
-    [SerializeField] string name;
+    [SerializeField] new string name;
     [SerializeField] Sprite portrait;
 
 

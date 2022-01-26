@@ -81,7 +81,9 @@ public class DialogueManager : MonoBehaviour
         if (!dialogueIsPlaying) return;
 
         // continue to next line of dialogue when player input is made
-        if (canContinueToNextLine && Input.GetButtonDown("Submit"))
+        if (canContinueToNextLine && 
+            Input.GetButtonDown("Submit") && 
+            currentStory.currentChoices.Count == 0)
         {
             ContinueStory();
         }

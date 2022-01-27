@@ -94,7 +94,6 @@ public class DialogueManager : MonoBehaviour
         {
             submitButtonPressedThisFrame = false;
             ContinueStory();
-            Debug.Log("Continue story.");
         }
     }
 
@@ -165,7 +164,6 @@ public class DialogueManager : MonoBehaviour
             {
                 submitButtonPressedThisFrame = false;
                 dialogueText.maxVisibleCharacters = line.Length;
-                Debug.Log("Skip text.");
                 break;
             } 
 

@@ -5,16 +5,15 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
-    public float speed;
+    [SerializeField] private float speed = 4f;
+    [SerializeField] private Animator animator;
+    [SerializeField] private float jumpForce = 10f;
+
     private float vertical;
     
     private bool isLadder = false;
     private bool isClimbing = false;
     private bool allowJump = true;
-
-    public Animator animator;
-
-    [SerializeField] private float jumpForce;
 
     private void Start()
     {

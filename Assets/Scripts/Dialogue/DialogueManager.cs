@@ -161,9 +161,6 @@ public class DialogueManager : MonoBehaviour
         // display each letter one at a time
         foreach (char letter in line.ToCharArray())
         {
-            // play voice audio clip on each letter
-            SoundManager.instance.PlaySound(clip);
-
             if (submitButtonPressedThisFrame)
             {
                 submitButtonPressedThisFrame = false;
@@ -183,6 +180,8 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
+                // play voice audio clip on each letter
+                SoundManager.instance.PlaySound(clip);
                 dialogueText.maxVisibleCharacters++;
                 yield return new WaitForSeconds(typingSpeed);
             }

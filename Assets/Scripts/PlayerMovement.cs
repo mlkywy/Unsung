@@ -16,13 +16,11 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float jumpForce;
 
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
-
 
     private void Update()
     {
@@ -48,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     private void FixedUpdate()
     {
         if (isClimbing) 
@@ -61,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
             rb.gravityScale = 4f;
         }
     }
-
 
     // walking
     private void MoveHorizontal() 
@@ -86,7 +82,6 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = playerScale;
     }
 
-
     // climbing
     private void MoveVertical()
     {
@@ -98,7 +93,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     // climbing logic
     private void OnTriggerEnter2D(Collider2D collider) 
     {
@@ -108,7 +102,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     private void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.CompareTag("Ladder"))
@@ -117,7 +110,6 @@ public class PlayerMovement : MonoBehaviour
             isClimbing = false;
         }
     }
-
 
     // jumping logic
     private void Jump()
@@ -130,7 +122,6 @@ public class PlayerMovement : MonoBehaviour
             
         }
     }
-
 
     // enable jump with coroutine to avoid double jumping
     private IEnumerator EnableJump()

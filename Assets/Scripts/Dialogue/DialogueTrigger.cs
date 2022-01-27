@@ -12,7 +12,6 @@ public class DialogueTrigger : MonoBehaviour
         playerInRange = false;
     }
 
-
     private void Update()
     {
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
@@ -25,7 +24,6 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))
@@ -34,7 +32,6 @@ public class DialogueTrigger : MonoBehaviour
             Debug.Log("Player in range.");
         }
     }
-
 
     private void OnTriggerExit2D(Collider2D collider)
     {

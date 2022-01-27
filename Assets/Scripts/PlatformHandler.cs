@@ -7,12 +7,10 @@ public class PlatformHandler : MonoBehaviour
     [SerializeField] private PlatformEffector2D effector;
     [SerializeField] private new bool collider;
 
-
     private void Start()
     {
         effector = GetComponent<PlatformEffector2D>();
     }
-
 
     private void Update()
     {
@@ -24,7 +22,6 @@ public class PlatformHandler : MonoBehaviour
         }
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -33,7 +30,6 @@ public class PlatformHandler : MonoBehaviour
         }
     }
 
-
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -41,7 +37,6 @@ public class PlatformHandler : MonoBehaviour
            collider = false;
         }
     }
-
 
     private IEnumerator Wait()
     {

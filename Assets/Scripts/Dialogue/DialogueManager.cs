@@ -41,7 +41,6 @@ public class DialogueManager : MonoBehaviour
 
     private static DialogueManager instance;
 
-
     private void Awake()
     {
         if (instance != null)
@@ -52,12 +51,10 @@ public class DialogueManager : MonoBehaviour
         instance = this;
     }
 
-
     public static DialogueManager GetInstance()
     {
         return instance;
     }
-
 
     private void Start()
     {
@@ -78,7 +75,6 @@ public class DialogueManager : MonoBehaviour
             index++;
         }
     }
-
 
     private void Update()
     {
@@ -102,7 +98,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-
     public void EnterDialogueMode(TextAsset inkJSON)
     {
         currentStory = new Story(inkJSON.text);
@@ -116,7 +111,6 @@ public class DialogueManager : MonoBehaviour
         ContinueStory();
     }
 
-
     private void ExitDialogueMode()
     {
         dialogueIsPlaying = false;
@@ -128,7 +122,6 @@ public class DialogueManager : MonoBehaviour
 
         clip = null;
     }
-
 
     private void ContinueStory()
     {
@@ -151,7 +144,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-
     private IEnumerator DisplayLine(string line)
     {
         // set the text to the full line, but set the visible characters to 0
@@ -169,6 +161,7 @@ public class DialogueManager : MonoBehaviour
         // display each letter one at a time
         foreach (char letter in line.ToCharArray())
         {
+            // play voice audio clip on each letter
             SoundManager.instance.PlaySound(clip);
 
             if (submitButtonPressedThisFrame)
@@ -202,7 +195,6 @@ public class DialogueManager : MonoBehaviour
 
         canContinueToNextLine = true;
     }
-
 
     private void HandleTags(List<string> currentTags)
     {
@@ -246,7 +238,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-
     private void HideChoices()
     {
         foreach (GameObject choiceButton in choices)
@@ -254,7 +245,6 @@ public class DialogueManager : MonoBehaviour
             choiceButton.SetActive(false);
         }
     }
-
 
     private void DisplayChoices()
     {
@@ -284,7 +274,6 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(SelectFirstChoice());
     }
 
-
     private IEnumerator SelectFirstChoice()
     {
         // event system requires that we clear it first, then wait for at least one frame before setting current selected object
@@ -292,7 +281,6 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
     }
-
 
     public void MakeChoice(int choiceIndex)
     {

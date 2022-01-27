@@ -9,13 +9,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject[] frame;
     [SerializeField] private GameObject[] choices;
 
-
     private void Start()
     {
         frame[1].SetActive(false);
     }
 
-    
     private void Update()
     {
         if (Input.anyKeyDown && frame[0].activeInHierarchy)
@@ -32,12 +30,10 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-
     private void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
 
     private void QuitGame() 
     {

@@ -9,7 +9,8 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     [Header("Parameters")]
-    [SerializeField] private float typingSpeed = 0.04f;
+    [SerializeField] private float typingSpeed = 0.05f;
+    [SerializeField] private AudioClip clip;
 
     [Header("Text UI")]
     [SerializeField] private GameObject dialoguePanel;
@@ -36,6 +37,7 @@ public class DialogueManager : MonoBehaviour
     // tags
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
+    private const string VOICE_TAG = "voice";
 
     private static DialogueManager instance;
 
@@ -64,6 +66,8 @@ public class DialogueManager : MonoBehaviour
 
         namePanel.SetActive(false);
         portraitFrame.SetActive(false);
+
+        clip = null;
 
         // get all of the choices text
         choicesText = new TextMeshProUGUI[choices.Length];
@@ -121,6 +125,8 @@ public class DialogueManager : MonoBehaviour
 
         namePanel.SetActive(false);
         portraitFrame.SetActive(false);
+
+        clip = null;
     }
 
 
@@ -163,6 +169,8 @@ public class DialogueManager : MonoBehaviour
         // display each letter one at a time
         foreach (char letter in line.ToCharArray())
         {
+            SoundManager.instance.PlaySound(clip);
+
             if (submitButtonPressedThisFrame)
             {
                 submitButtonPressedThisFrame = false;
@@ -226,6 +234,10 @@ public class DialogueManager : MonoBehaviour
                     // text dialogue makes room for portrait when there is one
                     dialogueText.GetComponent<RectTransform>().localPosition = new Vector3(15.3f, 0.9f, 0f);
                     dialogueText.GetComponent<RectTransform>().sizeDelta = new Vector2(200f, 32f);
+                    break;
+                case VOICE_TAG:
+                    // set audio clip
+                    clip = (AudioClip)Resources.Load(tagValue);
                     break;
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);

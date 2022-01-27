@@ -22,7 +22,7 @@ public class MenuManager : MonoBehaviour
             frame[1].SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !frame[0].activeInHierarchy)
+        if (Input.GetButtonDown("Cancel") && !frame[0].activeInHierarchy)
         {
             frame[0].SetActive(true);
             frame[1].SetActive(false);

@@ -180,8 +180,12 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                // play voice audio clip on each letter
-                SoundManager.instance.PlaySound(clip);
+                if (letter != ' ' && letter != '.' && letter != ',' && letter != '!' && letter != '?')
+                {
+                    // play voice audio clip on each letter
+                    SoundManager.instance.PlaySound(clip);
+                }
+
                 dialogueText.maxVisibleCharacters++;
                 yield return new WaitForSeconds(typingSpeed);
             }

@@ -1445,6 +1445,11 @@ MonoBehaviour:
   frame:
   - {fileID: 1606798709}
   - {fileID: 2056813351}
+  choices:
+  - {fileID: 1239083470}
+  - {fileID: 964630415}
+  - {fileID: 861921079}
+  - {fileID: 1749225840}
 --- !u!1 &1323770096
 GameObject:
   m_ObjectHideFlags: 0

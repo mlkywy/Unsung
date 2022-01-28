@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HPBar : MonoBehaviour
 {
-    [SerializeField] GameObject health;
+    [SerializeField] private GameObject health;
 
     public void SetHP(float hpNormalized)
     {

@@ -32,6 +32,11 @@ public class CharacterBase : ScriptableObject
         get { return description; }
     }
 
+    public Sprite Sprite
+    {
+        get { return sprite; }
+    }
+
     public int MaxHp
     {
         get { return maxHp; }

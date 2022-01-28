@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class BattleUnit : MonoBehaviour
 {
-    [SerializeField] CharacterBase _base;
-    [SerializeField] int level;
-    // [SerializeField] bool isPlayerUnit;
+    [SerializeField] private CharacterBase _base;
+    [SerializeField] private int level;
+    // [SerializeField] private bool isPlayerUnit;
 
     public Character Character { get; set; }
 

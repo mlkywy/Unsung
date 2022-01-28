@@ -5,20 +5,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Character", menuName = "Character/New Character")]
 public class CharacterBase : ScriptableObject
 {
-    [SerializeField] string name;
-    [SerializeField] Sprite sprite;
-    [SerializeField] CharacterType type;
+    [SerializeField] private string name;
+    [SerializeField] private Sprite sprite;
+    [SerializeField] private CharacterType type;
 
     [TextArea] 
-    [SerializeField] string description;
+    [SerializeField] private string description;
 
     // base stats
-    [SerializeField] int maxHp;
-    [SerializeField] int attack;
-    [SerializeField] int defense;
-    [SerializeField] int spAttack;
-    [SerializeField] int spDefense;
-    [SerializeField] int speed;
+    [SerializeField] private int maxHp;
+    [SerializeField] private int attack;
+    [SerializeField] private int defense;
+    [SerializeField] private int spAttack;
+    [SerializeField] private int spDefense;
+    [SerializeField] private int speed;
 
     [SerializeField] List<LearnableAbility> learnableAbilities;
 

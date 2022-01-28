@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BattleSystem : MonoBehaviour
 {
-    [SerializeField] BattleUnit playerUnit;
-    [SerializeField] BattleHud playerHud;
+    [SerializeField] private BattleUnit playerUnit;
+    [SerializeField] private BattleHud playerHud;
 
-    [SerializeField] BattleUnit enemyUnit;
-    [SerializeField] BattleHud enemyHud;
+    [SerializeField] private BattleUnit enemyUnit;
+    [SerializeField] private BattleHud enemyHud;
 
     private void Start()
     {

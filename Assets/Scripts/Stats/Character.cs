@@ -7,10 +7,30 @@ public class Character
     CharacterBase _base;
     int level;
 
+    public int HP { get; set; }
+
+    public List<Ability> Abilities { get; set; }
+
     public Character(CharacterBase cBase, int cLevel)
     {
         _base = cBase;
         level = cLevel;
+        HP = _base.MaxHp;
+
+        // generates moves of character based on level
+        Abilities = new List<Ability>();
+        foreach (var ability in _base.LearnableAbilities)
+        {
+            if (ability.Level <= level)
+            {
+                Abilities.Add(new Ability(ability.Base));
+            }
+
+            if (Abilities.Count >= 4)
+            {
+                break;
+            }
+        }
     }
 
     public int MaxHp

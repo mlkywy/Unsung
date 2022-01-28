@@ -7,9 +7,9 @@ public class Ability
     public AbilityBase Base { get; set; }
     public int PP { get; set; }
 
-    public Ability(AbilityBase cBase, int pp)
+    public Ability(AbilityBase cBase)
     {
         Base = cBase;
-        PP = pp;
+        PP = cBase.PP;
     }
 }

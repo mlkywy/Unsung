@@ -22,3 +22,10 @@ MonoBehaviour:
   spAttack: 65
   spDefense: 65
   speed: 45
+  learnableAbilities:
+  - abilityBase: {fileID: 11400000, guid: 80a65d3659bedef40abbe17bdb9496ac, type: 2}
+    level: 1
+  - abilityBase: {fileID: 11400000, guid: 5a01affc3e0fc6c45850a3f90a231bd0, type: 2}
+    level: 4
+  - abilityBase: {fileID: 11400000, guid: a80a069483a846f478b926ac7d6efac7, type: 2}
+    level: 7

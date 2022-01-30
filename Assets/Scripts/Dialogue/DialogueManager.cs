@@ -60,7 +60,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
-
+     
         namePanel.SetActive(false);
         portraitFrame.SetActive(false);
 
@@ -277,10 +277,13 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator SelectFirstChoice()
     {
-        // event system requires that we clear it first, then wait for at least one frame before setting current selected object
-        EventSystem.current.SetSelectedGameObject(null);
-        yield return new WaitForEndOfFrame();
-        EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
+        if (currentStory.currentChoices.Count > 0)
+        {
+            // event system requires that we clear it first, then wait for at least one frame before setting current selected object
+            EventSystem.current.SetSelectedGameObject(null);
+            yield return new WaitForEndOfFrame();
+            EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
+        }
     }
 
     public void MakeChoice(int choiceIndex)

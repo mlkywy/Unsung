@@ -3529,8 +3529,8 @@ MonoBehaviour:
   - {fileID: 1064171825}
   - {fileID: 1171965568}
   - {fileID: 2113625520}
-  playerPrefab: {fileID: 7461850085115484648, guid: 184225637c0cdb347b5f5d35b8f45e2f, type: 3}
-  enemyPrefab: {fileID: 4476564717524434783, guid: a679e4bac1fc57244aab1e0ff67d764c, type: 3}
+  playerPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 0}
   playerBattleStation: {fileID: 856155741}
   enemyBattleStation: {fileID: 275709202}
   dialogueText: {fileID: 1263491822}

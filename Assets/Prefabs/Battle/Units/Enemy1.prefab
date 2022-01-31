@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4476564717524434782}
   - component: {fileID: 4476564717524434781}
   m_Layer: 5
-  m_Name: Enemy
+  m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646b85c7d9871a54787020dea5aa21ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Owl
+  unitName: Enemy1
   unitLevel: 2
   damage: 5
   maxHP: 30

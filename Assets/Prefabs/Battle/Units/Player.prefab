@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Player
-  unitLevel: 999
+  unitLevel: 2
   damage: 10
   maxHP: 25
-  currentHP: 20
+  currentHP: 25
 --- !u!1 &7461850085920569259
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,11 +15,11 @@ public class BattleTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("Enemy"))
+        if (collider.CompareTag("Enemy") && !BattleManager.GetInstance().battleHasStarted)
         {
             enemy = collider.gameObject;
             Debug.Log("Collided with enemy!");
-            
+
             StartCoroutine(StartBattle());
         }
     }

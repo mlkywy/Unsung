@@ -14,8 +14,14 @@ public class IntroScene : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(StartIntro());
+    }
+
+    private IEnumerator StartIntro()
+    {
         if (gameStarted && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
+            yield return new WaitForSeconds(1f);
             DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             Debug.Log(inkJSON.text);
         }

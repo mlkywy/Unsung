@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // freeze player if dialogue is playing
-        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        if (DialogueManager.GetInstance().dialogueIsPlaying || BattleManager.GetInstance().battleHasStarted)
         {
             return;
             Debug.Log("Player frozen.");

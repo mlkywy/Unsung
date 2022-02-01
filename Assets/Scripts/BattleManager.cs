@@ -7,34 +7,65 @@ using UnityEngine.EventSystems;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
-public class BattleSystem : MonoBehaviour
+public class BattleManager : MonoBehaviour
 {
+    [SerializeField] private GameObject background;
+
+    [Header("Buttons")]
     public GameObject[] choices;
 
+    [Header("Battle Units")]
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
 
+    [Header("Battlestations")]
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
 
     private Unit playerUnit;
     private Unit enemyUnit;
 
+    [Header("Dialogue")]
     public TextMeshProUGUI dialogueText;
 
+    [Header("Battle Huds")]
     public BattleHUD playerHud;
     public BattleHUD enemyHud;
 
+    [Header("State")]
     public BattleState state;
-    
-    private void Start()
+
+    public bool battleHasStarted { get; private set; }
+
+    private static BattleManager instance;
+
+    private void Awake()
     {
-        state = BattleState.START;
-        StartCoroutine(SetupBattle());
+        if (instance != null)
+        {
+            Debug.LogWarning("Found more than one Battle Manager in the scene.");
+        }
+
+        instance = this;
     }
 
-    private IEnumerator SetupBattle()
+    public static BattleManager GetInstance()
     {
+        return instance;
+    }
+
+    private void Start()
+    {
+        battleHasStarted = false;
+        background.SetActive(false);
+    }
+
+    public void SetupBattle()
+    {
+        state = BattleState.START;
+        battleHasStarted = true;
+        background.SetActive(true);
+
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGO.GetComponent<Unit>();
 
@@ -46,8 +77,12 @@ public class BattleSystem : MonoBehaviour
         playerHud.SetHUD(playerUnit);
         enemyHud.SetHUD(enemyUnit);
 
-        yield return new WaitForSeconds(2f);
+        StartCoroutine(PlayerGoesFirst());
+    }
 
+    private IEnumerator PlayerGoesFirst()
+    {
+        yield return new WaitForSeconds(2f);
         state = BattleState.PLAYERTURN;
         PlayerTurn();
     }
@@ -95,7 +130,7 @@ public class BattleSystem : MonoBehaviour
         {
             // end the battle
             state = BattleState.WON;
-            EndBattle();
+            StartCoroutine(EndBattle());
         }
         else
         {
@@ -136,7 +171,7 @@ public class BattleSystem : MonoBehaviour
         {
             // end the battle
             state = BattleState.LOST;
-            EndBattle();
+            StartCoroutine(EndBattle());
         }
         else
         {
@@ -146,7 +181,7 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    private void EndBattle() 
+    private IEnumerator EndBattle() 
     {
         if (state == BattleState.WON)
         {
@@ -156,6 +191,10 @@ public class BattleSystem : MonoBehaviour
         {
             dialogueText.text = "You were defeated.";
         }
+
+        yield return new WaitForSeconds(2f);
+        background.SetActive(false);
+        battleHasStarted = false;
     }
 
      private IEnumerator SelectFirstChoice()

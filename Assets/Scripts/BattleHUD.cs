@@ -6,6 +6,8 @@ using TMPro;
 
 public class BattleHUD : MonoBehaviour
 {
+    public Image spriteUI;
+
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI levelText;
 
@@ -15,6 +17,8 @@ public class BattleHUD : MonoBehaviour
 
     public void SetHUD(Unit unit)
     {
+        spriteUI.GetComponent<Image>().sprite = unit.unitSprite;
+
         nameText.text = unit.unitName;
         levelText.text = "LVL\n" + unit.unitLevel;
 

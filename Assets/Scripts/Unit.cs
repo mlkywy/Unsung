@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
+    public Sprite unitSprite;
+
     public string unitName;
     public int unitLevel;
 

@@ -10,7 +10,7 @@ public class BattleTrigger : MonoBehaviour
         if (collider.CompareTag("Enemy"))
         {
             Debug.Log("Collided with enemy!");
-            StartCoroutine(ChangeScenes());
+            StartCoroutine(StartBattle());
         }
     }
 
@@ -22,10 +22,11 @@ public class BattleTrigger : MonoBehaviour
         }
     }
     
-    private IEnumerator ChangeScenes()
+    private IEnumerator StartBattle()
     {
         yield return new WaitForSeconds(2f);
 
-        SceneManager.LoadScene("BattleScreen");
+        BattleManager.GetInstance().SetupBattle();
+        Debug.Log("Get battle instance!");
     }
 }

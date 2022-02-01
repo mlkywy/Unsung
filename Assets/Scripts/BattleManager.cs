@@ -14,9 +14,9 @@ public class BattleManager : MonoBehaviour
     [Header("Buttons")]
     public GameObject[] choices;
 
-    [Header("Battle Units")]
-    public GameObject playerPrefab;
-    public GameObject enemyPrefab;
+    // [Header("Battle Units")]
+    // public GameObject playerPrefab;
+    // public GameObject enemyPrefab;
 
     [Header("Battlestations")]
     public Transform playerBattleStation;
@@ -60,7 +60,7 @@ public class BattleManager : MonoBehaviour
         background.SetActive(false);
     }
 
-    public void SetupBattle()
+    public void SetupBattle(GameObject playerPrefab, GameObject enemyPrefab)
     {
         state = BattleState.START;
         battleHasStarted = true;

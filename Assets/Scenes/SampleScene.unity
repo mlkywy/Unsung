@@ -1566,7 +1566,7 @@ GameObject:
   - component: {fileID: 475644752}
   - component: {fileID: 475644751}
   m_Layer: 5
-  m_Name: Background
+  m_Name: BattlePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2095,7 +2095,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5000001, y: -2.3435643, z: -10}
+  m_LocalPosition: {x: -0.29999965, y: -2.3435643, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4251,14 +4251,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2faa672fc6166ff4ba293cef8c237efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  background: {fileID: 475644749}
+  battlePanel: {fileID: 475644749}
   choices:
   - {fileID: 772857411}
   - {fileID: 15205594}
   - {fileID: 644910507}
   - {fileID: 1582026136}
-  playerPrefab: {fileID: 0}
-  enemyPrefab: {fileID: 0}
   playerBattleStation: {fileID: 1976213928}
   enemyBattleStation: {fileID: 174037449}
   dialogueText: {fileID: 1399929591}
@@ -7000,7 +6998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328700192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5000001, y: -3.3048127, z: -10}
+  m_LocalPosition: {x: -0.30000013, y: -3.3048127, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 173658723}
@@ -9815,7 +9813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4948057124229684710, guid: c3741bef531945e45b74f15fba14988c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4948057124229684710, guid: c3741bef531945e45b74f15fba14988c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10144,7 +10142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8484194597173125226, guid: 4fc1e4165a8abdb4eb80a32e2130af53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: -2.5220525
       objectReference: {fileID: 0}
     - target: {fileID: 8484194597173125226, guid: 4fc1e4165a8abdb4eb80a32e2130af53, type: 3}
       propertyPath: m_LocalPosition.y

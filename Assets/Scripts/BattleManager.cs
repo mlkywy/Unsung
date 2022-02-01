@@ -9,7 +9,7 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class BattleManager : MonoBehaviour
 {
-    [SerializeField] private GameObject background;
+    [SerializeField] private GameObject battlePanel;
 
     [Header("Buttons")]
     public GameObject[] choices;
@@ -53,14 +53,14 @@ public class BattleManager : MonoBehaviour
     private void Start()
     {
         battleHasStarted = false;
-        background.SetActive(false);
+        battlePanel.SetActive(false);
     }
 
     public void SetupBattle(GameObject playerPrefab, GameObject enemyPrefab)
     {
         state = BattleState.START;
         battleHasStarted = true;
-        background.SetActive(true);
+        battlePanel.SetActive(true);
 
         GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGO.GetComponent<Unit>();
@@ -189,7 +189,7 @@ public class BattleManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2f);
-        background.SetActive(false);
+        battlePanel.SetActive(false);
         battleHasStarted = false;
     }
 

@@ -14,10 +14,6 @@ public class BattleManager : MonoBehaviour
     [Header("Buttons")]
     public GameObject[] choices;
 
-    // [Header("Battle Units")]
-    // public GameObject playerPrefab;
-    // public GameObject enemyPrefab;
-
     [Header("Battlestations")]
     public Transform playerBattleStation;
     public Transform enemyBattleStation;

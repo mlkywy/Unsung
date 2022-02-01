@@ -4,38 +4,21 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class MenuManager : MonoBehaviour
+public class GameOverMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject[] frame;
     [SerializeField] private GameObject[] choices;
 
     private void Start()
     {
-        frame[1].SetActive(false);
+        StartCoroutine(SelectFirstChoice()); 
     }
 
-    public void Update()
+    public void MainMenu()
     {
-        if (Input.anyKeyDown && frame[0].activeInHierarchy)
-        {
-            frame[0].SetActive(false);
-            frame[1].SetActive(true);
-            StartCoroutine(SelectFirstChoice());
-        }
-
-        if (Input.GetButtonDown("Cancel") && !frame[0].activeInHierarchy)
-        {
-            frame[0].SetActive(true);
-            frame[1].SetActive(false);
-        }
+        SceneManager.LoadScene("MainMenu");
     }
 
-    public void StartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    private void QuitGame() 
+    public void QuitGame() 
     {
         Debug.Log("Quit!");
         Application.Quit();

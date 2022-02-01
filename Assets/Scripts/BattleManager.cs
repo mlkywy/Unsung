@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
@@ -18,6 +19,11 @@ public class BattleManager : MonoBehaviour
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
 
+    // clones that instantiate when battle starts, must be destroyed at the end
+    private GameObject playerGO;
+    private GameObject enemyGO;
+
+    // these hold the player and enemy stats
     private Unit playerUnit;
     private Unit enemyUnit;
 
@@ -62,14 +68,21 @@ public class BattleManager : MonoBehaviour
         battleHasStarted = true;
         battlePanel.SetActive(true);
 
-        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+        playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerGO.GetComponent<Unit>();
 
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+        enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
         dialogueText.text = enemyUnit.unitName + " blocks your path.";
 
+        // load player data from Global Control
+        playerUnit.unitLevel = GlobalControl.instance.unitLevel;
+        playerUnit.damage = GlobalControl.instance.damage;
+        playerUnit.maxHP = GlobalControl.instance.maxHP;
+        playerUnit.currentHP = GlobalControl.instance.currentHP;
+
+        // set HUD details for player & enemy
         playerHud.SetHUD(playerUnit);
         enemyHud.SetHUD(enemyUnit);
 
@@ -182,15 +195,30 @@ public class BattleManager : MonoBehaviour
         if (state == BattleState.WON)
         {
             dialogueText.text = "You won the battle!";
+            SavePlayer();
+            Destroy(playerGO);
+            Destroy(enemyGO);
+            yield return new WaitForSeconds(2f);
+            battlePanel.SetActive(false);
+            battleHasStarted = false;
         } 
         else if (state == BattleState.LOST)
         {
             dialogueText.text = "You were defeated.";
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene("GameOver");
         }
 
-        yield return new WaitForSeconds(2f);
-        battlePanel.SetActive(false);
-        battleHasStarted = false;
+        yield return null;
+    }
+
+    // save player data at end of game
+    public void SavePlayer()
+    {
+        GlobalControl.instance.unitLevel = playerUnit.unitLevel;
+        GlobalControl.instance.damage = playerUnit.damage;
+        GlobalControl.instance.maxHP = playerUnit.maxHP;
+        GlobalControl.instance.currentHP = playerUnit.currentHP;
     }
 
      private IEnumerator SelectFirstChoice()

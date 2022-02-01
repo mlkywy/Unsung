@@ -37,6 +37,9 @@ public class BattleTrigger : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         BattleManager.GetInstance().SetupBattle(player, enemy);
+
+        // destroy enemy since you can only win/lose in battle instance
+        Destroy(enemy);
         Debug.Log("Get battle instance!");
     }
 }

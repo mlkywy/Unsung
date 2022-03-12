@@ -290,7 +290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -23.4}
+  m_AnchoredPosition: {x: 0, y: -24.9}
   m_SizeDelta: {x: 13.239395, y: 1.7591}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &346388645
@@ -1553,7 +1553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -67}
+  m_AnchoredPosition: {x: 0, y: -52.9}
   m_SizeDelta: {x: 300, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1838246867
@@ -1790,7 +1790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9a31fa6206cc5429139e56bd7b79e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: f74846b204e653a488542fa1d9fd0e2a, type: 3}
+  inkJSON: {fileID: 4900000, guid: 5a36e8778ba64dc4b9d925c308311361, type: 3}
   music: {fileID: 8300000, guid: 5b8cbca87f2f55c4b889cfb39ffbeb82, type: 3}
 --- !u!1 &2044113877
 GameObject:
@@ -1827,7 +1827,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 84.7}
+  m_AnchoredPosition: {x: 0, y: 80}
   m_SizeDelta: {x: 192, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2044113879
@@ -1840,7 +1840,7 @@ Animator:
   m_GameObject: {fileID: 2044113877}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7ac72db327cde874eb5544d5cec320e5, type: 2}
+  m_Controller: {fileID: 9100000, guid: b5839212e15a44c478b605412f9b9ffb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

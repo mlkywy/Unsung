@@ -9,12 +9,31 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+        if (instance != null)
+        {
+            Debug.LogWarning("Found more than one Sound Manager in the scene.");
+        }
+        
         instance = this;
+        DontDestroyOnLoad(this);
+
         source = GetComponent<AudioSource>();
     }
 
     public void PlaySound(AudioClip clip)
     {
         source.PlayOneShot(clip);
+    }
+
+    public void ChangeBGM(AudioClip music)
+    {
+        if (source.clip.name == music.name) 
+        {
+            return;
+        }
+
+        source.Stop();
+        source.clip = music;
+        source.Play();
     }
 }

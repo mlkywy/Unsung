@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] frame;
     [SerializeField] private GameObject[] choices;
+    [SerializeField] private AudioClip clip;
 
     private void Start()
     {

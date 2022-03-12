@@ -6,9 +6,11 @@ public class IntroScene : MonoBehaviour
 {
     private bool gameStarted;
     [SerializeField] private TextAsset inkJSON;
+    [SerializeField] private AudioClip music;
 
     private void Awake()
     {
+        SoundManager.instance.ChangeBGM(music);
         gameStarted = true;
     }
 

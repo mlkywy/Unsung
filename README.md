@@ -26,7 +26,6 @@ Goals for the Semester:
   * simple transitions, cutscenes, sound effects
   * simple animations
   * dialogue boxes for on-screen narrative and conversations
-  * item inventory and party member stat screen
   * turn-based battle system and separate health pools for characters & enemies
 * GitHub repository with README and access to scripts
 * Itch.io page for the demo (free download)
@@ -35,9 +34,6 @@ Goals for the Semester:
 * Music assets/soundtracks if custom
   * mp3/wav format
 
-## Progress - Week 2
-
-https://user-images.githubusercontent.com/91434717/150629069-da78f16b-b8cd-4315-bea0-4bfcb7250536.mp4
-
+## Progress 
 
 ## Credits 

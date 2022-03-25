@@ -8,28 +8,26 @@ public class Enemy : Character
     {
         int randomAct = Random.Range(0, 2);
 
+        Character target = BattleController.Instance.GetRandomPlayer();
+
         switch(randomAct)
         {
             case 0:
-                Defend();
-                break;
-            case 1:
-                // spell
                 Spell spellToCast = GetRandomSpell();
 
                 if (spellToCast.spellType == Spell.SpellType.Heal)
                 {
-                    // get friendly weak target
+                    target = BattleController.Instance.GetWeakestEnemy();
                 }
 
-                if (!CastSpell(spellToCast, null))
+                if (!CastSpell(spellToCast, target))
                 {
-                    // attack
+                    BattleController.Instance.DoAttack(this, target);
                 }
 
                 break;
-            case 2: 
-                // attack
+            case 1: 
+                BattleController.Instance.DoAttack(this, target);
                 break;
         }
     }
@@ -44,6 +42,6 @@ public class Enemy : Character
     public override void Die()
     {
         base.Die();
-        // do more
+        BattleController.Instance.characters[1].Remove(this);
     }
 }

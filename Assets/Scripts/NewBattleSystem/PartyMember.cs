@@ -7,6 +7,6 @@ public class PartyMember : Character
     public override void Die()
     {
         base.Die();
-        // do more
+        BattleController.Instance.characters[0].Remove(this);
     }
 }

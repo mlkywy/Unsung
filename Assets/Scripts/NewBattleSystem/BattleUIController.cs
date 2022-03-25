@@ -105,14 +105,6 @@ public class BattleUIController : MonoBehaviour
                    slider.GetComponentInChildren<TextMeshProUGUI>().text = character.manaPoints.ToString();
                }
            }
-           
-        //    playerHud[i].GetComponentInChildren<Slider>().maxValue = character.maxHealth;
-        //    playerHud[i].GetComponentInChildren<Slider>().value = character.health;
-        //    playerHud[i].GetComponentInChildren<Slider>().GetComponentInChildren<TextMeshProUGUI>().text = character.health.ToString();
-
-        //    playerHud[i].GetComponentInChildren<Slider>().maxValue = character.maxManaPoints;
-        //    playerHud[i].GetComponentInChildren<Slider>().maxValue = character.maxManaPoints;
-        //    playerHud[i].GetComponentInChildren<Slider>().GetComponentInChildren<TextMeshProUGUI>().text = character.manaPoints.ToString();
         }
     }
 

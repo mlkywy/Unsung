@@ -14,6 +14,8 @@ public class Character : MonoBehaviour
     public int maxManaPoints;
     public List<Spell> spells;
 
+    public bool isDead = false;
+
     public void Hurt(int amount)
     {
         // formula for damage amount
@@ -64,6 +66,7 @@ public class Character : MonoBehaviour
     public virtual void Die()
     {
         Destroy(this.gameObject);
+        isDead = true;
         Debug.LogFormat("{0} has died!", characterName);
     }
 }

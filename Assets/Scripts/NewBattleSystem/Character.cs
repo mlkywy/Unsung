@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public class Character : MonoBehaviour, ICharacter
 {
     public string characterName;
     public Sprite characterSprite;
@@ -13,6 +13,7 @@ public class Character : MonoBehaviour
     public int manaPoints;
     public int maxManaPoints;
     public List<Spell> spells;
+    public bool isDead = false;
 
     public void Hurt(int amount)
     {

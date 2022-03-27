@@ -25,7 +25,7 @@ public class BattleUIController : MonoBehaviour
 
             if (hitInfo.collider != null && hitInfo.collider.CompareTag("Character"))
             {
-                BattleController.Instance.SelectCharacter(hitInfo.collider.GetComponent<Character>());
+                BattleController.Instance.SelectTarget(hitInfo.collider.GetComponent<Character>());
             }
         }
     }

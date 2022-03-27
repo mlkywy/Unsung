@@ -10,6 +10,9 @@ public class BattleController : MonoBehaviour
     0 1 2 3    0 1 2 3
     */
 
+    const private int PLAYER_TEAM = 0;
+    const private int ENEMY_TEAM = 1;
+
     public static BattleController Instance { get; set; }
 
     public Dictionary<int, List<Character>> characters = new Dictionary<int, List<Character>>();
@@ -42,14 +45,14 @@ public class BattleController : MonoBehaviour
 
     public Character GetRandomPlayer()
     {
-        return characters[0][Random.Range(0, characters[0].Count - 1)];
+        return characters[PLAYER_TEAM][Random.Range(0, characters[PLAYER_TEAM].Count - 1)];
     }
 
     public Character GetWeakestEnemy()
     {
-        Character weakestEnemy = characters[1][0];
+        Character weakestEnemy;
 
-        foreach(Character character in characters[1])
+        foreach(Character character in characters[ENEMY_TEAM])
         {
             if (character.health < weakestEnemy.health)
             {
@@ -60,38 +63,38 @@ public class BattleController : MonoBehaviour
         return weakestEnemy;
     }
 
-    private void NextTurn()
-    {
-        // if turn 0, set act turn to 1; if 1, set act turn to 0
-        actTurn = actTurn == 0 ? 1 : 0;
-    }
+    // private void NextTurn()
+    // {
+    //     // if turn 0, set act turn to 1; if 1, set act turn to 0
+    //     actTurn ^= 1;
+    //     if(actTurn == 1) { EnemyAct(); }
+    // }
 
     private void NextAct()
     {
-        if (characters[0].Count > 0 && characters[1].Count > 0)
+        uiController.UpdateCharacterUI();
+
+        if (!characters[PLAYER_TEAM].All(c => c.isDead) && characters[ENEMY_TEAM].Count > 0)
         {
-            if (characterTurnIndex < characters[actTurn].Count - 1)
+            if (characterTurnIndex < characters[PLAYER_TEAM].Count - 1)
             {
                 characterTurnIndex++;
+
+                if(characters[PLAYER_TEAM][characterTurnIndex].isDead)
+                {
+                    return;
+                }
             }
             else
             {
-                NextTurn();
+                StartCoroutine(EnemyAct());
+                uiController.ToggleActionState(false);
                 characterTurnIndex = 0;
-                Debug.Log("turn: " + actTurn);
+                Debug.Log("Enemy turn");
             }
 
-            switch(actTurn)
-            {
-                case 0:
-                    uiController.ToggleActionState(true);
-                    uiController.BuildSpellList(GetCurrentCharacter().spells);
-                    break;
-                case 1:
-                    StartCoroutine(PerformAct());
-                    uiController.ToggleActionState(false);
-                    break;
-            }
+            uiController.ToggleActionState(true);
+            uiController.BuildSpellList(GetCurrentCharacter().spells);
         }
         else
         {
@@ -99,33 +102,36 @@ public class BattleController : MonoBehaviour
         }
     }
 
-    private IEnumerator PerformAct()
+    private IEnumerator EnemyAct()
     {
-        yield return new WaitForSeconds(0.75f);
-
-        if (GetCurrentCharacter().health > 0)
+        foreach(Character character in characters[ENEMY_TEAM])
         {
-            GetCurrentCharacter().GetComponent<Enemy>().Act();
+            yield return new WaitForSeconds(0.75f);
+
+            if (character.health > 0)
+            {
+                character.GetComponent<Enemy>().Act();
+            }
+
+            uiController.UpdateCharacterUI();
+
+            yield return new WaitForSeconds(1f);
         }
-
-        uiController.UpdateCharacterUI();
-
-        yield return new WaitForSeconds(1f);
-
-        NextAct();
     }
 
-    public void SelectCharacter(Character character)
+    public void SelectTarget(Character target)
     {
         if (playerIsAttacking)
         {
-            DoAttack(GetCurrentCharacter(), character);
+            var curr = GetCurrentCharacter();
+            Debug.Log($"{curr.characterName} attacks {target.characterName}");
+            target.Hurt(curr.attackPower);
+            NextAct();
         }
         else if (playerSelectedSpell != null)
         {
-            if (GetCurrentCharacter().CastSpell(playerSelectedSpell, character))
+            if (GetCurrentCharacter().CastSpell(playerSelectedSpell, target))
             {
-                uiController.UpdateCharacterUI();
                 NextAct();
             }
             else 
@@ -135,34 +141,23 @@ public class BattleController : MonoBehaviour
         }
     }
 
-    public void DoAttack(Character attacker, Character target)
-    {
-        Debug.Log("Do attack.");
-        target.Hurt(attacker.attackPower);
-        // NextAct();
-        if (actTurn == 0)
-        {
-            NextAct();
-        }
-    }
-
     public void StartBattle(List<Character> players, List<Character> enemies)
     {
         Debug.Log("Setup battle!");
 
         for (int i = 0; i < players.Count; i++)
         {
-            characters[0].Add(spawnPoints[i + 4].Spawn(players[i]));
+            characters[PLAYER_TEAM].Add(spawnPoints[i + 4].Spawn(players[i]));
         }
 
         for (int i = 0; i < enemies.Count; i++)
         {
-            characters[1].Add(spawnPoints[i].Spawn(enemies[i]));
+            characters[ENEMY_TEAM].Add(spawnPoints[i].Spawn(enemies[i]));
         }
     }
 
     public Character GetCurrentCharacter()
     {
-        return characters[actTurn][characterTurnIndex];
+        return characters[PLAYER_TEAM][characterTurnIndex];
     }
 }

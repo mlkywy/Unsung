@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class BattleController : MonoBehaviour
 {
@@ -10,14 +11,14 @@ public class BattleController : MonoBehaviour
     0 1 2 3    0 1 2 3
     */
 
-    const private int PLAYER_TEAM = 0;
-    const private int ENEMY_TEAM = 1;
+    private const int PLAYER_TEAM = 0;
+    private const int ENEMY_TEAM = 1;
 
     public static BattleController Instance { get; set; }
 
     public Dictionary<int, List<Character>> characters = new Dictionary<int, List<Character>>();
 
-    public int characterTurnIndex;
+    public int characterTurnIndex = 0;
     public Spell playerSelectedSpell;
     public bool playerIsAttacking;
 
@@ -50,7 +51,7 @@ public class BattleController : MonoBehaviour
 
     public Character GetWeakestEnemy()
     {
-        Character weakestEnemy;
+        Character weakestEnemy = characters[ENEMY_TEAM][0];
 
         foreach(Character character in characters[ENEMY_TEAM])
         {
@@ -63,13 +64,6 @@ public class BattleController : MonoBehaviour
         return weakestEnemy;
     }
 
-    // private void NextTurn()
-    // {
-    //     // if turn 0, set act turn to 1; if 1, set act turn to 0
-    //     actTurn ^= 1;
-    //     if(actTurn == 1) { EnemyAct(); }
-    // }
-
     private void NextAct()
     {
         uiController.UpdateCharacterUI();
@@ -80,21 +74,23 @@ public class BattleController : MonoBehaviour
             {
                 characterTurnIndex++;
 
-                if(characters[PLAYER_TEAM][characterTurnIndex].isDead)
+                Debug.Log(characters[PLAYER_TEAM][characterTurnIndex] + "'s turn!");
+
+                uiController.ToggleActionState(true);
+                uiController.BuildSpellList(GetCurrentCharacter().spells);
+
+                while (characters[PLAYER_TEAM][characterTurnIndex].isDead)
                 {
-                    return;
+                    characterTurnIndex = (characterTurnIndex + 1) % 4;
                 }
             }
             else
             {
-                StartCoroutine(EnemyAct());
-                uiController.ToggleActionState(false);
                 characterTurnIndex = 0;
+                uiController.ToggleActionState(false);
+                StartCoroutine(EnemyAct());
                 Debug.Log("Enemy turn");
             }
-
-            uiController.ToggleActionState(true);
-            uiController.BuildSpellList(GetCurrentCharacter().spells);
         }
         else
         {
@@ -117,16 +113,21 @@ public class BattleController : MonoBehaviour
 
             yield return new WaitForSeconds(1f);
         }
+
+        while (characters[PLAYER_TEAM][characterTurnIndex].isDead && characterTurnIndex < 4)
+        {
+            characterTurnIndex++;
+        }
+
+        uiController.ToggleActionState(true);
+        uiController.BuildSpellList(GetCurrentCharacter().spells);
     }
 
     public void SelectTarget(Character target)
     {
         if (playerIsAttacking)
         {
-            var curr = GetCurrentCharacter();
-            Debug.Log($"{curr.characterName} attacks {target.characterName}");
-            target.Hurt(curr.attackPower);
-            NextAct();
+            DoAttack(GetCurrentCharacter(), target);
         }
         else if (playerSelectedSpell != null)
         {
@@ -139,6 +140,13 @@ public class BattleController : MonoBehaviour
                 Debug.LogWarning("Not enough mana to cast that spell!");
             }
         }
+    }
+
+    public void DoAttack(Character attacker, Character target)
+    {
+        Debug.Log(attacker.characterName + " attacks " + target.characterName);
+        target.Hurt(attacker.attackPower);
+        NextAct();
     }
 
     public void StartBattle(List<Character> players, List<Character> enemies)

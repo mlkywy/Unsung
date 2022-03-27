@@ -23,7 +23,15 @@ public class BattleUIController : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hitInfo = Physics2D.Raycast(ray.origin, ray.direction);
 
-            if (hitInfo.collider != null && hitInfo.collider.CompareTag("Character"))
+            // if target is friendly and heal spell is selected
+            if (hitInfo.collider != null && hitInfo.collider.CompareTag("Character") && BattleController.Instance.playerSelectedSpell.spellType == Spell.SpellType.Heal)
+            {
+                BattleController.Instance.SelectTarget(hitInfo.collider.GetComponent<Character>());
+            }
+
+            // if target is enemy and attack spell or regular attack selected
+            if (hitInfo.collider != null && hitInfo.collider.CompareTag("Enemy")
+                && (BattleController.Instance.playerIsAttacking || BattleController.Instance.playerSelectedSpell.spellType == Spell.SpellType.Attack))
             {
                 BattleController.Instance.SelectTarget(hitInfo.collider.GetComponent<Character>());
             }

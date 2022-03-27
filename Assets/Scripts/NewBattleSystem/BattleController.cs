@@ -146,7 +146,6 @@ public class BattleController : MonoBehaviour
     {
         Debug.Log(attacker.characterName + " attacks " + target.characterName);
         target.Hurt(attacker.attackPower);
-        NextAct();
     }
 
     public void StartBattle(List<Character> players, List<Character> enemies)

@@ -127,7 +127,7 @@ public class BattleController : MonoBehaviour
     {
         if (playerIsAttacking)
         {
-            DoAttack(GetCurrentCharacter(), target);
+            PlayerDoAttack(GetCurrentCharacter(), target);
         }
         else if (playerSelectedSpell != null)
         {
@@ -142,7 +142,14 @@ public class BattleController : MonoBehaviour
         }
     }
 
-    public void DoAttack(Character attacker, Character target)
+    public void PlayerDoAttack(Character attacker, Character target)
+    {
+        Debug.Log(attacker.characterName + " attacks " + target.characterName);
+        target.Hurt(attacker.attackPower);
+        NextAct();
+    }
+
+    public void EnemyDoAttack(Character attacker, Character target)
     {
         Debug.Log(attacker.characterName + " attacks " + target.characterName);
         target.Hurt(attacker.attackPower);

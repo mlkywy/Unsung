@@ -22,12 +22,12 @@ public class Enemy : Character
 
                 if (!CastSpell(spellToCast, target))
                 {
-                    BattleController.Instance.DoAttack(this, target);
+                    BattleController.Instance.EnemyDoAttack(this, target);
                 }
 
                 break;
             case 1: 
-                BattleController.Instance.DoAttack(this, target);
+                BattleController.Instance.EnemyDoAttack(this, target);
                 break;
         }
     }

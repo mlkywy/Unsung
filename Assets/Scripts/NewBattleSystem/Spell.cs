@@ -13,6 +13,9 @@ public class Spell : MonoBehaviour
 
     [SerializeField] private Vector3 targetPosition;
 
+    public GameObject DialoguePanel;
+    public BattleDialogue dialogueController;
+
     private void Update()
     {
         if (targetPosition != Vector3.zero)
@@ -31,8 +34,12 @@ public class Spell : MonoBehaviour
 
     public void Cast(Character target)
     {
+        DialoguePanel = GameObject.FindWithTag("DialoguePanel");
+        dialogueController = DialoguePanel.GetComponent<BattleDialogue>();
+
         targetPosition = target.transform.position;
-        Debug.Log(spellName + "was cast on " + target.characterName + "!");
+        // Debug.Log(spellName + "was cast on " + target.characterName + "!");
+        dialogueController.SetText($"{spellName} was cast on {target.characterName}!");
 
         if (spellType == SpellType.Attack)
         {

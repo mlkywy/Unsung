@@ -199,7 +199,7 @@ public class BattleController : MonoBehaviour
         {
             if (GetCurrentCharacter().CastSpell(playerSelectedSpell, target))
             {
-                dialogueController.SetText($"{playerSelectedSpell.spellName} was cast on {target.characterName}!");
+                // dialogueController.SetText($"{playerSelectedSpell.spellName} was cast on {target.characterName}!");
                 StartCoroutine(TurnDelay());
             }
             else 

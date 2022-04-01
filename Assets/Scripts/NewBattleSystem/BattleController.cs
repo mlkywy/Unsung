@@ -86,7 +86,7 @@ public class BattleController : MonoBehaviour
            }
        }
 
-       return eligibleCharacters[Random.Range(0, eligibleCharacters.Count - 1)];
+       return eligibleCharacters[Random.Range(0, eligibleCharacters.Count)];
     }
 
     // function for the enemy to heal their own members (if one of them has a heal spell)

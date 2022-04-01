@@ -19,6 +19,9 @@ public class BattleController : MonoBehaviour
 
     public Dictionary<int, List<Character>> characters = new Dictionary<int, List<Character>>();
 
+    // check for alive characters
+    public List<Character> eligibleCharacters = new List<Character>();
+
     public int characterTurnIndex = 0;
     public Spell playerSelectedSpell;
     public bool playerIsAttacking;
@@ -70,10 +73,20 @@ public class BattleController : MonoBehaviour
         NextAct();
     }
 
-    // function for the enemy to select a random target
+    // function for the enemy to select a random target that is still alive
     public Character GetRandomPlayer()
     {
-        return characters[PLAYER_TEAM][Random.Range(0, characters[PLAYER_TEAM].Count - 1)];
+       eligibleCharacters.Clear();
+       
+       for (int i = 0; i < characters[PLAYER_TEAM].Count; i++)
+       {
+           if (!characters[PLAYER_TEAM][i].isDead)
+           {
+               eligibleCharacters.Add(characters[PLAYER_TEAM][i]);
+           }
+       }
+
+       return eligibleCharacters[Random.Range(0, eligibleCharacters.Count - 1)];
     }
 
     // function for the enemy to heal their own members (if one of them has a heal spell)

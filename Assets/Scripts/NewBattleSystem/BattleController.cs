@@ -44,11 +44,28 @@ public class BattleController : MonoBehaviour
         uiController.UpdateCharacterUI();
     }
 
+    public void StartBattle(List<Character> players, List<Character> enemies)
+    {
+        Debug.Log("Setup battle!");
+
+        for (int i = 0; i < players.Count; i++)
+        {
+            characters[PLAYER_TEAM].Add(spawnPoints[i + 4].Spawn(players[i]));
+        }
+
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            characters[ENEMY_TEAM].Add(spawnPoints[i].Spawn(enemies[i]));
+        }
+    }
+
+    // function for the enemy to select a random target
     public Character GetRandomPlayer()
     {
         return characters[PLAYER_TEAM][Random.Range(0, characters[PLAYER_TEAM].Count - 1)];
     }
 
+    // function for the enemy to heal their own members (if one of them has a heal spell)
     public Character GetWeakestEnemy()
     {
         Character weakestEnemy = characters[ENEMY_TEAM][0];
@@ -64,6 +81,13 @@ public class BattleController : MonoBehaviour
         return weakestEnemy;
     }
 
+    // get current party member (whose turn it is)
+    public Character GetCurrentCharacter()
+    {
+        return characters[PLAYER_TEAM][characterTurnIndex];
+    }
+
+    // controls which party member goes
     private void NextAct()
     {
         uiController.UpdateCharacterUI();
@@ -74,9 +98,10 @@ public class BattleController : MonoBehaviour
             {
                 characterTurnIndex++;
 
+                // if a character is dead, skip their turn
                 while (characters[PLAYER_TEAM][characterTurnIndex].isDead)
                 {
-                    Debug.Log("this character is dead!");
+                    Debug.Log("This character is dead!");
                     characterTurnIndex++;
                 }
 
@@ -98,6 +123,7 @@ public class BattleController : MonoBehaviour
         else
         {
             Debug.Log("Battle over!");
+            // call function to end battle
         }
     }
 
@@ -117,13 +143,7 @@ public class BattleController : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        // while (characters[PLAYER_TEAM][characterTurnIndex].isDead && characterTurnIndex < 4)
-        // {
-        //     characterTurnIndex++;
-        // }
-
-        // uiController.ToggleActionState(true);
-        // uiController.BuildSpellList(GetCurrentCharacter().spells);
+        // after all enemies go, return to player's turn
         NextAct();
     }
 
@@ -157,25 +177,5 @@ public class BattleController : MonoBehaviour
     {
         Debug.Log(attacker.characterName + " attacks " + target.characterName);
         target.Hurt(attacker.attackPower);
-    }
-
-    public void StartBattle(List<Character> players, List<Character> enemies)
-    {
-        Debug.Log("Setup battle!");
-
-        for (int i = 0; i < players.Count; i++)
-        {
-            characters[PLAYER_TEAM].Add(spawnPoints[i + 4].Spawn(players[i]));
-        }
-
-        for (int i = 0; i < enemies.Count; i++)
-        {
-            characters[ENEMY_TEAM].Add(spawnPoints[i].Spawn(enemies[i]));
-        }
-    }
-
-    public Character GetCurrentCharacter()
-    {
-        return characters[PLAYER_TEAM][characterTurnIndex];
     }
 }

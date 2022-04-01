@@ -83,12 +83,14 @@ public class BattleController : MonoBehaviour
                 Debug.Log(characters[PLAYER_TEAM][characterTurnIndex] + "'s turn!");
 
                 uiController.ToggleActionState(true);
+                uiController.ToggleSpellPanel(false);
                 uiController.BuildSpellList(GetCurrentCharacter().spells);
             }
             else
             {
                 characterTurnIndex = -1;
                 uiController.ToggleActionState(false);
+                uiController.ToggleSpellPanel(false);
                 StartCoroutine(EnemyAct());
                 Debug.Log("Enemy turn");
             }

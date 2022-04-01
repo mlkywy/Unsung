@@ -86,6 +86,7 @@ public class BattleUIController : MonoBehaviour
     public void SelectAttack()
     {
         Debug.Log("Attack selected.");
+        ToggleSpellPanel(false);
         BattleController.Instance.playerSelectedSpell = null;
         BattleController.Instance.playerIsAttacking = true;
     }

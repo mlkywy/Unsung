@@ -11,14 +11,20 @@ public class Character : MonoBehaviour
     public int attackPower;
     public int defensePower;
     public int manaPoints;
+    public int maxManaPoints;
     public List<Spell> spells;
+    public bool isDead = false;
 
     public void Hurt(int amount)
     {
         // formula for damage amount
-        int damageAmount = Random.Range(0,1) * (amount - defensePower);
-        // health should never go below zero
-        health = Mathf.Max(health - damageAmount, 0);
+        // int damageAmount = Random.Range(0,1) * (amount - defensePower); <-- doesn't work
+        int damageAmount = amount;
+
+        if (damageAmount > 0)
+        {
+            health = Mathf.Max(health - damageAmount, 0);
+        }
 
         if (health == 0)
         {
@@ -29,7 +35,8 @@ public class Character : MonoBehaviour
     public void Heal(int amount)
     {
         // formula for heal amount
-        int healAmount = Random.Range(0,1) * (int)(amount + (maxHealth * 0.33));
+        // int healAmount = Random.Range(0,1) * (int)(amount + (maxHealth * 0.33)); <-- doesn't work
+        int healAmount = amount;
         // health should never go above max health
         health = Mathf.Min(health + healAmount, maxHealth);
     }
@@ -57,7 +64,9 @@ public class Character : MonoBehaviour
     // virtual means it can be overridden
     public virtual void Die()
     {
-        Destroy(this.gameObject);
+        // Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
+        isDead = true;
         Debug.LogFormat("{0} has died!", characterName);
     }
 }

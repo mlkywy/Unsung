@@ -4815,7 +4815,7 @@ GameObject:
   - component: {fileID: 2311244619098771754}
   - component: {fileID: 8049346649834582413}
   m_Layer: 0
-  m_Name: Fireball
+  m_Name: Dorien Skill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4848,7 +4848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58bf33a2f967ee4d82057a8599df742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellName: Fireball
+  spellName: Dorien Skill
   power: 5
   manaCost: 5
   spellType: 0

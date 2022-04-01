@@ -15,10 +15,16 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/BattleScreen.unity
+    path: Assets/Scenes/scrapped/BattleScreen (scrapped).unity
     guid: ff0dfce8103cd0648ad822a5536d2b5e
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 2d371c3d7658fd54595d9799be8ca6f9
+  - enabled: 1
+    path: Assets/Scenes/World.unity
+    guid: 60cc3ca657c2a354b99ccbe6bfa94393
+  - enabled: 1
+    path: Assets/Scenes/Battle.unity
+    guid: 732ac0e3dedee294aa6d3261512c658a
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9ac7aaab525082e46a710ebdc5a43829, type: 2}

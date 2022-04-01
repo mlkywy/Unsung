@@ -32,7 +32,7 @@ public class Spell : MonoBehaviour
     public void Cast(Character target)
     {
         targetPosition = target.transform.position;
-        Debug.Log(spellName + "was cast on " + target.name + "!");
+        Debug.Log(spellName + "was cast on " + target.characterName + "!");
 
         if (spellType == SpellType.Attack)
         {

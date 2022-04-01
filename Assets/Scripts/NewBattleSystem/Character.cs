@@ -64,7 +64,9 @@ public class Character : MonoBehaviour
     // virtual means it can be overridden
     public virtual void Die()
     {
-        Destroy(this.gameObject);
+        // Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
+        isDead = true;
         Debug.LogFormat("{0} has died!", characterName);
     }
 }

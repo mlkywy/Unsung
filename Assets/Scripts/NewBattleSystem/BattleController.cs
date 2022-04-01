@@ -74,19 +74,20 @@ public class BattleController : MonoBehaviour
             {
                 characterTurnIndex++;
 
+                while (characters[PLAYER_TEAM][characterTurnIndex].isDead)
+                {
+                    Debug.Log("this character is dead!");
+                    characterTurnIndex++;
+                }
+
                 Debug.Log(characters[PLAYER_TEAM][characterTurnIndex] + "'s turn!");
 
                 uiController.ToggleActionState(true);
                 uiController.BuildSpellList(GetCurrentCharacter().spells);
-
-                while (characters[PLAYER_TEAM][characterTurnIndex].isDead)
-                {
-                    characterTurnIndex = (characterTurnIndex + 1) % 4;
-                }
             }
             else
             {
-                characterTurnIndex = 0;
+                characterTurnIndex = -1;
                 uiController.ToggleActionState(false);
                 StartCoroutine(EnemyAct());
                 Debug.Log("Enemy turn");
@@ -114,13 +115,14 @@ public class BattleController : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        while (characters[PLAYER_TEAM][characterTurnIndex].isDead && characterTurnIndex < 4)
-        {
-            characterTurnIndex++;
-        }
+        // while (characters[PLAYER_TEAM][characterTurnIndex].isDead && characterTurnIndex < 4)
+        // {
+        //     characterTurnIndex++;
+        // }
 
-        uiController.ToggleActionState(true);
-        uiController.BuildSpellList(GetCurrentCharacter().spells);
+        // uiController.ToggleActionState(true);
+        // uiController.BuildSpellList(GetCurrentCharacter().spells);
+        NextAct();
     }
 
     public void SelectTarget(Character target)

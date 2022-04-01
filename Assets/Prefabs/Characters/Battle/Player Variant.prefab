@@ -74,6 +74,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2454615614105380396, guid: c3741bef531945e45b74f15fba14988c, type: 3}
     - {fileID: 8484090425805811743, guid: c3741bef531945e45b74f15fba14988c, type: 3}
+    - {fileID: 2601061750993114500, guid: c3741bef531945e45b74f15fba14988c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c3741bef531945e45b74f15fba14988c, type: 3}
 --- !u!1 &8127571990037561602 stripped
 GameObject:
@@ -102,3 +103,4 @@ MonoBehaviour:
   maxManaPoints: 15
   spells:
   - {fileID: 8049346649834582413, guid: bc19784945eb36d4aa62ff34f1b0e062, type: 3}
+  isDead: 0

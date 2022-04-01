@@ -25,6 +25,8 @@ public class BattleController : MonoBehaviour
     [SerializeField] private BattleSpawnPoint[] spawnPoints;
     [SerializeField] private BattleUIController uiController;
 
+    [SerializeField] private BattleDialogue dialogueController;
+
     private int actTurn;
 
     private void Start()
@@ -57,6 +59,14 @@ public class BattleController : MonoBehaviour
         {
             characters[ENEMY_TEAM].Add(spawnPoints[i].Spawn(enemies[i]));
         }
+
+        dialogueController.SetText($"The battle has begun! It is {characters[PLAYER_TEAM][0].characterName}'s turn!");
+    }
+
+    private IEnumerator TurnDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        NextAct();
     }
 
     // function for the enemy to select a random target
@@ -105,6 +115,7 @@ public class BattleController : MonoBehaviour
                     characterTurnIndex++;
                 }
 
+                dialogueController.SetText($"It is {characters[PLAYER_TEAM][characterTurnIndex].characterName}'s turn!");
                 Debug.Log(characters[PLAYER_TEAM][characterTurnIndex] + "'s turn!");
 
                 uiController.ToggleActionState(true);
@@ -117,6 +128,7 @@ public class BattleController : MonoBehaviour
                 uiController.ToggleActionState(false);
                 uiController.ToggleSpellPanel(false);
                 StartCoroutine(EnemyAct());
+                dialogueController.SetText("The opposition prepares their attack!");
                 Debug.Log("Enemy turn");
             }
         }
@@ -131,7 +143,7 @@ public class BattleController : MonoBehaviour
     {
         foreach(Character character in characters[ENEMY_TEAM])
         {
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(1f);
 
             if (character.health > 0)
             {
@@ -157,24 +169,28 @@ public class BattleController : MonoBehaviour
         {
             if (GetCurrentCharacter().CastSpell(playerSelectedSpell, target))
             {
-                NextAct();
+                dialogueController.SetText($"{playerSelectedSpell.spellName} was cast on {target.characterName}!");
+                StartCoroutine(TurnDelay());
             }
             else 
             {
-                Debug.LogWarning("Not enough mana to cast that spell!");
+                dialogueController.SetText("There is not enough mana to cast that spell.");
+                Debug.LogWarning("There is not enough mana to cast that spell.");
             }
         }
     }
 
     public void PlayerDoAttack(Character attacker, Character target)
     {
+        dialogueController.SetText($"{attacker.characterName} attacks {target.characterName}!");
         Debug.Log(attacker.characterName + " attacks " + target.characterName);
         target.Hurt(attacker.attackPower);
-        NextAct();
+        StartCoroutine(TurnDelay());
     }
 
     public void EnemyDoAttack(Character attacker, Character target)
     {
+        dialogueController.SetText($"{attacker.characterName} attacks {target.characterName}!");
         Debug.Log(attacker.characterName + " attacks " + target.characterName);
         target.Hurt(attacker.attackPower);
     }

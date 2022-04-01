@@ -6634,6 +6634,7 @@ MonoBehaviour:
   - {fileID: 1991670052}
   - {fileID: 967023361}
   uiController: {fileID: 1237897229}
+  dialogueController: {fileID: 1813033231}
 --- !u!4 &1792647573
 Transform:
   m_ObjectHideFlags: 0
@@ -6659,6 +6660,7 @@ GameObject:
   - component: {fileID: 1813033228}
   - component: {fileID: 1813033230}
   - component: {fileID: 1813033229}
+  - component: {fileID: 1813033231}
   m_Layer: 5
   m_Name: DialoguePanel
   m_TagString: Untagged
@@ -6724,6 +6726,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813033227}
   m_CullTransparentMesh: 1
+--- !u!114 &1813033231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813033227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800012f80b9cb6649b94ee5328847ce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 1813033227}
 --- !u!1 &1837859892
 GameObject:
   m_ObjectHideFlags: 0

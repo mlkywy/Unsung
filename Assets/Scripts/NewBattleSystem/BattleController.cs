@@ -19,9 +19,6 @@ public class BattleController : MonoBehaviour
 
     public Dictionary<int, List<Character>> characters = new Dictionary<int, List<Character>>();
 
-    // check for alive characters
-    public List<Character> eligibleCharacters = new List<Character>();
-
     public int characterTurnIndex = 0;
     public Spell playerSelectedSpell;
     public bool playerIsAttacking;
@@ -76,7 +73,8 @@ public class BattleController : MonoBehaviour
     // function for the enemy to select a random target that is still alive
     public Character GetRandomPlayer()
     {
-       eligibleCharacters.Clear();
+        // check for alive characters
+       List<Character> eligibleCharacters = new List<Character>();
        
        for (int i = 0; i < characters[PLAYER_TEAM].Count; i++)
        {

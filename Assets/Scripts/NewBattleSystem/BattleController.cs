@@ -85,7 +85,15 @@ public class BattleController : MonoBehaviour
                eligibleCharacters.Add(characters[PLAYER_TEAM][i]);
            }
        }
-
+       
+       // check if people are alive
+       if (characters[PLAYER_TEAM].All(c => c.isDead))
+       {
+           Debug.Log("Battle over!");
+           // call function to end battle
+           StartCoroutine(EndBattle());
+       }
+       
        return eligibleCharacters[Random.Range(0, eligibleCharacters.Count)];
     }
 
@@ -170,8 +178,17 @@ public class BattleController : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        // after all enemies go, return to player's turn
-        NextAct();
+        // after all enemies go, return to player's turn if there are people still alive
+        if (!characters[PLAYER_TEAM].All(c => c.isDead) && characters[ENEMY_TEAM].Count > 0)
+        {
+            NextAct();
+        }
+        else
+        {
+            Debug.Log("Battle over!");
+            // call function to end battle
+            StartCoroutine(EndBattle());
+        }
     }
 
     public void SelectTarget(Character target)

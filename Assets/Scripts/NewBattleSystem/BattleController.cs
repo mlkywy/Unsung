@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class BattleController : MonoBehaviour
 {
@@ -136,6 +137,7 @@ public class BattleController : MonoBehaviour
         {
             Debug.Log("Battle over!");
             // call function to end battle
+            StartCoroutine(EndBattle());
         }
     }
 
@@ -193,5 +195,24 @@ public class BattleController : MonoBehaviour
         dialogueController.SetText($"{attacker.characterName} attacks {target.characterName}!");
         // Debug.Log(attacker.characterName + " attacks " + target.characterName);
         target.Hurt(attacker.attackPower);
+    }
+
+    private IEnumerator EndBattle() 
+    {
+        // if enemies are dead, you win
+        if (characters[ENEMY_TEAM].Count == 0)
+        {
+            dialogueController.SetText("You have successfully defeated the opposition!");
+            // Debug.Log("You win!");
+        } 
+        // if all party members are dead, you lose
+        else if (characters[PLAYER_TEAM].All(c => c.isDead))
+        {
+            dialogueController.SetText("You have been defeated.");
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene("GameOver");
+        }
+
+        yield return null;
     }
 }

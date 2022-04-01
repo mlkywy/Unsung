@@ -6,10 +6,16 @@ public class DialogueTrigger : MonoBehaviour
 {
     private bool playerInRange;
     [SerializeField] private TextAsset inkJSON;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         playerInRange = false;
+    }
+
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -30,6 +36,16 @@ public class DialogueTrigger : MonoBehaviour
         {
             playerInRange = true;
             Debug.Log("Player in range.");
+
+            // flip character to try and face player before dialogue starts?
+            if (collider.GetComponent<SpriteRenderer>().flipX)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else if (!collider.GetComponent<SpriteRenderer>().flipX)
+            {
+                spriteRenderer.flipX = true;
+            }
         }
     }
 
@@ -38,6 +54,7 @@ public class DialogueTrigger : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             playerInRange = false;
+            spriteRenderer.flipX = false;
             Debug.Log("Player left range.");
         }
     }

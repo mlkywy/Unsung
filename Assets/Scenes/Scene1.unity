@@ -527,7 +527,7 @@ Transform:
   - {fileID: 495390007}
   - {fileID: 1910685864}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &410556735
 PrefabInstance:
@@ -1320,7 +1320,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -2514,7 +2514,7 @@ Transform:
   m_Children:
   - {fileID: 1987140838}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &688418580
 PrefabInstance:
@@ -2885,53 +2885,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7020524047723744030, guid: 8e953cd3a65efbb4593b607fe074001a, type: 3}
   m_PrefabInstance: {fileID: 7020524048406523098}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &951595977
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 951595978}
-  - component: {fileID: 951595979}
-  m_Layer: 0
-  m_Name: GlobalObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &951595978
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951595977}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &951595979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951595977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f147d05d35a81d64dbdadefcbfe5383d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitLevel: 2
-  damage: 10
-  maxHP: 35
-  currentHP: 35
 --- !u!1 &984231383 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399188498497540165, guid: 821521849e847d24e85ed31a75e4cac2, type: 3}
@@ -5131,7 +5084,7 @@ Transform:
   - {fileID: 1993906372}
   - {fileID: 493599425}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1328700192
 GameObject:
@@ -5200,7 +5153,7 @@ Transform:
   m_Children:
   - {fileID: 173658723}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1328700195
 MonoBehaviour:
@@ -5597,7 +5550,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1745494592 stripped
 GameObject:

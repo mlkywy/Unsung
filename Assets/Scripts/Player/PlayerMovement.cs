@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float speed = 4f;
     [SerializeField] private Animator animator;
     [SerializeField] private float jumpForce = 10f;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -69,16 +71,13 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
         // flip the character
-        Vector3 playerScale = transform.localScale;
         if (horizontal < 0f) {
-            playerScale.x = -1;
+            spriteRenderer.flipX = true;
         }
 
         if (horizontal > 0f) {
-            playerScale.x = 1;
+            spriteRenderer.flipX = false;
         }
-
-        transform.localScale = playerScale;
     }
 
     // climbing

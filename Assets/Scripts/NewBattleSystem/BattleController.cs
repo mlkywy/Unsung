@@ -116,7 +116,7 @@ public class BattleController : MonoBehaviour
                 }
 
                 dialogueController.SetText($"It is {characters[PLAYER_TEAM][characterTurnIndex].characterName}'s turn!");
-                Debug.Log(characters[PLAYER_TEAM][characterTurnIndex] + "'s turn!");
+                // Debug.Log(characters[PLAYER_TEAM][characterTurnIndex] + "'s turn!");
 
                 uiController.ToggleActionState(true);
                 uiController.ToggleSpellPanel(false);
@@ -129,7 +129,7 @@ public class BattleController : MonoBehaviour
                 uiController.ToggleSpellPanel(false);
                 StartCoroutine(EnemyAct());
                 dialogueController.SetText("The opposition prepares their attack!");
-                Debug.Log("Enemy turn");
+                // Debug.Log("Enemy turn");
             }
         }
         else
@@ -175,7 +175,7 @@ public class BattleController : MonoBehaviour
             else 
             {
                 dialogueController.SetText("There is not enough mana to cast that spell.");
-                Debug.LogWarning("There is not enough mana to cast that spell.");
+                // Debug.LogWarning("There is not enough mana to cast that spell.");
             }
         }
     }
@@ -183,7 +183,7 @@ public class BattleController : MonoBehaviour
     public void PlayerDoAttack(Character attacker, Character target)
     {
         dialogueController.SetText($"{attacker.characterName} attacks {target.characterName}!");
-        Debug.Log(attacker.characterName + " attacks " + target.characterName);
+        // Debug.Log(attacker.characterName + " attacks " + target.characterName);
         target.Hurt(attacker.attackPower);
         StartCoroutine(TurnDelay());
     }
@@ -191,7 +191,7 @@ public class BattleController : MonoBehaviour
     public void EnemyDoAttack(Character attacker, Character target)
     {
         dialogueController.SetText($"{attacker.characterName} attacks {target.characterName}!");
-        Debug.Log(attacker.characterName + " attacks " + target.characterName);
+        // Debug.Log(attacker.characterName + " attacks " + target.characterName);
         target.Hurt(attacker.attackPower);
     }
 }

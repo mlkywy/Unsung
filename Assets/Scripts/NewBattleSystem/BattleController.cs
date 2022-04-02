@@ -135,6 +135,7 @@ public class BattleController : MonoBehaviour
                     characterTurnIndex++;
                 }
 
+                Debug.Log(characterTurnIndex);
                 dialogueController.SetText($"It is {characters[PLAYER_TEAM][characterTurnIndex].characterName}'s turn!");
                 // Debug.Log(characters[PLAYER_TEAM][characterTurnIndex] + "'s turn!");
 
@@ -176,17 +177,7 @@ public class BattleController : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        // after all enemies go, return to player's turn if there are people still alive
-        if (!characters[PLAYER_TEAM].All(c => c.isDead) && characters[ENEMY_TEAM].Count > 0)
-        {
-            NextAct();
-        }
-        else
-        {
-            Debug.Log("Battle over!");
-            // call function to end battle
-            StartCoroutine(EndBattle());
-        }
+        NextAct();
     }
 
     public void SelectTarget(Character target)
@@ -214,6 +205,9 @@ public class BattleController : MonoBehaviour
     {
         dialogueController.SetText($"{attacker.characterName} attacks {target.characterName}!");
         // Debug.Log(attacker.characterName + " attacks " + target.characterName);
+
+        ScreenShakeController.instance.StartShake(0.2f, 0.05f);
+
         target.Hurt(attacker.attackPower);
         StartCoroutine(TurnDelay());
     }
@@ -222,6 +216,9 @@ public class BattleController : MonoBehaviour
     {
         dialogueController.SetText($"{attacker.characterName} attacks {target.characterName}!");
         // Debug.Log(attacker.characterName + " attacks " + target.characterName);
+
+        ScreenShakeController.instance.StartShake(0.2f, 0.05f);
+
         target.Hurt(attacker.attackPower);
     }
 

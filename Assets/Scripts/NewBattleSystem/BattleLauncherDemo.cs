@@ -16,7 +16,7 @@ public class BattleLauncherDemo : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-           Launch();
+            Launch();
         }
     }
 

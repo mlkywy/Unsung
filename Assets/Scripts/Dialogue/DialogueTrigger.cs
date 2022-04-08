@@ -6,7 +6,7 @@ public class DialogueTrigger : MonoBehaviour
 {
     private bool playerInRange;
     [SerializeField] private TextAsset inkJSON;
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {

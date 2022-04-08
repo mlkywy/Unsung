@@ -25,7 +25,7 @@ public class DialogueTrigger : MonoBehaviour
             if (Input.GetButtonDown("Interact"))
             {
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
-                Debug.Log(inkJSON.text);
+                // Debug.Log(inkJSON.text);
             }
         }
     }
@@ -35,7 +35,7 @@ public class DialogueTrigger : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             playerInRange = true;
-            Debug.Log("Player in range.");
+            // Debug.Log("Player in range.");
 
             // flip character to try and face player before dialogue starts?
             if (collider.GetComponent<SpriteRenderer>().flipX)
@@ -55,7 +55,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             playerInRange = false;
             spriteRenderer.flipX = false;
-            Debug.Log("Player left range.");
+            // Debug.Log("Player left range.");
         }
     }
 }

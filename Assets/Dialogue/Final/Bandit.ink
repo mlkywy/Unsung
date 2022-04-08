@@ -1,3 +1,4 @@
+#voice:NPC1_voice
 INCLUDE globals.ink
 
 { bandit_answer == "": -> main | -> already_chosen }
@@ -16,6 +17,7 @@ What do you think about those bandits? L-Listen, I ain't associated with them.
 === chosen(answer) ===
 ~ bandit_answer = answer
 ~ spoke_to_bandit = true
+
 Interesting...
 -> END
 

@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
         if (isLadder && Mathf.Abs(vertical) > 0f || isLadder && rb.velocity.y != 0f)
         {
             isClimbing = true; 
-            Debug.Log("Climbing.");
+            // Debug.Log("Climbing.");
         }
     }
 

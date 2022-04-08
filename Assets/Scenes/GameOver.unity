@@ -477,6 +477,7 @@ MonoBehaviour:
   choices:
   - {fileID: 1171796278}
   - {fileID: 1797070750}
+  music: {fileID: 8300000, guid: 5b8cbca87f2f55c4b889cfb39ffbeb82, type: 3}
 --- !u!1 &1171796278
 GameObject:
   m_ObjectHideFlags: 0

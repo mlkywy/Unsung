@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 public class GameOverMenu : MonoBehaviour
 {
     [SerializeField] private GameObject[] choices;
+    [SerializeField] private AudioClip music;
 
     private void Start()
     {
+        SoundManager.instance.ChangeBGM(music);
         StartCoroutine(SelectFirstChoice()); 
     }
 

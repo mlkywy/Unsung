@@ -133,11 +133,19 @@ public class BattleController : MonoBehaviour
                 {
                     Debug.Log("This character is dead!");
                     characterTurnIndex++;
+
+                    if (characterTurnIndex > characters[PLAYER_TEAM].Count - 1)
+                    {
+                        characterTurnIndex = -1;
+                        uiController.ToggleActionState(false);
+                        uiController.ToggleSpellPanel(false);
+                        StartCoroutine(EnemyAct());
+                        dialogueController.SetText("The opposition prepares their attack!");
+                    }
                 }
 
                 Debug.Log(characterTurnIndex);
                 dialogueController.SetText($"It is {characters[PLAYER_TEAM][characterTurnIndex].characterName}'s turn!");
-                // Debug.Log(characters[PLAYER_TEAM][characterTurnIndex] + "'s turn!");
 
                 uiController.ToggleActionState(true);
                 uiController.ToggleSpellPanel(false);

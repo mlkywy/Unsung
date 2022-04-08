@@ -155,6 +155,7 @@ MonoBehaviour:
   - {fileID: 1734487594, guid: 34c8761bd3323bb419d611116eb74c86, type: 3}
   - {fileID: 1734487594, guid: 34c8761bd3323bb419d611116eb74c86, type: 3}
   launcher: {fileID: 385149200}
+  music: {fileID: 8300000, guid: a99727234427a8c439321ee4e9bac571, type: 3}
 --- !u!1 &152428339
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +548,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: 0158698c5f4000e4d8c5135d0fd2b832, type: 3}
-  spriteRenderer: {fileID: 0}
 --- !u!114 &228048974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1184,7 +1184,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: 9bacd9e6a1305584caf48e95492bd660, type: 3}
-  spriteRenderer: {fileID: 0}
 --- !u!61 &493599427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3034,7 +3033,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: 7dc18b6fc7004464a9aeaa586e4a0fd1, type: 3}
-  spriteRenderer: {fileID: 0}
 --- !u!1 &984231383 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399188498497540165, guid: 821521849e847d24e85ed31a75e4cac2, type: 3}
@@ -3058,7 +3056,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: 7fb8d8ada8f70544397be552966d6ed0, type: 3}
-  spriteRenderer: {fileID: 0}
 --- !u!1 &1092102121
 GameObject:
   m_ObjectHideFlags: 0
@@ -5979,7 +5976,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: 23b584a22be21694daf430881dd82f32, type: 3}
-  spriteRenderer: {fileID: 0}
 --- !u!1 &2009713684
 GameObject:
   m_ObjectHideFlags: 0
@@ -6246,6 +6242,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2518668543541109526, guid: d5a36cd2ce2d3b64bad9acd0de7a40a9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b8cbca87f2f55c4b889cfb39ffbeb82, type: 3}
     - target: {fileID: 2518668543541109527, guid: d5a36cd2ce2d3b64bad9acd0de7a40a9, type: 3}
       propertyPath: m_RootOrder
       value: 1

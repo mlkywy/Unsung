@@ -6,6 +6,7 @@ public class BattleLauncherDemo : MonoBehaviour
 {
     [SerializeField] private List<Character> players, enemies;
     [SerializeField] private BattleLauncher launcher;
+    [SerializeField] private AudioClip music;
 
     public void Launch()
     {
@@ -16,6 +17,7 @@ public class BattleLauncherDemo : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
+            SoundManager.instance.ChangeBGM(music);
             Launch();
         }
     }

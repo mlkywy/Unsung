@@ -320,4 +320,14 @@ public class DialogueManager : MonoBehaviour
 
         return variableValue;
     }
+
+    // this method will get called anytime the application quits
+    // depending on game, can save variable state in other places
+    public void OnApplicationQuit()
+    {
+        if (dialogueVariables != null)
+        {
+            dialogueVariables.SaveVariables();
+        }
+    }
 }

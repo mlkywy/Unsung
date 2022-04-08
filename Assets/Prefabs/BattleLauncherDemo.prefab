@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4808374776390682537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4808374776390682539}
+  - component: {fileID: 4808374776390682536}
+  m_Layer: 0
+  m_Name: BattleLauncherDemo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4808374776390682539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4808374776390682537}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4808374776390682536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4808374776390682537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77bc992b67dc154aaab51f62981fafa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 1730391253, guid: 8615684448e332a48a3be11d5effa387, type: 3}
+  - {fileID: 1519599060, guid: 43d13663142597f4d938f0eb24fe3e91, type: 3}
+  - {fileID: 1905891897, guid: 235a687f39af5b5468fa6a8323732bc1, type: 3}
+  - {fileID: 742040716, guid: f122052086cf376458698b00a4d9f881, type: 3}
+  enemies:
+  - {fileID: 1734487594, guid: 34c8761bd3323bb419d611116eb74c86, type: 3}
+  - {fileID: 1734487594, guid: 34c8761bd3323bb419d611116eb74c86, type: 3}
+  - {fileID: 1734487594, guid: 34c8761bd3323bb419d611116eb74c86, type: 3}
+  launcher: {fileID: 0}

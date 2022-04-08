@@ -497,6 +497,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &228048969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 399188498497540165, guid: 41c73bb4685e1e14aa81245c1c9924cf, type: 3}
+  m_PrefabInstance: {fileID: 1186848861}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &228048970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228048969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474f860be0f8cf64e8e8eacdc9976f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkJSON: {fileID: 4900000, guid: 0158698c5f4000e4d8c5135d0fd2b832, type: 3}
+  spriteRenderer: {fileID: 0}
 --- !u!1 &280592089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,6 +1130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: 9bacd9e6a1305584caf48e95492bd660, type: 3}
+  spriteRenderer: {fileID: 0}
 --- !u!61 &493599427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2885,6 +2905,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7020524047723744030, guid: 8e953cd3a65efbb4593b607fe074001a, type: 3}
   m_PrefabInstance: {fileID: 7020524048406523098}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &774424400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8484194597173125227, guid: b87124bc768a7cc45ae34dcebed12495, type: 3}
+  m_PrefabInstance: {fileID: 2085596326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &774424404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774424400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474f860be0f8cf64e8e8eacdc9976f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkJSON: {fileID: 4900000, guid: 7dc18b6fc7004464a9aeaa586e4a0fd1, type: 3}
+  spriteRenderer: {fileID: 0}
 --- !u!1 &984231383 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399188498497540165, guid: 821521849e847d24e85ed31a75e4cac2, type: 3}
@@ -2908,6 +2947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: 7fb8d8ada8f70544397be552966d6ed0, type: 3}
+  spriteRenderer: {fileID: 0}
 --- !u!1 &1092102121
 GameObject:
   m_ObjectHideFlags: 0
@@ -5775,6 +5815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: 23b584a22be21694daf430881dd82f32, type: 3}
+  spriteRenderer: {fileID: 0}
 --- !u!1 &2009713684
 GameObject:
   m_ObjectHideFlags: 0
@@ -6024,6 +6065,10 @@ PrefabInstance:
       propertyPath: choices.Array.data[2]
       value: 
       objectReference: {fileID: 737339332}
+    - target: {fileID: 2481842326137730445, guid: 3096df2dd0fff59418789cd17e6c72eb, type: 3}
+      propertyPath: globalsInkFile.inkAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: c404cebc4194bcf4bbc46a5a257346ff, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3096df2dd0fff59418789cd17e6c72eb, type: 3}
 --- !u!1001 &2518668544356721599

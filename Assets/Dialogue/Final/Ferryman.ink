@@ -1,6 +1,6 @@
 INCLUDE globals.ink
 
-{ bandits_answer == "": -> main | -> spoken_with_npc }
+{ spoke_to_bandit == false: -> main | -> spoken_with_npc }
 
 -> main
 

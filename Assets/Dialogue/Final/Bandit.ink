@@ -1,6 +1,6 @@
 INCLUDE globals.ink
 
-{ bandits_answer == "": -> main | -> already_chosen }
+{ bandit_answer == "": -> main | -> already_chosen }
 
 -> main
 
@@ -14,10 +14,11 @@ What do you think about those bandits? L-Listen, I ain't associated with them.
         -> chosen("alright")
         
 === chosen(answer) ===
-~ bandits_answer = answer
+~ bandit_answer = answer
+~ spoke_to_bandit = true
 Interesting...
 -> END
 
 === already_chosen ===
-You think they're {bandits_answer}, huh? You and me both.
+You think they're {bandit_answer}, huh? You and me both.
 -> END

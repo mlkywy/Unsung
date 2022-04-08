@@ -12,11 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroScene.unity
     guid: baf6cc16d02a9f0449f8ac41267f8b9e
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Scene1.unity
+    guid: fdb95ef6a8138f44aaa1a8714375b32a
   - enabled: 1
-    path: Assets/Scenes/scrapped/BattleScreen (scrapped).unity
-    guid: ff0dfce8103cd0648ad822a5536d2b5e
+    path: Assets/Scenes/Scene2.unity
+    guid: f44b1fa4b6d38c947a2d54ba3f4e6cb7
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 2d371c3d7658fd54595d9799be8ca6f9

@@ -9,8 +9,9 @@ using Ink.UnityIntegration;
 
 public class DialogueManager : MonoBehaviour
 {
-    [Header("Globals Ink File")]
-    [SerializeField] private InkFile globalsInkFile;
+     // variable for the load_globals.ink JSON
+    [Header("Load Globals JSON")]
+    [SerializeField] private TextAsset loadGlobalsJSON;
 
     [Header("Parameters")]
     [SerializeField] private float typingSpeed = 0.05f;
@@ -56,7 +57,7 @@ public class DialogueManager : MonoBehaviour
 
         instance = this;
 
-        dialogueVariables = new DialogueVariables(globalsInkFile.filePath);
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
     }
 
     public static DialogueManager GetInstance()

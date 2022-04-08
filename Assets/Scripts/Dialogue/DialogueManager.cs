@@ -5,9 +5,13 @@ using UnityEngine.EventSystems;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.UI;
+using Ink.UnityIntegration;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("Globals Ink File")]
+    [SerializeField] private InkFile globalsInkFile;
+
     [Header("Parameters")]
     [SerializeField] private float typingSpeed = 0.05f;
     [SerializeField] private AudioClip clip;
@@ -41,6 +45,8 @@ public class DialogueManager : MonoBehaviour
 
     private static DialogueManager instance;
 
+    private DialogueVariables dialogueVariables;
+
     private void Awake()
     {
         if (instance != null)
@@ -49,6 +55,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         instance = this;
+
+        dialogueVariables = new DialogueVariables(globalsInkFile.filePath);
     }
 
     public static DialogueManager GetInstance()
@@ -104,6 +112,8 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        dialogueVariables.StartListening(currentStory);
+
         // make text dialogue span width of dialogue panel when there is no portrait
         dialogueText.GetComponent<RectTransform>().localPosition = new Vector3(0f, 0.9f, 0f);
         dialogueText.GetComponent<RectTransform>().sizeDelta = new Vector2(250f, 32f);
@@ -113,6 +123,8 @@ public class DialogueManager : MonoBehaviour
 
     private void ExitDialogueMode()
     {
+        dialogueVariables.StopListening(currentStory);
+
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";

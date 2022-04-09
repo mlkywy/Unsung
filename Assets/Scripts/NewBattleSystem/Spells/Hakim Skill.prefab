@@ -4853,3 +4853,6 @@ MonoBehaviour:
   manaCost: 5
   spellType: 0
   targetPosition: {x: 0, y: 0, z: 0}
+  DialoguePanel: {fileID: 0}
+  dialogueController: {fileID: 0}
+  skillSound: {fileID: 8300000, guid: 20e9fee41d763ec4a938678dee080f26, type: 3}

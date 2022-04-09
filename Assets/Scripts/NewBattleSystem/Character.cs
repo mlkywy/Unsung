@@ -37,6 +37,7 @@ public class Character : MonoBehaviour
         // formula for heal amount
         // int healAmount = Random.Range(0,1) * (int)(amount + (maxHealth * 0.33)); <-- doesn't work
         int healAmount = amount;
+        
         // health should never go above max health
         health = Mathf.Min(health + healAmount, maxHealth);
     }

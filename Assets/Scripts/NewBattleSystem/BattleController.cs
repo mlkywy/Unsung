@@ -23,10 +23,15 @@ public class BattleController : MonoBehaviour
     public Spell playerSelectedSpell;
     public bool playerIsAttacking;
 
+    [Header("Parameters")]
     [SerializeField] private BattleSpawnPoint[] spawnPoints;
     [SerializeField] private BattleUIController uiController;
-
     [SerializeField] private BattleDialogue dialogueController;
+
+    [Header("Sound Effects")]
+    [SerializeField] private AudioClip attackSound;
+    [SerializeField] private AudioClip winSound;
+    [SerializeField] private AudioClip loseSound;
 
     private int actTurn;
 
@@ -215,6 +220,7 @@ public class BattleController : MonoBehaviour
         // Debug.Log(attacker.characterName + " attacks " + target.characterName);
 
         ScreenShakeController.instance.StartShake(0.2f, 0.05f);
+        SoundManager.instance.PlaySound(attackSound);
 
         target.Hurt(attacker.attackPower);
         StartCoroutine(TurnDelay());
@@ -226,6 +232,7 @@ public class BattleController : MonoBehaviour
         // Debug.Log(attacker.characterName + " attacks " + target.characterName);
 
         ScreenShakeController.instance.StartShake(0.2f, 0.05f);
+        SoundManager.instance.PlaySound(attackSound);
 
         target.Hurt(attacker.attackPower);
     }
@@ -236,12 +243,14 @@ public class BattleController : MonoBehaviour
         if (characters[ENEMY_TEAM].Count == 0)
         {
             dialogueController.SetText("You have successfully defeated the opposition!");
+            SoundManager.instance.PlaySound(winSound);
             // Debug.Log("You win!");
         } 
         // if all party members are dead, you lose
         else if (characters[PLAYER_TEAM].All(c => c.isDead))
         {
             dialogueController.SetText("You have been defeated.");
+            SoundManager.instance.PlaySound(loseSound);
             yield return new WaitForSeconds(2f);
             SceneManager.LoadScene("GameOver");
         }

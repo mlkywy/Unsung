@@ -16,6 +16,8 @@ public class Spell : MonoBehaviour
     public GameObject DialoguePanel;
     public BattleDialogue dialogueController;
 
+    [SerializeField] private AudioClip skillSound;
+
     private void Update()
     {
         if (targetPosition != Vector3.zero)
@@ -37,9 +39,11 @@ public class Spell : MonoBehaviour
         DialoguePanel = GameObject.FindWithTag("DialoguePanel");
         dialogueController = DialoguePanel.GetComponent<BattleDialogue>();
 
+        SoundManager.instance.PlaySound(skillSound);
+
         targetPosition = target.transform.position;
-        // Debug.Log(spellName + "was cast on " + target.characterName + "!");
-        dialogueController.SetText($"{spellName} was cast on {target.characterName}!");
+        // Debug.Log(spellName + "was performed on " + target.characterName + "!");
+        dialogueController.SetText($"{spellName} was performed on {target.characterName}!");
 
         if (spellType == SpellType.Attack)
         {

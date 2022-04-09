@@ -71,7 +71,7 @@ public class BattleUIController : MonoBehaviour
         foreach(Spell spell in spells)
         {
             Button spellButton = Instantiate<Button>(button, spellPanel.transform);
-            spellButton.GetComponentInChildren<TextMeshProUGUI>().text = spell.spellName;
+            spellButton.GetComponentInChildren<TextMeshProUGUI>().text = spell.spellName + ": (" + spell.manaCost + ")";
             spellButton.onClick.AddListener(() => SelectSpell(spell));
         }
     }

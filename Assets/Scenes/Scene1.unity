@@ -151,7 +151,8 @@ MonoBehaviour:
   - {fileID: 1905891897, guid: 235a687f39af5b5468fa6a8323732bc1, type: 3}
   - {fileID: 742040716, guid: f122052086cf376458698b00a4d9f881, type: 3}
   enemies:
-  - {fileID: 1734487594, guid: 34c8761bd3323bb419d611116eb74c86, type: 3}
+  - {fileID: 1734487594, guid: 97d6027db5e9ab5469701fabfd3f2db7, type: 3}
+  - {fileID: 1734487594, guid: 97d6027db5e9ab5469701fabfd3f2db7, type: 3}
   - {fileID: 1734487594, guid: 34c8761bd3323bb419d611116eb74c86, type: 3}
   - {fileID: 1734487594, guid: 34c8761bd3323bb419d611116eb74c86, type: 3}
   launcher: {fileID: 385149200}

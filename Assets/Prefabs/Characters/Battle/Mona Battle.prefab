@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 399188498497540165, guid: e2d175f4ab7e35c44a37492b8d48ff15, type: 3}
       propertyPath: m_Name
-      value: Mona Variant
+      value: Mona Battle
       objectReference: {fileID: 0}
     - target: {fileID: 399188498497540165, guid: e2d175f4ab7e35c44a37492b8d48ff15, type: 3}
       propertyPath: m_TagString
@@ -88,11 +88,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Mona
   characterSprite: {fileID: 21300000, guid: 865f4521725b6be429ea150dbda4cbd6, type: 3}
-  health: 15
-  maxHealth: 15
-  attackPower: 5
-  defensePower: 3
-  manaPoints: 15
-  maxManaPoints: 15
+  health: 120
+  maxHealth: 120
+  attackPower: 15
+  defensePower: 5
+  manaPoints: 120
+  maxManaPoints: 120
   spells:
-  - {fileID: 8049346649834582413, guid: e344aa06bd132a045bf22365a64ac17f, type: 3}
+  - {fileID: 8049346649834582413, guid: e710de65d7efdc1488812e12b9164b8d, type: 3}
+  - {fileID: 8049346649834582413, guid: 8102e28a50c4b904292b4e11b465c5ee, type: 3}
+  - {fileID: 8049346649834582413, guid: d1d43b343e6714d4ba750ff859221f6b, type: 3}
+  isDead: 0

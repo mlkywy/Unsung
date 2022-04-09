@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8484194597173125227, guid: b87124bc768a7cc45ae34dcebed12495, type: 3}
       propertyPath: m_Name
-      value: Bandit Variant
+      value: Bandit No Heal
       objectReference: {fileID: 0}
     - target: {fileID: 8484194597173125227, guid: b87124bc768a7cc45ae34dcebed12495, type: 3}
       propertyPath: m_TagString
@@ -80,12 +80,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Bandit
   characterSprite: {fileID: 0}
-  health: 25
-  maxHealth: 25
+  health: 175
+  maxHealth: 175
   attackPower: 15
   defensePower: 5
-  manaPoints: 10
-  maxManaPoints: 10
+  manaPoints: 120
+  maxManaPoints: 120
   spells:
-  - {fileID: 8049346649834582413, guid: 31aed6a06a192264faf6f9dae0be0717, type: 3}
+  - {fileID: 8049346649834582413, guid: 96441e710e39da943bea373466cef4e7, type: 3}
+  - {fileID: 8049346649834582413, guid: b38c18f46ed90554784d58b0d9e084cd, type: 3}
+  - {fileID: 8049346649834582413, guid: 1030a5f4f9ed2774ca9343f0db9d1aa0, type: 3}
   isDead: 0

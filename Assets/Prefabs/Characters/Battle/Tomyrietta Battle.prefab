@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 399188498497540165, guid: 821521849e847d24e85ed31a75e4cac2, type: 3}
       propertyPath: m_Name
-      value: Tomyrietta Variant
+      value: Tomyrietta Battle
       objectReference: {fileID: 0}
     - target: {fileID: 399188498497540165, guid: 821521849e847d24e85ed31a75e4cac2, type: 3}
       propertyPath: m_TagString
@@ -88,12 +88,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Tomyrietta
   characterSprite: {fileID: 21300000, guid: 6d8cb9da1bc0a364ca15e32695ccaaac, type: 3}
-  health: 15
-  maxHealth: 15
-  attackPower: 5
-  defensePower: 3
-  manaPoints: 15
-  maxManaPoints: 15
+  health: 100
+  maxHealth: 100
+  attackPower: 10
+  defensePower: 5
+  manaPoints: 170
+  maxManaPoints: 170
   spells:
-  - {fileID: 8049346649834582413, guid: 196019155e5649f499f8938a794add55, type: 3}
-  - {fileID: 8049346649834582413, guid: 246bd8f7fdb6a6547bc2be53601ec8cb, type: 3}
+  - {fileID: 8049346649834582413, guid: 099ceb42f3f4dae418549e0ac99b3ea6, type: 3}
+  - {fileID: 8049346649834582413, guid: f5872547ffb1e2a4e9718b600e00988c, type: 3}
+  - {fileID: 8049346649834582413, guid: 5559f48f48e0f274381c802d5782a534, type: 3}
+  isDead: 0

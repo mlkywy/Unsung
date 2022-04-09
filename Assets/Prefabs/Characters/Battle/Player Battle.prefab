@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6072455805845583193, guid: c3741bef531945e45b74f15fba14988c, type: 3}
       propertyPath: m_Name
-      value: Player Variant
+      value: Player Battle
       objectReference: {fileID: 0}
     - target: {fileID: 6072455805845583193, guid: c3741bef531945e45b74f15fba14988c, type: 3}
       propertyPath: m_TagString
@@ -95,12 +95,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Dorien
   characterSprite: {fileID: 21300000, guid: 150bf4be2a6545e45b411aa97fae6beb, type: 3}
-  health: 15
-  maxHealth: 15
-  attackPower: 5
-  defensePower: 3
-  manaPoints: 15
-  maxManaPoints: 15
+  health: 130
+  maxHealth: 130
+  attackPower: 10
+  defensePower: 5
+  manaPoints: 140
+  maxManaPoints: 140
   spells:
-  - {fileID: 8049346649834582413, guid: bc19784945eb36d4aa62ff34f1b0e062, type: 3}
+  - {fileID: 8049346649834582413, guid: 9119278e8a57b754c80e2756d8244c96, type: 3}
+  - {fileID: 8049346649834582413, guid: f38701455f2dd824f93972206930ca58, type: 3}
+  - {fileID: 8049346649834582413, guid: 7eb791e3bc1a1c94f9691afc59df5d54, type: 3}
   isDead: 0

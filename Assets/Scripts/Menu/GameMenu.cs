@@ -18,15 +18,10 @@ public class GameMenu : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetButtonDown("Cancel") && !menuPanel.activeInHierarchy)
+        if (Input.GetButtonDown("Cancel"))
         {
-            menuPanel.SetActive(true);
+            menuPanel.SetActive(!menuPanel.activeSelf);
             // StartCoroutine(SelectFirstChoice());
-        }
-
-        if (Input.GetButtonDown("Cancel") && menuPanel.activeInHierarchy)
-        {
-            menuPanel.SetActive(false);
         }
     }
 

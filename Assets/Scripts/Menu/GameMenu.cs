@@ -10,8 +10,11 @@ public class GameMenu : MonoBehaviour
     [SerializeField] private GameObject[] choices;
     private GameObject soundManager;
 
+    SavePlayerPos playerPosData;
+
     private void Start()
     {
+        playerPosData = FindObjectOfType<SavePlayerPos>();
         soundManager = GameObject.FindWithTag("SoundManager");
         menuPanel.SetActive(false);
     }
@@ -23,6 +26,12 @@ public class GameMenu : MonoBehaviour
             menuPanel.SetActive(!menuPanel.activeSelf);
             // StartCoroutine(SelectFirstChoice());
         }
+    }
+
+    public void SaveGame()
+    {
+        playerPosData.PlayerPosSave();
+        Debug.Log("Game has been saved!");
     }
 
     public void QuitToMenu()

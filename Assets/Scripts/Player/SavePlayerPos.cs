@@ -16,6 +16,9 @@ public class SavePlayerPos : MonoBehaviour
 
             pX = PlayerPrefs.GetFloat("p_x");
             pY = PlayerPrefs.GetFloat("p_y");
+
+            player.transform.position = new Vector2(pX, pY);
+
             PlayerPrefs.SetInt("TimeToLoad", 0);
             PlayerPrefs.Save();
         }

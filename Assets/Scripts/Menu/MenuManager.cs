@@ -10,11 +10,6 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject[] choices;
     [SerializeField] private AudioClip music;
 
-    // private void Awake()
-    // {
-    //     SoundManager.instance.ChangeBGM(music);
-    // }
-
     private void Start()
     {
         frame[1].SetActive(false);
@@ -38,7 +33,13 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Intro");
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("Scene1");
+    }
+
+    public void ContinueGame()
+    {
+        SceneManager.LoadScene("Scene1");
     }
 
     private void QuitGame() 

@@ -5345,9 +5345,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: StartGame
+      - m_Target: {fileID: 2030538447}
+        m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
+        m_MethodName: LoadSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6237,7 +6237,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1987140842}
+      - m_Target: {fileID: 2030538447}
         m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
         m_MethodName: QuitToMenu
         m_Mode: 1
@@ -6777,7 +6777,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1987140842}
+      - m_Target: {fileID: 2030538447}
         m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
         m_MethodName: SaveGame
         m_Mode: 1
@@ -6839,7 +6839,6 @@ GameObject:
   - component: {fileID: 1987140841}
   - component: {fileID: 1987140840}
   - component: {fileID: 1987140839}
-  - component: {fileID: 1987140842}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6929,20 +6928,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1987140842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987140837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bd78a852cc3e264b96e0ddb2ac3429f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuPanel: {fileID: 1729371754}
-  choices: []
 --- !u!1 &1993906371 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 399188498497540165, guid: e2d175f4ab7e35c44a37492b8d48ff15, type: 3}
@@ -7010,6 +6995,7 @@ GameObject:
   - component: {fileID: 2030538445}
   - component: {fileID: 2030538444}
   - component: {fileID: 2030538446}
+  - component: {fileID: 2030538447}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -7057,6 +7043,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: 5b8cbca87f2f55c4b889cfb39ffbeb82, type: 3}
+--- !u!114 &2030538447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030538443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd78a852cc3e264b96e0ddb2ac3429f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuPanel: {fileID: 1729371754}
+  choices:
+  - {fileID: 1940322686}
+  - {fileID: 1187445402}
+  - {fileID: 1603639834}
 --- !u!1001 &2085596326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7126,6 +7129,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1280032103}
     m_Modifications:
+    - target: {fileID: 2601061750993114500, guid: c3741bef531945e45b74f15fba14988c, type: 3}
+      propertyPath: gameMenu
+      value: 
+      objectReference: {fileID: 2030538447}
     - target: {fileID: 4948057124229684710, guid: c3741bef531945e45b74f15fba14988c, type: 3}
       propertyPath: m_RootOrder
       value: 10

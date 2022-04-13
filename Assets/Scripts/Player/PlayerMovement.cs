@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     SavePlayerPos playerPosData;
 
+    [SerializeField] private GameMenu gameMenu;
+
     private void Awake()
     {
         playerPosData = FindObjectOfType<SavePlayerPos>();
@@ -34,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // freeze player if dialogue is playing
-        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        if (DialogueManager.GetInstance().dialogueIsPlaying || gameMenu.menuPanel.activeSelf)
         {
             Debug.Log("Player frozen.");
             return;

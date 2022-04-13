@@ -34,12 +34,19 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene("Scene1");
+        SceneManager.LoadScene("Intro");
     }
 
     public void ContinueGame()
     {
-        SceneManager.LoadScene("Scene1");
+        if (PlayerPrefs.GetInt("LoadSaved") == 1)
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
+        }
+        else 
+        {
+            return;
+        }
     }
 
     private void QuitGame() 

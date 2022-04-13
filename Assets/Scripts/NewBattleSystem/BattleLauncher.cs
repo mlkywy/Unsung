@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BattleLauncher : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class BattleLauncher : MonoBehaviour
     {
         Players = players;
         Enemies = enemies;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Battle");
+        SceneManager.LoadScene("Battle");
     }
 
     public void Launch()

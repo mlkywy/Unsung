@@ -16,6 +16,14 @@ public class PlayerMovement : MonoBehaviour
     private bool isClimbing = false;
     private bool allowJump = true;
 
+    SavePlayerPos playerPosData;
+
+    private void Awake()
+    {
+        playerPosData = FindObjectOfType<SavePlayerPos>();
+        playerPosData.PlayerPosLoad();
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,8 +36,8 @@ public class PlayerMovement : MonoBehaviour
         // freeze player if dialogue is playing
         if (DialogueManager.GetInstance().dialogueIsPlaying)
         {
-            return;
             Debug.Log("Player frozen.");
+            return;
         }
 
         MoveHorizontal();

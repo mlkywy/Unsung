@@ -36,5 +36,6 @@ public class SoundManager : MonoBehaviour
         source.Stop();
         source.clip = music;
         source.Play();
+        Debug.Log("Changed bg musci!");
     }
 }

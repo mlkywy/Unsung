@@ -1657,7 +1657,7 @@ MonoBehaviour:
   - {fileID: 964630415}
   - {fileID: 861921079}
   - {fileID: 1749225840}
-  clip: {fileID: 0}
+  music: {fileID: 8300000, guid: a99727234427a8c439321ee4e9bac571, type: 3}
 --- !u!1 &1323770096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,6 +1896,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2518668543541109528, guid: d5a36cd2ce2d3b64bad9acd0de7a40a9, type: 3}
       propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2518668543541109528, guid: d5a36cd2ce2d3b64bad9acd0de7a40a9, type: 3}
+      propertyPath: m_TagString
       value: SoundManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []

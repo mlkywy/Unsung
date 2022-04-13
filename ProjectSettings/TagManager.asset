@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Character
   - DialoguePanel
+  - SoundManager
   layers:
   - Default
   - TransparentFX

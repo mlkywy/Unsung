@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IntroScene : MonoBehaviour
 {
@@ -19,6 +20,14 @@ public class IntroScene : MonoBehaviour
         StartCoroutine(StartIntro());
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            StartGameScene();
+        }
+    }
+
     private IEnumerator StartIntro()
     {
         if (gameStarted && !DialogueManager.GetInstance().dialogueIsPlaying)
@@ -27,5 +36,10 @@ public class IntroScene : MonoBehaviour
             DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             Debug.Log(inkJSON.text);
         }
+    }
+
+    private void StartGameScene()
+    {
+        SceneManager.LoadScene("Scene1");
     }
 }

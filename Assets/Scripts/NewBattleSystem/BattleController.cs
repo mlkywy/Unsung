@@ -244,7 +244,8 @@ public class BattleController : MonoBehaviour
         {
             dialogueController.SetText("You have successfully defeated the opposition!");
             SoundManager.instance.PlaySound(winSound);
-            // Debug.Log("You win!");
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
         } 
         // if all party members are dead, you lose
         else if (characters[PLAYER_TEAM].All(c => c.isDead))

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Spell : MonoBehaviour
 {
     public string spellName;
+    [TextArea]
+    public string spellDescription;
     public int power;
     public int manaCost;
 
@@ -43,7 +45,7 @@ public class Spell : MonoBehaviour
 
         targetPosition = target.transform.position;
         // Debug.Log(spellName + "was performed on " + target.characterName + "!");
-        dialogueController.SetText($"{spellName} was performed on {target.characterName}!");
+        dialogueController.SetText($"{spellName} was performed on {target.characterName} for {power} damage!");
 
         if (spellType == SpellType.Attack)
         {

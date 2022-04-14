@@ -4849,6 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Destiny's Blade
+  spellDescription: This is a test.
   power: 25
   manaCost: 20
   spellType: 0

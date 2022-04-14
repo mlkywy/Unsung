@@ -10,9 +10,11 @@ public class BattleUIController : MonoBehaviour
     [SerializeField] private Button[] actionButtons;
     [SerializeField] private Button button;
     [SerializeField] private GameObject[] playerHud;
+    [SerializeField] private GameObject descriptionPanel;
 
     private void Start()
     {
+        descriptionPanel.GetComponentInChildren<TextMeshProUGUI>().text = "";
         spellPanel.SetActive(false);
     }
 
@@ -81,10 +83,12 @@ public class BattleUIController : MonoBehaviour
         Debug.Log("Spell selected.");
         BattleController.Instance.playerSelectedSpell = spell;
         BattleController.Instance.playerIsAttacking = false;
+        descriptionPanel.GetComponentInChildren<TextMeshProUGUI>().text = spell.spellDescription;
     }
 
     public void SelectAttack()
     {
+        descriptionPanel.GetComponentInChildren<TextMeshProUGUI>().text = "Select a target to attack!";
         Debug.Log("Attack selected.");
         ToggleSpellPanel(false);
         BattleController.Instance.playerSelectedSpell = null;
@@ -93,6 +97,7 @@ public class BattleUIController : MonoBehaviour
 
     public void UpdateCharacterUI()
     {
+        descriptionPanel.GetComponentInChildren<TextMeshProUGUI>().text = "";
         for (int i = 0; i < BattleController.Instance.characters[0].Count; i++)
         {
            Character character = BattleController.Instance.characters[0][i];

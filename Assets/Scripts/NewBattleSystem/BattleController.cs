@@ -221,7 +221,7 @@ public class BattleController : MonoBehaviour
 
     public void PlayerDoAttack(Character attacker, Character target)
     {
-        dialogueController.SetText($"{attacker.characterName} attacks {target.characterName}!");
+        dialogueController.SetText($"{attacker.characterName} attacks {target.characterName} for {attacker.attackPower} damage!");
         // Debug.Log(attacker.characterName + " attacks " + target.characterName);
 
         ScreenShakeController.instance.StartShake(0.2f, 0.05f);
@@ -233,7 +233,7 @@ public class BattleController : MonoBehaviour
 
     public void EnemyDoAttack(Character attacker, Character target)
     {
-        dialogueController.SetText($"{attacker.characterName} attacks {target.characterName}!");
+        dialogueController.SetText($"{attacker.characterName} attacks {target.characterName} for {attacker.attackPower} damage!");
         // Debug.Log(attacker.characterName + " attacks " + target.characterName);
 
         ScreenShakeController.instance.StartShake(0.2f, 0.05f);

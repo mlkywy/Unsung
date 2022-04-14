@@ -4849,6 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Mage-King's Curse
+  spellDescription: This is a test. 2
   power: 100
   manaCost: 100
   spellType: 0

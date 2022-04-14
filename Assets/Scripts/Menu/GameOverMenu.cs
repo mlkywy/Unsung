@@ -19,7 +19,10 @@ public class GameOverMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        // destroy sound manager before returning to main menu screen
         Destroy(soundManager);
+        // prevents incorrect battle launching in world scene
+        Destroy(GameObject.FindWithTag("BattleLauncher"));
         SceneManager.LoadScene("MainMenu");
     }
 

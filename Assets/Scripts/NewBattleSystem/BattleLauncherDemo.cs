@@ -12,12 +12,12 @@ public class BattleLauncherDemo : MonoBehaviour
 
     public void Start()
     {
-        // load PlayerPrefs value for enemy name key and inactivate if it has been triggered
+        // load PlayerPrefs value for enemy name key and set inactive if it has been triggered
         if (PlayerPrefs.GetInt(enemyKey) == 1)
         {
             gameObject.SetActive(false);
         }
-        else
+        else // if the value is 0, set active (this will only occur if the enemy was not succcessfully defeated)
         {
             gameObject.SetActive(true);
         }
@@ -33,7 +33,6 @@ public class BattleLauncherDemo : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             SoundManager.instance.ChangeBGM(music);
-            PlayerPrefs.SetInt(enemyKey, 1);
             Launch();
         }
     }

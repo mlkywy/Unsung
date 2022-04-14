@@ -247,6 +247,7 @@ public class BattleController : MonoBehaviour
         // if enemies are dead, you win
         if (characters[ENEMY_TEAM].Count == 0)
         {
+            // set boolean value to 1, so that enemy is set inactive in game world
             PlayerPrefs.SetInt(currentEnemyKey, 1);
             dialogueController.SetText("You have successfully defeated the opposition!");
             SoundManager.instance.PlaySound(winSound);
@@ -256,6 +257,7 @@ public class BattleController : MonoBehaviour
         // if all party members are dead, you lose
         else if (characters[PLAYER_TEAM].All(c => c.isDead))
         {
+            // set boolean value to 0, so that enemy is set active in game world
             PlayerPrefs.SetInt(currentEnemyKey, 0);
             dialogueController.SetText("You have been defeated.");
             SoundManager.instance.PlaySound(loseSound);

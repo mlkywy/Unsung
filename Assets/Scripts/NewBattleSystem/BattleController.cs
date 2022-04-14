@@ -35,6 +35,8 @@ public class BattleController : MonoBehaviour
 
     private int actTurn;
 
+    public string currentEnemyKey;
+
     private void Start()
     {
         if  (Instance != null && Instance != this)
@@ -245,6 +247,7 @@ public class BattleController : MonoBehaviour
         // if enemies are dead, you win
         if (characters[ENEMY_TEAM].Count == 0)
         {
+            PlayerPrefs.SetInt(currentEnemyKey, 1);
             dialogueController.SetText("You have successfully defeated the opposition!");
             SoundManager.instance.PlaySound(winSound);
             yield return new WaitForSeconds(2f);
@@ -253,6 +256,7 @@ public class BattleController : MonoBehaviour
         // if all party members are dead, you lose
         else if (characters[PLAYER_TEAM].All(c => c.isDead))
         {
+            PlayerPrefs.SetInt(currentEnemyKey, 0);
             dialogueController.SetText("You have been defeated.");
             SoundManager.instance.PlaySound(loseSound);
             yield return new WaitForSeconds(2f);

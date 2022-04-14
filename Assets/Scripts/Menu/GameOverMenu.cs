@@ -8,15 +8,18 @@ public class GameOverMenu : MonoBehaviour
 {
     [SerializeField] private GameObject[] choices;
     [SerializeField] private AudioClip music;
+    private GameObject soundManager;
 
     private void Start()
     {
         SoundManager.instance.ChangeBGM(music);
+        soundManager = GameObject.FindWithTag("SoundManager");
         StartCoroutine(SelectFirstChoice()); 
     }
 
     public void MainMenu()
     {
+        Destroy(soundManager);
         SceneManager.LoadScene("MainMenu");
     }
 

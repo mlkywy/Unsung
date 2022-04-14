@@ -50,6 +50,9 @@ public class BattleController : MonoBehaviour
         characters.Add(1, new List<Character>());
         FindObjectOfType<BattleLauncher>().Launch();
         uiController.UpdateCharacterUI();
+        
+        // prevents incorrect battle launching in world scene
+        Destroy(GameObject.FindWithTag("BattleLauncher"));
     }
 
     public void StartBattle(List<Character> players, List<Character> enemies)

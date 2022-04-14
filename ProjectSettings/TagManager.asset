@@ -10,6 +10,7 @@ TagManager:
   - Character
   - DialoguePanel
   - SoundManager
+  - BattleLauncher
   layers:
   - Default
   - TransparentFX

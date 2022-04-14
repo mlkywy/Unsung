@@ -5520,6 +5520,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BattleLauncher
       objectReference: {fileID: 0}
+    - target: {fileID: 7662372615046209004, guid: 69433fee74beeb04bab527e628f17ee0, type: 3}
+      propertyPath: m_TagString
+      value: BattleLauncher
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69433fee74beeb04bab527e628f17ee0, type: 3}
 --- !u!1 &1250726388

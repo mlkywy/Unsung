@@ -36,17 +36,19 @@ public class GameMenu : MonoBehaviour
         Debug.Log("Game has been saved!");
     }
 
-    public void LoadSave()
-    {
-         if (PlayerPrefs.GetInt("LoadSaved") == 1)
-        {
-            SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
-        }
-        else 
-        {
-            return;
-        }
-    }
+    // this function messes things up for some reason??
+    // public void LoadSave()
+    // {
+    //      if (PlayerPrefs.GetInt("LoadSaved") == 1)
+    //     {
+    //         StartCoroutine(SceneLoader.instance.SceneTransition(PlayerPrefs.GetInt("SavedScene")));
+    //         // SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
+    //     }
+    //     else 
+    //     {
+    //         return;
+    //     }
+    // }
 
     public void QuitToMenu()
     {
@@ -55,7 +57,8 @@ public class GameMenu : MonoBehaviour
         // prevents incorrect battle launching in world scene
         Destroy(GameObject.FindWithTag("BattleLauncher"));
 
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(SceneLoader.instance.SceneTransition("MainMenu"));
+        // SceneManager.LoadScene("MainMenu");
     }
 
     private IEnumerator SelectFirstChoice()

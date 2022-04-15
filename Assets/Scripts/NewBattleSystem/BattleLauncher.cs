@@ -19,6 +19,8 @@ public class BattleLauncher : MonoBehaviour
         EnemyKey = enemyKey;
         Players = players;
         Enemies = enemies;
+
+        // StartCoroutine(SceneLoader.instance.SceneTransition("Battle"));
         SceneManager.LoadScene("Battle");
     }
 

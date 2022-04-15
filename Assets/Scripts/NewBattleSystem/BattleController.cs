@@ -252,6 +252,8 @@ public class BattleController : MonoBehaviour
             dialogueController.SetText("You have successfully defeated the opposition!");
             SoundManager.instance.PlaySound(winSound);
             yield return new WaitForSeconds(2f);
+
+            // StartCoroutine(SceneLoader.instance.SceneTransition(PlayerPrefs.GetInt("SavedScene")));
             SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
         } 
         // if all party members are dead, you lose
@@ -262,6 +264,9 @@ public class BattleController : MonoBehaviour
             dialogueController.SetText("You have been defeated.");
             SoundManager.instance.PlaySound(loseSound);
             yield return new WaitForSeconds(2f);
+
+
+            // StartCoroutine(SceneLoader.instance.SceneTransition("GameOver"));
             SceneManager.LoadScene("GameOver");
         }
 

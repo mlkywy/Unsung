@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ferryman : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class Ferryman : MonoBehaviour
     private IEnumerator NextArea()
     {
         yield return new WaitForSeconds(2f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Scene2");
+        StartCoroutine(SceneLoader.instance.SceneTransition("Scene2"));
+        // SceneManager.LoadScene("Scene2");
     }
 }

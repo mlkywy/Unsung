@@ -23,7 +23,9 @@ public class GameOverMenu : MonoBehaviour
         Destroy(soundManager);
         // prevents incorrect battle launching in world scene
         Destroy(GameObject.FindWithTag("BattleLauncher"));
-        SceneManager.LoadScene("MainMenu");
+
+        StartCoroutine(SceneLoader.instance.SceneTransition("MainMenu"));
+        // SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame() 

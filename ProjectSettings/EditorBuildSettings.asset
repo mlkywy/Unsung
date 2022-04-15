@@ -15,13 +15,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene1.unity
     guid: fdb95ef6a8138f44aaa1a8714375b32a
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: 2d371c3d7658fd54595d9799be8ca6f9
-  - enabled: 1
-    path: Assets/Scenes/DemoBattle.unity
-    guid: 60cc3ca657c2a354b99ccbe6bfa94393
+    path: Assets/Scenes/Scene2.unity
+    guid: 0eaa2aa5b0b513b49960a260433e4185
   - enabled: 1
     path: Assets/Scenes/Battle.unity
     guid: 732ac0e3dedee294aa6d3261512c658a
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 2d371c3d7658fd54595d9799be8ca6f9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9ac7aaab525082e46a710ebdc5a43829, type: 2}

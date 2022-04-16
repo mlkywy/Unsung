@@ -17,9 +17,9 @@ Fortunately my father's journal survived the fall. Curious of it are you? #speak
 
 === final ===
 Do you have any additional questions?
-+ [Yes]
++ [Yes.]
     -> main
-+ [No]
++ [No.]
     Let's carry on then, shall we?
     -> END
     

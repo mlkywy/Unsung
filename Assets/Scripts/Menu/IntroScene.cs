@@ -40,7 +40,7 @@ public class IntroScene : MonoBehaviour
 
     private void StartGameScene()
     {
-        StartCoroutine(SceneLoader.instance.SceneTransition("Scene1"));
+        StartCoroutine(SceneLoader.instance.SceneTransition("Cave"));
         // SceneManager.LoadScene("Scene1");
     }
 }

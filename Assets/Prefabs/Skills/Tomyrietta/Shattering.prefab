@@ -4849,6 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Shattering
+  spellDescription: Attack the enemy's ontological existence.
   power: 30
   manaCost: 10
   spellType: 0

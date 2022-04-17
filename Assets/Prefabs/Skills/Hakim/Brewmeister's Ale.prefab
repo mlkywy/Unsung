@@ -4849,7 +4849,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Brewmeister's Ale
-  power: 100
+  spellDescription: A powerful, tasty, and refreshing brew that heals an ally to
+    full.
+  power: 200
   manaCost: 50
   spellType: 1
   targetPosition: {x: 0, y: 0, z: 0}

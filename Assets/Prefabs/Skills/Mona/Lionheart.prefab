@@ -4849,6 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Lionheart
+  spellDescription: A twisting chest-stab.
   power: 50
   manaCost: 40
   spellType: 0

@@ -4849,6 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Iron Fist
+  spellDescription: Hakim's signature Herculean uppercut.
   power: 35
   manaCost: 25
   spellType: 0

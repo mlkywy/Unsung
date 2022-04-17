@@ -4849,6 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Thorn of Roses
+  spellDescription: The enemy is thrown sharpened thorns.
   power: 25
   manaCost: 15
   spellType: 0

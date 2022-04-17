@@ -4849,6 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Mend Wounds
+  spellDescription: Blanket an ally in flesh-stitching aura.
   power: 45
   manaCost: 25
   spellType: 1

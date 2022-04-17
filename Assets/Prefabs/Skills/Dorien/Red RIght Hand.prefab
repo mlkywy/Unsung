@@ -4849,7 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Red Right Hand
-  spellDescription: This is a test. 3
+  spellDescription: A normal punch given an extraordinary name.
   power: 10
   manaCost: 5
   spellType: 0

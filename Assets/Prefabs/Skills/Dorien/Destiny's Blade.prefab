@@ -4849,7 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Destiny's Blade
-  spellDescription: This is a test.
+  spellDescription: A swift stab made true by the Hero's will.
   power: 25
   manaCost: 20
   spellType: 0

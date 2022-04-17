@@ -4849,6 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Blades of Azure
+  spellDescription: Launch piercing arcane daggers.
   power: 12
   manaCost: 8
   spellType: 0

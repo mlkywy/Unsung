@@ -26,6 +26,12 @@ public class IntroScene : MonoBehaviour
         {
             StartGameScene();
         }
+
+        // for testing purposes only!!!
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            StartCoroutine(SceneLoader.instance.SceneTransition("Scene1"));
+        }
     }
 
     private IEnumerator StartIntro()

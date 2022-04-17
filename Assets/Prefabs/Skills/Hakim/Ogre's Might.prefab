@@ -4849,6 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Ogre's Might
+  spellDescription: A painful and thunderous slap on the chest.
   power: 22
   manaCost: 12
   spellType: 0

@@ -4849,7 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellName: Mage-King's Curse
-  spellDescription: This is a test. 2
+  spellDescription: Mordhau embued with a powerful, anathematic energy.
   power: 100
   manaCost: 100
   spellType: 0

@@ -18,7 +18,6 @@ public class GameOverMenu : MonoBehaviour
         SoundManager.instance.ChangeBGM(music);
 
         soundManager = GameObject.FindWithTag("SoundManager");
-        postProcessing = GameObject.FindWithTag("PostProcessing");
         battleLauncher = GameObject.FindWithTag("BattleLauncher");
 
         StartCoroutine(SelectFirstChoice()); 
@@ -26,10 +25,9 @@ public class GameOverMenu : MonoBehaviour
 
     public void MainMenu()
     {
-        // destroy sound manager & post processing before returning to main menu screen
+        // destroy sound manager before returning to main menu screen
         Destroy(soundManager);
-        Destroy(postProcessing);
-        
+
         // prevents incorrect battle launching in world scene
         Destroy(battleLauncher);
 

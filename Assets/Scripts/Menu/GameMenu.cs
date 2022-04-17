@@ -8,14 +8,21 @@ public class GameMenu : MonoBehaviour
 {
     public GameObject menuPanel;
     public GameObject[] choices;
+
     private GameObject soundManager;
+    private GameObject postProcessing;
+    private GameObject battleLauncher;
 
     SavePlayerPos playerPosData;
 
     private void Start()
     {
         playerPosData = FindObjectOfType<SavePlayerPos>();
+
         soundManager = GameObject.FindWithTag("SoundManager");
+        postProcessing = GameObject.FindWithTag("PostProcessing");
+        battleLauncher = GameObject.FindWithTag("BattleLauncher");
+
         menuPanel.SetActive(false);
     }
 
@@ -52,10 +59,11 @@ public class GameMenu : MonoBehaviour
 
     public void QuitToMenu()
     {
-        // destroy sound manager before returning to main menu screen
+        // destroy sound manager & post processing before returning to main menu screen
         Destroy(soundManager);
+        Destroy(postProcessing);
         // prevents incorrect battle launching in world scene
-        Destroy(GameObject.FindWithTag("BattleLauncher"));
+        Destroy(battleLauncher);
 
         StartCoroutine(SceneLoader.instance.SceneTransition("MainMenu"));
         // SceneManager.LoadScene("MainMenu");

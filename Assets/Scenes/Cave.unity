@@ -631,6 +631,10 @@ PrefabInstance:
       propertyPath: choices.Array.data[1]
       value: 
       objectReference: {fileID: 1165195967}
+    - target: {fileID: 8073541040685775121, guid: f81ec85ed681a1d4b90d55bc9d07a1df, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 8300000, guid: 15343912496acdc45b2479cbbb9f5adc, type: 3}
     - target: {fileID: 8073541040685775122, guid: f81ec85ed681a1d4b90d55bc9d07a1df, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4959,7 +4963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 290682361348512679, guid: 604a7d199c1d08146ad430c9bf90885a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 290682361348512679, guid: 604a7d199c1d08146ad430c9bf90885a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5346,8 +5350,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 488494971}
   - {fileID: 1165195965}
+  - {fileID: 488494971}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

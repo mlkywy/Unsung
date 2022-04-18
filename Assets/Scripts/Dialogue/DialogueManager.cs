@@ -42,6 +42,7 @@ public class DialogueManager : MonoBehaviour
     // tags
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
+    private const string CUTSCENE_TAG = "cutscene";
     private const string VOICE_TAG = "voice";
 
     private static DialogueManager instance;
@@ -241,6 +242,11 @@ public class DialogueManager : MonoBehaviour
                     // text dialogue makes room for portrait when there is one
                     dialogueText.GetComponent<RectTransform>().localPosition = new Vector3(15.3f, 0.9f, 0f);
                     dialogueText.GetComponent<RectTransform>().sizeDelta = new Vector2(200f, 32f);
+                    break;
+                case CUTSCENE_TAG:
+                    // set portrait frame and portrait
+                    portraitFrame.SetActive(true);
+                    portraitAnimator.Play(tagValue);
                     break;
                 case VOICE_TAG:
                     // set audio clip

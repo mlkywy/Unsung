@@ -1,4 +1,4 @@
-There were once two continents separated by an ocean, Briwyll and Parayen. #voice:type1 #portrait:Intro_1
+There were once two continents separated by an ocean, Briwyll and Parayen. #voice:type1 #cutscene:intro
 For many years, both continents were ruled under a unified kingdom by dynasties of mage-rulers.
 Dissent was met with violence by both the sword and the staff. 
 Despite living in relative peace and stability, the people had no ability to challenge their lords or make demands.

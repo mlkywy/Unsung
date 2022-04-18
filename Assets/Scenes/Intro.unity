@@ -1711,7 +1711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1838246866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2020,7 +2020,7 @@ Animator:
   m_GameObject: {fileID: 2044113877}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b5839212e15a44c478b605412f9b9ffb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7ac72db327cde874eb5544d5cec320e5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2255,6 +2255,10 @@ PrefabInstance:
       propertyPath: loadGlobalsJSON
       value: 
       objectReference: {fileID: 4900000, guid: 64e68f78e76f2684a959a2666de3c7b1, type: 3}
+    - target: {fileID: 2481842326137730445, guid: 3096df2dd0fff59418789cd17e6c72eb, type: 3}
+      propertyPath: portraitAnimator
+      value: 
+      objectReference: {fileID: 2044113879}
     - target: {fileID: 2481842326137730445, guid: 3096df2dd0fff59418789cd17e6c72eb, type: 3}
       propertyPath: choices.Array.size
       value: 0

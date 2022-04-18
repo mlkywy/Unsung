@@ -37,4 +37,9 @@ public class SoundManager : MonoBehaviour
         source.clip = music;
         source.Play();
     }
+
+    public void StopMusic()
+    {
+        source.Stop();
+    }
 }

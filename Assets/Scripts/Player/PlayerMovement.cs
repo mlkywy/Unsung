@@ -125,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump")) 
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            animator.Play("Player_Jump");
             allowJump = false;
             StartCoroutine(EnableJump());
             
@@ -135,6 +136,7 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator EnableJump()
     {
         yield return new WaitForSeconds(0.5f);
+        animator.Play("Player_Idle");
         allowJump = true;
     }
 }

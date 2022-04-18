@@ -12,6 +12,8 @@ public class GameMenu : MonoBehaviour
     private GameObject soundManager;
     private GameObject postProcessing;
     private GameObject battleLauncher;
+    
+    [SerializeField] private AudioClip menuToggleSound;
 
     SavePlayerPos playerPosData;
 
@@ -29,6 +31,12 @@ public class GameMenu : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
+            if (DialogueManager.GetInstance().dialogueIsPlaying)
+            {
+                return;
+            }
+
+            SoundManager.instance.PlaySound(menuToggleSound);
             menuPanel.SetActive(!menuPanel.activeSelf);
             StartCoroutine(SelectFirstChoice());
         }

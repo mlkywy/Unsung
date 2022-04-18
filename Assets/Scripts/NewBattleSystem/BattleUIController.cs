@@ -12,6 +12,8 @@ public class BattleUIController : MonoBehaviour
     [SerializeField] private GameObject[] playerHud;
     [SerializeField] private GameObject descriptionPanel;
 
+    [SerializeField] private AudioClip selectSpellSound;
+
     private void Start()
     {
         descriptionPanel.GetComponentInChildren<TextMeshProUGUI>().text = "";
@@ -81,6 +83,8 @@ public class BattleUIController : MonoBehaviour
     private void SelectSpell(Spell spell)
     {
         Debug.Log("Spell selected.");
+        SoundManager.instance.PlaySound(selectSpellSound);
+
         BattleController.Instance.playerSelectedSpell = spell;
         BattleController.Instance.playerIsAttacking = false;
         descriptionPanel.GetComponentInChildren<TextMeshProUGUI>().text = spell.spellDescription;

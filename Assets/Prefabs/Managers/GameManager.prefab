@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265ef64ab54cf6e4382ab29ab66ee4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 8300000, guid: 5b8cbca87f2f55c4b889cfb39ffbeb82, type: 3}
+  music: {fileID: 0}
 --- !u!114 &8073541040685775120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,3 +75,4 @@ MonoBehaviour:
   choices:
   - {fileID: 0}
   - {fileID: 0}
+  menuToggleSound: {fileID: 8300000, guid: 744e775aa5f3d2849b0696aab74e1ad3, type: 3}

@@ -1466,7 +1466,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4875774, y: -2.3435643, z: -10}
+  m_LocalPosition: {x: -2.4924507, y: -2.3435643, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6903,6 +6903,10 @@ PrefabInstance:
       propertyPath: choices.Array.data[1]
       value: 
       objectReference: {fileID: 1603639834}
+    - target: {fileID: 8073541040685775121, guid: f81ec85ed681a1d4b90d55bc9d07a1df, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b8cbca87f2f55c4b889cfb39ffbeb82, type: 3}
     - target: {fileID: 8073541040685775122, guid: f81ec85ed681a1d4b90d55bc9d07a1df, type: 3}
       propertyPath: m_RootOrder
       value: 2

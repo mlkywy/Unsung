@@ -98,8 +98,16 @@ public class BattleController : MonoBehaviour
        if (characters[PLAYER_TEAM].All(c => c.isDead))
        {
            Debug.Log("Battle over!");
-           // call function to end battle
-           StartCoroutine(EndBattle());
+
+            if (currentEnemyKey == "queen")
+            {
+                StartCoroutine(EndFinalBattle());
+            } 
+            else 
+            {
+                // call function to end battle
+                StartCoroutine(EndBattle());
+            }
        }
        
        return eligibleCharacters[Random.Range(0, eligibleCharacters.Count)];
@@ -174,8 +182,16 @@ public class BattleController : MonoBehaviour
         else
         {
             Debug.Log("Battle over!");
-            // call function to end battle
-            StartCoroutine(EndBattle());
+
+            if (currentEnemyKey == "queen")
+            {
+                StartCoroutine(EndFinalBattle());
+            } 
+            else 
+            {
+                // call function to end battle
+                StartCoroutine(EndBattle());
+            }
         }
     }
 
@@ -265,9 +281,34 @@ public class BattleController : MonoBehaviour
             SoundManager.instance.PlaySound(loseSound);
             yield return new WaitForSeconds(2f);
 
-
             // StartCoroutine(SceneLoader.instance.SceneTransition("GameOver"));
             SceneManager.LoadScene("GameOver");
+        }
+
+        yield return null;
+    }
+
+    private IEnumerator EndFinalBattle() 
+    {
+        // if enemies are dead, you win
+        if (characters[ENEMY_TEAM].Count == 0)
+        {
+            PlayerPrefs.SetInt(currentEnemyKey, 0);
+            dialogueController.SetText("The queen succumbs to your party...");
+            SoundManager.instance.PlaySound(winSound);
+            yield return new WaitForSeconds(2f);
+
+            SceneManager.LoadScene("Ending");
+        } 
+        // if all party members are dead, you lose
+        else if (characters[PLAYER_TEAM].All(c => c.isDead))
+        {
+            PlayerPrefs.SetInt(currentEnemyKey, 0);
+            dialogueController.SetText("At least you died an honorable death.");
+            SoundManager.instance.PlaySound(loseSound);
+            yield return new WaitForSeconds(2f);
+
+            SceneManager.LoadScene("Ending");
         }
 
         yield return null;

@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Parameters")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float speed = 4f;
     [SerializeField] private Animator animator;
     [SerializeField] private float jumpForce = 10f;
 
-
+    [Header("Sound Effects")]
     [SerializeField] private AudioSource walkSFX;
     [SerializeField] private AudioSource jumpSFX;
 
     private float vertical;
-    
     private bool isLadder = false;
     private bool isClimbing = false;
     private bool allowJump = true;
 
     SavePlayerPos playerPosData;
 
+    [Header("Menu")]
     [SerializeField] private GameMenu gameMenu;
 
     private void Awake()

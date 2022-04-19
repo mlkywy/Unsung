@@ -11,7 +11,6 @@ public class BattleUIController : MonoBehaviour
     [SerializeField] private Button button;
     [SerializeField] private GameObject[] playerHud;
     [SerializeField] private GameObject descriptionPanel;
-
     [SerializeField] private AudioClip selectSpellSound;
 
     private void Start()

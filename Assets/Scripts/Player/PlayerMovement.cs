@@ -10,6 +10,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private float jumpForce = 10f;
 
+
+    [SerializeField] private AudioSource walkSFX;
+    [SerializeField] private AudioSource jumpSFX;
+
     private float vertical;
     
     private bool isLadder = false;
@@ -39,11 +43,17 @@ public class PlayerMovement : MonoBehaviour
         if (DialogueManager.GetInstance().dialogueIsPlaying || gameMenu.menuPanel.activeSelf)
         {
             Debug.Log("Player frozen.");
+            walkSFX.Stop();
             return;
         }
 
         MoveHorizontal();
         MoveVertical();
+
+        if (!Input.GetButton("Horizontal"))
+        {
+            walkSFX.Play();
+        }
 
         if (allowJump) Jump();
 
@@ -126,6 +136,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             animator.Play("Player_Jump");
+            jumpSFX.Play();
             allowJump = false;
             StartCoroutine(EnableJump());
             

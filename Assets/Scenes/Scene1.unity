@@ -213,6 +213,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Queen
       objectReference: {fileID: 0}
+    - target: {fileID: 8484194597173125227, guid: 6b8a997dfdbe44c448511a3e0854a5e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b8a997dfdbe44c448511a3e0854a5e3, type: 3}
 --- !u!1 &134577742
@@ -1523,7 +1527,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4924507, y: -2.3435643, z: -10}
+  m_LocalPosition: {x: -2.4975348, y: -2.3435643, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3296,6 +3300,10 @@ PrefabInstance:
     - target: {fileID: 8484194597173125227, guid: b87124bc768a7cc45ae34dcebed12495, type: 3}
       propertyPath: m_Name
       value: Bandit (HARD)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484194597173125227, guid: b87124bc768a7cc45ae34dcebed12495, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b87124bc768a7cc45ae34dcebed12495, type: 3}

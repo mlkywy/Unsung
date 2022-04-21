@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         MoveHorizontal();
         MoveVertical();
 
-        if (!Input.GetButton("Horizontal"))
+        if (animator.GetFloat("Speed") < 0.01)
         {
             walkSFX.Play();
         }
@@ -138,6 +138,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             animator.Play("Player_Jump");
             jumpSFX.Play();
+            walkSFX.Stop();
             allowJump = false;
             StartCoroutine(EnableJump());
             

@@ -817,7 +817,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 552113356}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 3.65625
@@ -841,7 +841,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718809140}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.1800003, y: -3.3048127, z: -10}
+  m_LocalPosition: {x: -4.59, y: -3.6828127, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 466332588}
@@ -5819,7 +5819,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: -4.928248, y: 0.06694865}
+  m_Offset: {x: -5.139407, y: 0.06694865}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5830,7 +5830,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 13.426581, y: 7.4718757}
+  m_Size: {x: 13.071835, y: 7.4718757}
   m_EdgeRadius: 0
 --- !u!66 &1936834591
 CompositeCollider2D:
@@ -5852,20 +5852,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1936834590}
     m_ColliderPaths:
-    - - X: 17850135
+    - - X: 13964808
         Y: -36689892
-      - X: 17850135
+      - X: 13964808
         Y: 38028864
-      - X: -116415384
+      - X: -116753248
         Y: 38028571
-      - X: -116415091
+      - X: -116752955
         Y: -36689892
   m_CompositePaths:
     m_Paths:
-    - - {x: 1.7849842, y: -3.6689892}
-      - {x: 1.7849842, y: 3.8028865}
-      - {x: -11.641539, y: 3.802828}
-      - {x: -11.64148, y: -3.6689892}
+    - - {x: 1.3964515, y: -3.6689892}
+      - {x: 1.3964515, y: 3.8028865}
+      - {x: -11.675325, y: 3.802828}
+      - {x: -11.675266, y: -3.6689892}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1936834592
@@ -6033,7 +6033,7 @@ GameObject:
   - component: {fileID: 2107011830}
   - component: {fileID: 2107011829}
   m_Layer: 0
-  m_Name: Background
+  m_Name: Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6092,7 +6092,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -6402,11 +6402,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 104592956522969588, guid: ad51dc37b0727704a84f5932a40b0f3b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9683838
+      value: -2.9757042
       objectReference: {fileID: 0}
     - target: {fileID: 104592956522969588, guid: ad51dc37b0727704a84f5932a40b0f3b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3435671
+      value: -2.343567
       objectReference: {fileID: 0}
     - target: {fileID: 104592956522969588, guid: ad51dc37b0727704a84f5932a40b0f3b, type: 3}
       propertyPath: m_LocalPosition.z

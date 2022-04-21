@@ -11,6 +11,24 @@ public class ParallaxBackground : MonoBehaviour
 
    private float textureUnitSizeX;
 
+   private void Awake()
+   {
+       // for saving camera position
+       if (PlayerPrefs.GetInt("SavedCamera") == 1 && PlayerPrefs.GetInt("TimeToLoadCamera") == 1)
+        {
+            float cX = cameraTransform.transform.position.x;
+            float cY = cameraTransform.transform.position.y;
+
+            cX = PlayerPrefs.GetFloat("c_x");
+            cY = PlayerPrefs.GetFloat("c_y");
+
+            cameraTransform.transform.position = new Vector2(cX, cY);
+
+            PlayerPrefs.SetInt("TimeToLoadCamera", 0);
+            PlayerPrefs.Save();
+        }
+   }
+
    private void Start()
    {
        cameraTransform = Camera.main.transform;
@@ -20,8 +38,21 @@ public class ParallaxBackground : MonoBehaviour
        Texture2D texture = sprite.texture;
 
        textureUnitSizeX = texture.width / sprite.pixelsPerUnit;
-
    }
+
+   public void CameraPosSave()
+    {
+        PlayerPrefs.SetFloat("c_x", cameraTransform.transform.position.x);
+        PlayerPrefs.SetFloat("c_y", cameraTransform.transform.position.y);
+        PlayerPrefs.SetInt("SavedCamera", 1);
+        PlayerPrefs.Save();
+    }
+
+    public void CameraPosLoad()
+    {
+        PlayerPrefs.SetInt("TimeToLoadCamera", 1);
+        PlayerPrefs.Save();
+    }
 
    private void FixedUpdate()
    {

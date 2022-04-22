@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7662372615046209005}
   m_Layer: 0
   m_Name: BattleLauncher
-  m_TagString: Untagged
+  m_TagString: BattleLauncher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,3 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dd02fef597d2b740abb236922caf141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyKey: 

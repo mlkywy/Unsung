@@ -10,6 +10,11 @@ public class BattleLauncherDemo : MonoBehaviour
 
     public string enemyKey;
 
+    public void Awake()
+    {
+        launcher = FindObjectOfType<BattleLauncher>();
+    }
+
     public void Start()
     {
         // load PlayerPrefs value for enemy name key and set inactive if it has been triggered

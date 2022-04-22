@@ -13143,7 +13143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1485535966811478439, guid: 9155ce47474243544b9590cd3b0ea29c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9155ce47474243544b9590cd3b0ea29c, type: 3}
@@ -17478,7 +17478,7 @@ PrefabInstance:
     - target: {fileID: 8073541040685775121, guid: f81ec85ed681a1d4b90d55bc9d07a1df, type: 3}
       propertyPath: music
       value: 
-      objectReference: {fileID: 8300000, guid: 15343912496acdc45b2479cbbb9f5adc, type: 3}
+      objectReference: {fileID: 8300000, guid: bc3ddb36e1e67ca419140ecc8e80d668, type: 3}
     - target: {fileID: 8073541040685775122, guid: f81ec85ed681a1d4b90d55bc9d07a1df, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -18933,7 +18933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 104592956522969588, guid: ad51dc37b0727704a84f5932a40b0f3b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.75
+      value: 25.749996
       objectReference: {fileID: 0}
     - target: {fileID: 104592956522969588, guid: ad51dc37b0727704a84f5932a40b0f3b, type: 3}
       propertyPath: m_LocalPosition.y

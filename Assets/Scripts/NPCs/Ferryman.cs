@@ -13,18 +13,12 @@ public class Ferryman : MonoBehaviour
         {
             if (DialogueManager.GetInstance().dialogueIsPlaying)
             {
+                Debug.Log("Dialogue is playing!");
                 return;
             } 
-            else 
-            {
-                StartCoroutine(NextArea()); 
-            }
-        }
-    }
 
-    private IEnumerator NextArea()
-    {
-        yield return new WaitForSeconds(2f);
-        StartCoroutine(SceneLoader.instance.SceneTransition("Hole"));
+            Debug.Log("Loading scene now.");
+            StartCoroutine(SceneLoader.instance.SceneTransition("Hole")); 
+        }
     }
 }

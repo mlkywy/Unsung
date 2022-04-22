@@ -11,6 +11,8 @@ public class SceneTransition : MonoBehaviour
         if (collider.CompareTag("Player") && !collider.isTrigger)
         {
             StartCoroutine(SceneLoader.instance.SceneTransition(sceneToLoad));    
+            PlayerPrefs.DeleteKey("Saved");
+            PlayerPrefs.DeleteKey("SavedCamera");
         }
     }
 }

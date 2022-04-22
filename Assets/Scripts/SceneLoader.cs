@@ -11,14 +11,7 @@ public class SceneLoader : MonoBehaviour
 
     private void Awake()
     {
-        // if (instance != null)
-        // {
-        //     Debug.LogWarning("Found more than one Scene Loader in the scene.");
-        //     Destroy(gameObject);
-        // }
-        
         instance = this;
-        // DontDestroyOnLoad(this);
     }
 
     public IEnumerator SceneTransition(string sceneName)

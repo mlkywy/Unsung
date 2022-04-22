@@ -643,6 +643,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8073541040685775120, guid: f81ec85ed681a1d4b90d55bc9d07a1df, type: 3}
+      propertyPath: popup
+      value: 
+      objectReference: {fileID: 1165195969}
+    - target: {fileID: 8073541040685775120, guid: f81ec85ed681a1d4b90d55bc9d07a1df, type: 3}
       propertyPath: menuPanel
       value: 
       objectReference: {fileID: 1165195968}
@@ -5658,6 +5662,11 @@ GameObject:
 --- !u!1 &1165195968 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 290682361348512678, guid: 604a7d199c1d08146ad430c9bf90885a, type: 3}
+  m_PrefabInstance: {fileID: 1165195964}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1165195969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8020627289276942792, guid: 604a7d199c1d08146ad430c9bf90885a, type: 3}
   m_PrefabInstance: {fileID: 1165195964}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1234924147

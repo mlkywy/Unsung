@@ -9,6 +9,8 @@ public class GameMenu : MonoBehaviour
     public GameObject menuPanel;
     public GameObject[] choices;
 
+    public GameObject popup;
+
     private GameObject soundManager;
     private GameObject postProcessing;
     private GameObject battleLauncher;
@@ -27,6 +29,7 @@ public class GameMenu : MonoBehaviour
         battleLauncher = GameObject.FindWithTag("BattleLauncher");
 
         menuPanel.SetActive(false);
+        popup.SetActive(false);
     }
 
     public void Update()
@@ -49,23 +52,24 @@ public class GameMenu : MonoBehaviour
         PlayerPrefs.SetInt("LoadSaved", 1);
         PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
         playerPosData.PlayerPosSave();
-        cameraPosData.CameraPosSave();
+
+        if (cameraPosData != null) 
+        {
+            cameraPosData.CameraPosSave();
+        }
+
+        StartCoroutine(ShowPopup());
+
         Debug.Log("Game has been saved!");
     }
 
-    // this function messes things up for some reason??
-    // public void LoadSave()
-    // {
-    //      if (PlayerPrefs.GetInt("LoadSaved") == 1)
-    //     {
-    //         StartCoroutine(SceneLoader.instance.SceneTransition(PlayerPrefs.GetInt("SavedScene")));
-    //         // SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
-    //     }
-    //     else 
-    //     {
-    //         return;
-    //     }
-    // }
+    private IEnumerator ShowPopup()
+    {
+        popup.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+        popup.SetActive(false);
+    }
 
     public void QuitToMenu()
     {

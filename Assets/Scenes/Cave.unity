@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bfdea1212078014b809b7fca49017df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Cave1
+  sceneToLoad: Underground
 --- !u!1001 &150179536
 PrefabInstance:
   m_ObjectHideFlags: 0

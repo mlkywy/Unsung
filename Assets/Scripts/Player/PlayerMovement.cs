@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerPosData = FindObjectOfType<SavePlayerPos>();
         playerPosData.PlayerPosLoad();
+        gameMenu = FindObjectOfType<GameMenu>();
     }
 
     private void Start()

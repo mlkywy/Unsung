@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00881fcd908facc4ea8a34e42827dbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadGlobalsJSON: {fileID: 4900000, guid: 64e68f78e76f2684a959a2666de3c7b1, type: 3}
   typingSpeed: 0.05
   clip: {fileID: 0}
   dialoguePanel: {fileID: 0}

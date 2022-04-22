@@ -75,4 +75,6 @@ MonoBehaviour:
   choices:
   - {fileID: 0}
   - {fileID: 0}
+  popup: {fileID: 0}
   menuToggleSound: {fileID: 8300000, guid: 744e775aa5f3d2849b0696aab74e1ad3, type: 3}
+  loadGlobalsJSON: {fileID: 4900000, guid: 64e68f78e76f2684a959a2666de3c7b1, type: 3}

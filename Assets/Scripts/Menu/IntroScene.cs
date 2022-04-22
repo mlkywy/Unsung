@@ -30,7 +30,7 @@ public class IntroScene : MonoBehaviour
         // for testing purposes only!!!
         if (Input.GetKeyDown(KeyCode.T))
         {
-            StartCoroutine(SceneLoader.instance.SceneTransition("Cave1"));
+            StartCoroutine(SceneLoader.instance.SceneTransition("Scene1"));
         }
     }
 

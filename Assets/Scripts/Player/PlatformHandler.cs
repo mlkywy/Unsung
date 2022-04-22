@@ -7,13 +7,23 @@ public class PlatformHandler : MonoBehaviour
     [SerializeField] private PlatformEffector2D effector;
     [SerializeField] private new bool collider;
 
+    [Header("Menu")]
+    [SerializeField] private GameMenu gameMenu;
+
     private void Start()
     {
         effector = GetComponent<PlatformEffector2D>();
+        gameMenu = FindObjectOfType<GameMenu>();
     }
 
     private void Update()
     {
+         // freeze player if dialogue is playing
+        if (DialogueManager.GetInstance().dialogueIsPlaying || gameMenu.menuPanel.activeSelf)
+        {
+            return;
+        }
+
         if (collider && Input.GetButtonDown("Down"))
         {
             effector.rotationalOffset = 180f;

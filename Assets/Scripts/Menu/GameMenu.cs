@@ -17,13 +17,15 @@ public class GameMenu : MonoBehaviour
     
     [SerializeField] private AudioClip menuToggleSound;
 
-    SavePlayerPos playerPosData;
-    ParallaxBackground cameraPosData;
+    private SavePlayerPos playerPosData;
+    private ParallaxBackground cameraPosData;
+    private DialogueManager dialogueData;
 
     private void Start()
     {
         playerPosData = FindObjectOfType<SavePlayerPos>();
         cameraPosData = FindObjectOfType<ParallaxBackground>();
+        dialogueData = FindObjectOfType<DialogueManager>();
 
         soundManager = GameObject.FindWithTag("SoundManager");
         battleLauncher = GameObject.FindWithTag("BattleLauncher");
@@ -52,6 +54,7 @@ public class GameMenu : MonoBehaviour
         PlayerPrefs.SetInt("LoadSaved", 1);
         PlayerPrefs.SetInt("SavedScene", SceneManager.GetActiveScene().buildIndex);
         playerPosData.PlayerPosSave();
+        dialogueData.OnApplicationQuit();
 
         if (cameraPosData != null) 
         {

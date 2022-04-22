@@ -1,4 +1,4 @@
-#speaker:Bandit? #portrait:bandit_portrait #voice:hakim_voice
+#speaker:Bandit? #portrait:bandit_portrait #voice:bandit_voice
 INCLUDE globals.ink
 
 { bandit_answer == "": -> main | -> already_chosen }

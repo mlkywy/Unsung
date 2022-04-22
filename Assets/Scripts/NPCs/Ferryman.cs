@@ -25,7 +25,6 @@ public class Ferryman : MonoBehaviour
     private IEnumerator NextArea()
     {
         yield return new WaitForSeconds(2f);
-        StartCoroutine(SceneLoader.instance.SceneTransition("Scene2"));
-        // SceneManager.LoadScene("Scene2");
+        StartCoroutine(SceneLoader.instance.SceneTransition("Hole"));
     }
 }

@@ -2351,6 +2351,12 @@ TextureImporter:
   - first:
       213: 2074093621888550604
     second: mainlev_build_782
+  - first:
+      213: -8766108663012778934
+    second: mainlev_build_783
+  - first:
+      213: 6068175840572082216
+    second: mainlev_build_784
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -18878,6 +18884,48 @@ TextureImporter:
       bones: []
       spriteID: cc6029bf829a8cc10800000000000000
       internalID: 2074093621888550604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainlev_build_783
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 816
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c16a6ad96885680800000000000000
+      internalID: -8766108663012778934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mainlev_build_784
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 816
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82808e3c6cd763450800000000000000
+      internalID: 6068175840572082216
       vertices: []
       indices: 
       edges: []

@@ -5998,7 +5998,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!1 &2076527221
 GameObject:
@@ -6478,7 +6478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 104592956522969588, guid: ad51dc37b0727704a84f5932a40b0f3b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.00949
+      value: -3.0100508
       objectReference: {fileID: 0}
     - target: {fileID: 104592956522969588, guid: ad51dc37b0727704a84f5932a40b0f3b, type: 3}
       propertyPath: m_LocalPosition.y

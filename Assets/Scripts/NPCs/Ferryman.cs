@@ -5,20 +5,42 @@ using UnityEngine.SceneManagement;
 
 public class Ferryman : MonoBehaviour
 {
+    private bool startNextScene = false;
+
     private void Update()
     {
         bool ferrymanRide = ((Ink.Runtime.BoolValue) DialogueManager.GetInstance().GetVariableState("ferryman_ride")).value;
 
-        if (ferrymanRide)
+        if (ferrymanRide && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
-            if (DialogueManager.GetInstance().dialogueIsPlaying)
-            {
-                Debug.Log("Dialogue is playing!");
-                return;
-            } 
+            startNextScene = true;
+            
+            // if (Input.GetButtonDown("Submit"))
+            // {
+            //     Debug.Log("Loading scene now.");
+            //     GoNext();
+            // } 
+        }
+    }
 
-            Debug.Log("Loading scene now.");
-            StartCoroutine(SceneLoader.instance.SceneTransition("Hole")); 
+    private void GoNext()
+    {
+        StartCoroutine(SceneLoader.instance.SceneTransition("Hole")); 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Player") && startNextScene)
+        {
+            GoNext();
+        }
+    }
+
+     private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Player") && startNextScene)
+        {
+            GoNext();
         }
     }
 }

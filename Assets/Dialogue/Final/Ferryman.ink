@@ -21,6 +21,7 @@ Find it and you'll find me in a more agreeable mood.
 
 === spoken_with_npc ===
 Ahhh... I see you have spoken with my friend. #speaker:Ferryman #portrait:ferryman_portrait #voice:ferryman_voice
-I thank you very much for returning my belongings to me. Come, across the waters I will take you as promised.
+I thank you very much for returning my belongings to me. 
+Come, across the waters I will take you as promised...
 ~ ferryman_ride = true
 -> END

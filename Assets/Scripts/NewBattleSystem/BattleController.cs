@@ -265,7 +265,7 @@ public class BattleController : MonoBehaviour
         {
             // set boolean value to 1, so that enemy is set inactive in game world
             PlayerPrefs.SetInt(currentEnemyKey, 1);
-            dialogueController.SetText("You have successfully defeated the opposition!");
+            dialogueController.SetText("You have successfully defeated the opposition! Your health has been restored!");
             SoundManager.instance.PlaySound(winSound);
             yield return new WaitForSeconds(2f);
 

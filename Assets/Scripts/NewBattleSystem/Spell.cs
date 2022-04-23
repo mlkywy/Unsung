@@ -45,16 +45,17 @@ public class Spell : MonoBehaviour
 
         targetPosition = target.transform.position;
         // Debug.Log(spellName + "was performed on " + target.characterName + "!");
-        dialogueController.SetText($"{spellName} was performed on {target.characterName} for {power} damage!");
 
         if (spellType == SpellType.Attack)
         {
             // hurt target
+            dialogueController.SetText($"{spellName} was performed on {target.characterName} for {power} damage!");
             target.Hurt(power);
         }
         else if (spellType == SpellType.Heal)
         {
             // heal target
+            dialogueController.SetText($"{spellName} was performed on {target.characterName} for {power} health!");
             target.Heal(power);
         }
     }

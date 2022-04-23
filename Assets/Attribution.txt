@@ -1,14 +1,28 @@
-README 
+Credits
 
 SFX:
+
 8-bit / 16-bit Sound Effects (x25) Pack - https://jdwasabi.itch.io/
 
+8 bit music & sfx assets (Hel Circle) - https://evilduckk.itch.io/
 
-Tilemaps:
+
+Tilemaps / Sprites:
+
 Pixel Fantasy Caves - https://szadiart.itch.io/
-Platformer Fantasy - https://szadiart.itch.io/
+
+Platformer Fantasy SET1 - https://szadiart.itch.io/
+
+Pixel Platformer World - https://szadiart.itch.io/
+
+Fire Column Pixel Art Effect - https://sanctumpixel.itch.io/
 
 
 Music:
+
+8 bit music & sfx assets (Hel Circle, cave_tuto) - https://evilduckk.itch.io/
+
+8-bit Fantasy & Adventure Music Pack (The Icy Cave, Prepare for Battle!, Decisive Battle, Exploring the Unknown) - https://xdeviruchi.itch.io/
+
 
 

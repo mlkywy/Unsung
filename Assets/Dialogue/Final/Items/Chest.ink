@@ -1,1 +1,1 @@
-There's nothing of value up here, but thanks for checking anyway. #voice:default_voice
+There's nothing of value up here, but the dev of this game thanks you for being thorough. #voice:default_voice

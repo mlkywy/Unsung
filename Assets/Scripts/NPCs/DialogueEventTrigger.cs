@@ -13,6 +13,12 @@ public class DialogueEventTrigger : MonoBehaviour
             if (!DialogueManager.GetInstance().dialogueIsPlaying)
             {
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                 
+                if (inkJSON.name == "Note")
+                {
+                    return;
+                }
+
                 Destroy(gameObject);
             }
         }

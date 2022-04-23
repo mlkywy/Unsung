@@ -750,6 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: a4e665ad3d3d4e1418768d4a6ea4c1ef, type: 3}
+  music: {fileID: 8300000, guid: a99727234427a8c439321ee4e9bac571, type: 3}
 --- !u!1001 &1170176560
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -144,8 +144,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Guard
   characterSprite: {fileID: 0}
-  health: 230
-  maxHealth: 230
+  health: 200
+  maxHealth: 200
   attackPower: 20
   defensePower: 5
   manaPoints: 150

@@ -1,0 +1,1 @@
+The fire crackles quietly. It's warm in here. #voice:default_voice

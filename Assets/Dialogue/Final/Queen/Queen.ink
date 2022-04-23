@@ -1,39 +1,41 @@
-We're two sides of the same coin, Dorien... #speaker:The Queen #portrait:queen_portrait #voice:queen_voice
-When our blades cross, we will finally see our true selves.
-So much alike one another but we never move in the same direction.
+
+We're two sides of the same coin, Hero. #speaker:The Queen #portrait:queen_portrait #voice:queen_voice
+When our blades cross, we will finally reveal our true selves.
+So alike one another, but we never move in the same direction.
 + [Are you done waxing poetic?]
     
 -> main
 
 === main ===
-Hah, it is my mistake for attempting some small talk for someone so set in their way.
+Hah, it is my mistake for attempting some diplomacy with someone so set in their ways.
 + [Hate you.]
     I don't hate you. 
     I hate what you do to my beautiful continent... but not what you are.
     -> final
 + [Die.]
     My death has consequences, Hero. 
-    Far-reaching consequences that you nor your King will be able to predict. 
+    Far-reaching consequences that you nor your King will be able to predict, much less handle.
     I can assure you of that. 
     -> final
 + [...]
-    Giving me the silent treatment now?
+    You've never struck me as the strong and silent type.
+    A commendable effort, though I'm not convinced.
     -> final
 
 === final ===
 - You're a monster. #speaker:Hakim #portrait:hakim_portrait #voice:hakim_voice
 
-The Eastern cities call me a LIBERATOR. #speaker:The Queen #portrait:queen_portrait #voice:queen_voice
-The rural peasants call me a LEGEND. 
-The artisans of Parayen call me a PATRON OF THE ARTS. 
-The only people who call me a monster are the people of Briwyll as they send Mageseekers upon scared and scattered Mages.
+The Eastern cities call me a <color=\#854cbf>LIBERATOR</color>. #speaker:The Queen #portrait:queen_portrait #voice:queen_voice
+The rural peasants call me a <color=\#854cbf>LEGEND</color>. 
+The artisans of Parayen call me a <color=\#854cbf>PATRON OF THE ARTS</color>. 
+The only ones who call me a monster are the people of Briwyll as they send Mageseekers upon scared and scattered mages.
 
 - What about those who disagree with you? What do they call you? #speaker:Mona #portrait:mona_portrait #voice:mona_voice
 
-Those Magekilling yokels call me a villain for refusing to let them put Mages to the blade or the rope. #speaker:The Queen #portrait:queen_portrait #voice:queen_voice
+Those mage-killing yokels call me a villain for refusing to let them put mages to the blade or the rope. #speaker:The Queen #portrait:queen_portrait #voice:queen_voice
 What about you, girl?
 
-- Wait... Me? #speaker:Tomyrietta #portrait:tomyrietta_portrait #voice:tomyrietta_voice
+- Huh? Me? #speaker:Tomyrietta #portrait:tomyrietta_portrait #voice:tomyrietta_voice
 
 Yes! Do you think they'll have space in the annals of Briwyll's history for a supposed 'Good Mage'? #speaker:The Queen #portrait:queen_portrait #voice:queen_voice
 When these two are prime candidates for the Hero's comrades?

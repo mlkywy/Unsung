@@ -38,11 +38,11 @@ public class DialogueTrigger : MonoBehaviour
             // Debug.Log("Player in range.");
 
             // flip character to try and face player before dialogue starts?
-            if (collider.GetComponent<SpriteRenderer>().flipX)
+            if (spriteRenderer != null && collider.GetComponent<SpriteRenderer>().flipX)
             {
                 spriteRenderer.flipX = false;
             }
-            else if (!collider.GetComponent<SpriteRenderer>().flipX)
+            else if (spriteRenderer != null && !collider.GetComponent<SpriteRenderer>().flipX)
             {
                 spriteRenderer.flipX = true;
             }
@@ -54,8 +54,11 @@ public class DialogueTrigger : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             playerInRange = false;
-            spriteRenderer.flipX = false;
-            // Debug.Log("Player left range.");
+
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.flipX = false;
+            }
         }
     }
 }

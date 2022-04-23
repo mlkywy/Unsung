@@ -750,7 +750,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: a4e665ad3d3d4e1418768d4a6ea4c1ef, type: 3}
-  music: {fileID: 8300000, guid: 5b8cbca87f2f55c4b889cfb39ffbeb82, type: 3}
 --- !u!1001 &1170176560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1811,7 +1810,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

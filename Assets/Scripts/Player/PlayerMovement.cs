@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Player frozen.");
             walkSFX.Stop();
+            animator.SetFloat("Speed", 0);
             return;
         }
 

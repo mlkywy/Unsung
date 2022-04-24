@@ -4850,7 +4850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Red Right Hand
   spellDescription: A normal punch given an extraordinary name.
-  power: 12
+  power: 22
   manaCost: 5
   spellType: 0
   targetPosition: {x: 0, y: 0, z: 0}

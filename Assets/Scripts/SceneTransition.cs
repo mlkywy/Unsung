@@ -5,6 +5,12 @@ using UnityEngine;
 public class SceneTransition : MonoBehaviour
 {
     public string sceneToLoad;
+    private DialogueManager dialogueData;
+
+    public void Start()
+    {
+        dialogueData = FindObjectOfType<DialogueManager>();
+    }
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
@@ -13,6 +19,7 @@ public class SceneTransition : MonoBehaviour
             StartCoroutine(SceneLoader.instance.SceneTransition(sceneToLoad));    
             PlayerPrefs.DeleteKey("Saved");
             PlayerPrefs.DeleteKey("SavedCamera");
+            dialogueData.OnApplicationQuit();
         }
     }
 }

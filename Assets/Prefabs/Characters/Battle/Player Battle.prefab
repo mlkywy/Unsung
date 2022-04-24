@@ -97,7 +97,7 @@ MonoBehaviour:
   characterSprite: {fileID: 21300000, guid: 150bf4be2a6545e45b411aa97fae6beb, type: 3}
   health: 130
   maxHealth: 130
-  attackPower: 10
+  attackPower: 18
   defensePower: 5
   manaPoints: 140
   maxManaPoints: 140

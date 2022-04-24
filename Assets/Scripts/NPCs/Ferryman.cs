@@ -15,11 +15,11 @@ public class Ferryman : MonoBehaviour
         {
             startNextScene = true;
             
-            // if (Input.GetButtonDown("Submit"))
-            // {
-            //     Debug.Log("Loading scene now.");
-            //     GoNext();
-            // } 
+            if (Input.GetButtonDown("Submit") && startNextScene)
+            {
+                Debug.Log("Loading scene now.");
+                GoNext();
+            } 
         }
     }
 
@@ -28,19 +28,19 @@ public class Ferryman : MonoBehaviour
         StartCoroutine(SceneLoader.instance.SceneTransition("Hole")); 
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.CompareTag("Player") && startNextScene)
-        {
-            GoNext();
-        }
-    }
+    // private void OnTriggerEnter2D(Collider2D collider)
+    // {
+    //     if (collider.CompareTag("Player") && startNextScene)
+    //     {
+    //         GoNext();
+    //     }
+    // }
 
-     private void OnTriggerExit2D(Collider2D collider)
-    {
-        if (collider.CompareTag("Player") && startNextScene)
-        {
-            GoNext();
-        }
-    }
+    //  private void OnTriggerExit2D(Collider2D collider)
+    // {
+    //     if (collider.CompareTag("Player") && startNextScene)
+    //     {
+    //         GoNext();
+    //     }
+    // }
 }

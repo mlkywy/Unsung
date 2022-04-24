@@ -4851,7 +4851,7 @@ MonoBehaviour:
   spellName: TEST
   spellDescription: 
   power: 200
-  manaCost: 10
+  manaCost: 0
   spellType: 0
   targetPosition: {x: 0, y: 0, z: 0}
   DialoguePanel: {fileID: 0}

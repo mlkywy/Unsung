@@ -150,7 +150,7 @@ public class PlayerMovement : MonoBehaviour
     // enable jump with coroutine to avoid double jumping
     private IEnumerator EnableJump()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         animator.Play("Player_Idle");
         allowJump = true;
     }

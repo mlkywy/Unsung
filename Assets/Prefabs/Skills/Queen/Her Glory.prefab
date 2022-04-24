@@ -4851,7 +4851,7 @@ MonoBehaviour:
   spellName: Her Glory
   spellDescription: 
   power: 65
-  manaCost: 48
+  manaCost: 0
   spellType: 0
   targetPosition: {x: 0, y: 0, z: 0}
   DialoguePanel: {fileID: 0}

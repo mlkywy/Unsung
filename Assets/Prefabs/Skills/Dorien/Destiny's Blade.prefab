@@ -4850,8 +4850,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Destiny's Blade
   spellDescription: A swift stab made true by the Hero's will.
-  power: 25
-  manaCost: 20
+  power: 38
+  manaCost: 15
   spellType: 0
   targetPosition: {x: 0, y: 0, z: 0}
   DialoguePanel: {fileID: 0}

@@ -4850,8 +4850,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Diligence
   spellDescription: 
-  power: 25
-  manaCost: 15
+  power: 30
+  manaCost: 0
   spellType: 1
   targetPosition: {x: 0, y: 0, z: 0}
   DialoguePanel: {fileID: 0}

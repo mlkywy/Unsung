@@ -146,10 +146,10 @@ MonoBehaviour:
   characterSprite: {fileID: 0}
   health: 600
   maxHealth: 600
-  attackPower: 25
+  attackPower: 30
   defensePower: 5
-  manaPoints: 300
-  maxManaPoints: 300
+  manaPoints: 1000
+  maxManaPoints: 1000
   spells:
   - {fileID: 8049346649834582413, guid: 4a64790dd36872f48a0af8f8da127abe, type: 3}
   - {fileID: 8049346649834582413, guid: 97e9c35a47314764da736e6f95214c18, type: 3}

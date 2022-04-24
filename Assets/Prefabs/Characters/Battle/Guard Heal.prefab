@@ -146,7 +146,7 @@ MonoBehaviour:
   characterSprite: {fileID: 0}
   health: 200
   maxHealth: 200
-  attackPower: 20
+  attackPower: 30
   defensePower: 5
   manaPoints: 150
   maxManaPoints: 150

@@ -4850,8 +4850,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Guillotine
   spellDescription: A vicious chop aimed at the enemy's head.
-  power: 30
-  manaCost: 30
+  power: 35
+  manaCost: 20
   spellType: 0
   targetPosition: {x: 0, y: 0, z: 0}
   DialoguePanel: {fileID: 0}

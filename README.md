@@ -3,10 +3,10 @@
   <h3 align="center">Unsung</h3>
 
   <p align="center">
-    Headline here.
+    Join a Hero and his motley crew as they hunt down an evil queen!
     <br/>
     <br/>
-    <a href="#">DOWNLOAD</a> 
+    <a href="https://mlkywy.itch.io/unsung">DOWNLOAD</a> 
     |
     <a href="https://github.com/alshei/Unsung/tree/main/Assets/Scripts">SCRIPTS</a>
     <br/>
@@ -33,7 +33,3 @@ Goals for the Semester:
   * design process, initial sketches of characters, maps, & worldbuilding
 * Music assets/soundtracks if custom
   * mp3/wav format
-
-## Progress 
-
-## Credits 

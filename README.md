@@ -17,11 +17,12 @@
 
 ## Unsung
 
-Spring Capstone 2022. An experimental demo made in Unity, featuring custom characters, dialogue system, turn-based battle system, saving/loading, etc. The game only has one ending and may be played in the browser or downloaded as an executable. Use WASD/arrow keys for movement, spacebar to jump, and 'E' to interact with NPCs and the environment.
+Spring Capstone 2022. An experimental demo made in Unity, featuring custom characters, dialogue system, turn-based battle system, saving/loading, etc. The game only has one ending and must be downloaded as an executable. Use WASD/arrow keys for movement, spacebar to jump, and 'E' to interact with NPCs and the environment.
 
 Current Bugs:
 
 * player jumps after exiting dialogue (build issue(?), this doesn't happen in the editor)
+* scenes sometimes don't load properly, or player ends up in the wrong scene after a fight 
   
 Future Improvements:
 

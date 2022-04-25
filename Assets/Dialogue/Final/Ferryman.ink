@@ -9,7 +9,7 @@ INCLUDE globals.ink
 Halt, murderhobos. #speaker:Ferryman #portrait:ferryman_portrait #voice:ferryman_voice
 That one. The one in the dreadful leather armor.
 She harbors foul arcane arts within her very being...
-I refuse to assist Mages, much less those who harbor them. 
+I refuse to assist mages, much less those who harbor them. 
 - The Queen's Parayen is meant to be a haven for us mages, is it not? Where's this attitude coming from!? #speaker:Tomyrietta #portrait:tomyrietta_portrait #voice:tomyrietta_voice
 I'm not loyal to the Queen and her rhetoric. #speaker:Ferryman #portrait:ferryman_portrait #voice:ferryman_voice
 Once I have the means, I will leave this country.

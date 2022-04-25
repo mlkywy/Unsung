@@ -1,4 +1,4 @@
-Fortunately my father's journal survived the fall. Curious of it are you? #speaker:Tomyrietta #portrait:tomyrietta_portrait #voice:tomyrietta_voice
+Fortunately my father's journal survived the fall. Curious of it, are you? #speaker:Tomyrietta #portrait:tomyrietta_portrait #voice:tomyrietta_voice
 -> main
 
 === main ===

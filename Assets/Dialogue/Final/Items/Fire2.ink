@@ -1,0 +1,1 @@
+It smells as though they had been cooking something here. #voice:default_voice

@@ -27,11 +27,11 @@ public class IntroScene : MonoBehaviour
             StartGameScene();
         }
 
-        // // for testing purposes only!!!
-        // if (Input.GetKeyDown(KeyCode.T))
-        // {
-        //     StartCoroutine(SceneLoader.instance.SceneTransition("Queen"));
-        // }
+        // for testing purposes only!!!
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            StartCoroutine(SceneLoader.instance.SceneTransition("Scene1"));
+        }
     }
 
     private IEnumerator StartIntro()
@@ -47,6 +47,5 @@ public class IntroScene : MonoBehaviour
     private void StartGameScene()
     {
         StartCoroutine(SceneLoader.instance.SceneTransition("Cave"));
-        // SceneManager.LoadScene("Scene1");
     }
 }

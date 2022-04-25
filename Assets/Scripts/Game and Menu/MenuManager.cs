@@ -36,7 +36,6 @@ public class MenuManager : MonoBehaviour
         PlayerPrefs.DeleteAll();
 
         StartCoroutine(SceneLoader.instance.SceneTransition("Intro"));
-        // SceneManager.LoadScene("Intro");
     }
 
     public void ContinueGame()
@@ -44,7 +43,6 @@ public class MenuManager : MonoBehaviour
         if (PlayerPrefs.GetInt("LoadSaved") == 1)
         {
             StartCoroutine(SceneLoader.instance.SceneTransition(PlayerPrefs.GetInt("SavedScene")));
-            // SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
         }
         else 
         {

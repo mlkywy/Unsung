@@ -135,6 +135,17 @@ public class DialogueManager : MonoBehaviour
         portraitFrame.SetActive(false);
 
         clip = null;
+
+        string sceneToLoad = ((Ink.Runtime.StringValue) GetVariableState("sceneTransitionAtEndOfDialogue")).value;
+
+        // if it's not empty, load the scene
+        if (sceneToLoad != "")
+        {
+             StartCoroutine(SceneLoader.instance.SceneTransition(sceneToLoad)); 
+        }
+
+        // set it to empty string again
+        ((Ink.Runtime.StringValue) GetVariableState("sceneTransitionAtEndOfDialogue")).value = "";
     }
 
     private void ContinueStory()

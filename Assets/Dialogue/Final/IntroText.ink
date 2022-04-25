@@ -1,3 +1,5 @@
+INCLUDE globals.ink
+
 There were once two continents separated by an ocean, Briwyll and Parayen. #voice:type1 #cutscene:intro
 For many years, both continents were ruled under a unified kingdom by dynasties of mage-rulers.
 Dissent was met with violence by both the sword and the staff. 
@@ -15,3 +17,4 @@ Meanwhile, Parayen built the foundations that would unknowingly foster a self-pr
 Some time after the Queen took over Parayen, the kingdom of Briwyll demanded Parayen’s reintegration to the kingdom.
 With her refusal, another war broke out… which soon gave way to the Queen's infamous invasions of Briwyll’s coastal regions.
 And so our story begins, as a new hero seeks to put an end to Her Majesty's reign.
+~ sceneTransitionAtEndOfDialogue = "Cave"

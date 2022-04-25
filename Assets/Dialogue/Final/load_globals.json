@@ -1,1 +1,1 @@
-﻿{"inkVersion":20,"root":[["\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev","str","^","/str",{"VAR=":"bandit_answer"},false,{"VAR=":"spoke_to_bandit"},false,{"VAR=":"ferryman_ride"},"/ev","end",null],"#f":1}],"listDefs":{}}
+﻿{"inkVersion":20,"root":[["\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev","str","^","/str",{"VAR=":"bandit_answer"},false,{"VAR=":"spoke_to_bandit"},false,{"VAR=":"ferryman_ride"},"str","^","/str",{"VAR=":"sceneTransitionAtEndOfDialogue"},"/ev","end",null],"#f":1}],"listDefs":{}}

@@ -24,4 +24,5 @@ Ahhh... I see you have spoken with my friend. #speaker:Ferryman #portrait:ferrym
 I thank you very much for returning my belongings to me. 
 Come, across the waters I will take you as promised...
 ~ ferryman_ride = true
+~ sceneTransitionAtEndOfDialogue = "Hole"
 -> END

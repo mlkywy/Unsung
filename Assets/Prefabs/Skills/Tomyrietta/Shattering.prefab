@@ -4851,7 +4851,7 @@ MonoBehaviour:
   spellName: Shattering
   spellDescription: Attack the enemy's ontological existence.
   power: 30
-  manaCost: 10
+  manaCost: 20
   spellType: 0
   targetPosition: {x: 0, y: 0, z: 0}
   DialoguePanel: {fileID: 0}

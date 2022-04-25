@@ -45,6 +45,7 @@ public class BattleUIController : MonoBehaviour
         }
     }
 
+    // prevents player from spamming
     private IEnumerator DisableMouse()
     {
         disableMouseClick = true;

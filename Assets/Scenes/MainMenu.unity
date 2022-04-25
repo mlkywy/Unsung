@@ -1879,8 +1879,8 @@ MonoBehaviour:
   - {fileID: 1606798709}
   - {fileID: 2056813351}
   choices:
-  - {fileID: 1239083470}
   - {fileID: 964630415}
+  - {fileID: 1239083470}
   - {fileID: 861921079}
   - {fileID: 1749225840}
   music: {fileID: 8300000, guid: a99727234427a8c439321ee4e9bac571, type: 3}

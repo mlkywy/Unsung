@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
         // freeze player if dialogue is playing
         if (DialogueManager.GetInstance().dialogueIsPlaying || gameMenu.menuPanel.activeSelf)
         {
-            Debug.Log("Player frozen.");
             walkSFX.Stop();
             animator.SetFloat("Speed", 0);
             return;

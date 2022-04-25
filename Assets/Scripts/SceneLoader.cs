@@ -9,9 +9,21 @@ public class SceneLoader : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
+    [SerializeField] private GameObject player;
+    [SerializeField] private Vector3 newPosition;
+
     private void Awake()
     {
         instance = this;
+    }
+
+    public IEnumerator TeleportPlayer()
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(2f);
+        transition.SetTrigger("End");
+
+        player.transform.position = newPosition;
     }
 
     public IEnumerator SceneTransition(string sceneName)
@@ -23,7 +35,7 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         // load scene
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadSceneAsync(sceneName);
         
     }
 
@@ -36,7 +48,7 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         // load scene
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadSceneAsync(sceneIndex);
         
     }
 

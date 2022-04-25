@@ -141,11 +141,20 @@ public class DialogueManager : MonoBehaviour
         // if it's not empty, load the scene
         if (sceneToLoad != "")
         {
-             StartCoroutine(SceneLoader.instance.SceneTransition(sceneToLoad)); 
+             StartCoroutine(SceneLoader.instance.SceneTransition(sceneToLoad));
+             // set it to empty string again
+            ((Ink.Runtime.StringValue) GetVariableState("sceneTransitionAtEndOfDialogue")).value = "";
         }
 
-        // set it to empty string again
-        ((Ink.Runtime.StringValue) GetVariableState("sceneTransitionAtEndOfDialogue")).value = "";
+        // TELEPORT PLAYER IN UNDERGROUND SCENE
+        bool playerTeleport = ((Ink.Runtime.BoolValue) GetVariableState("player_teleport")).value;
+
+        if (playerTeleport)
+        {
+            StartCoroutine(SceneLoader.instance.TeleportPlayer());
+             // set it to false
+            ((Ink.Runtime.BoolValue) GetVariableState("player_teleport")).value = false;
+        }
     }
 
     private void ContinueStory()

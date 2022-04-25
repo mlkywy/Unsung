@@ -48,6 +48,7 @@ public class DialogueManager : MonoBehaviour
     private static DialogueManager instance;
 
     private DialogueVariables dialogueVariables;
+    private PlayerMovement playerMovement;
 
     private void Awake()
     {
@@ -59,6 +60,7 @@ public class DialogueManager : MonoBehaviour
         instance = this;
 
         dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+        playerMovement = FindObjectOfType<PlayerMovement>();
     }
 
     public static DialogueManager GetInstance()
@@ -126,6 +128,9 @@ public class DialogueManager : MonoBehaviour
     private void ExitDialogueMode()
     {
         dialogueVariables.StopListening(currentStory);
+
+        playerMovement.allowJump = false;
+        StartCoroutine(playerMovement.EnableJump());
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);

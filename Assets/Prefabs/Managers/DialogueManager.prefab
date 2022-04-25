@@ -57,3 +57,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  playerMovement: {fileID: 2601061750993114500, guid: c3741bef531945e45b74f15fba14988c, type: 3}

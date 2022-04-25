@@ -33,6 +33,8 @@ public class BattleUIController : MonoBehaviour
             {
                 BattleController.Instance.SelectTarget(hitInfo.collider.GetComponent<Character>());
                 StartCoroutine(DisableMouse());
+                BattleController.Instance.playerSelectedSpell = null;
+                BattleController.Instance.playerIsAttacking = false;
             }
 
             // if target is enemy and attack spell or regular attack selected
@@ -41,6 +43,8 @@ public class BattleUIController : MonoBehaviour
             {
                 BattleController.Instance.SelectTarget(hitInfo.collider.GetComponent<Character>());
                 StartCoroutine(DisableMouse());
+                BattleController.Instance.playerSelectedSpell = null;
+                BattleController.Instance.playerIsAttacking = false;
             }
         }
     }

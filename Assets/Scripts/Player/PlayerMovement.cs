@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private float vertical;
     private bool isLadder = false;
     private bool isClimbing = false;
-    private bool allowJump = true;
+    public bool allowJump = true;
 
     SavePlayerPos playerPosData;
 
@@ -49,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        if (allowJump) Jump();
+
         MoveHorizontal();
         MoveVertical();
 
@@ -56,8 +58,6 @@ public class PlayerMovement : MonoBehaviour
         {
             walkSFX.Play();
         }
-
-        if (allowJump) Jump();
 
         if (isClimbing && rb.velocity.y != 0f)
         {
@@ -147,9 +147,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // enable jump with coroutine to avoid double jumping
-    private IEnumerator EnableJump()
+    public IEnumerator EnableJump()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         animator.Play("Player_Idle");
         allowJump = true;
     }

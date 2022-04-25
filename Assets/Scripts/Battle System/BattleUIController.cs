@@ -13,6 +13,8 @@ public class BattleUIController : MonoBehaviour
     [SerializeField] private GameObject descriptionPanel;
     [SerializeField] private AudioClip selectSpellSound;
 
+    private bool disableMouseClick = false;
+
     private void Start()
     {
         descriptionPanel.GetComponentInChildren<TextMeshProUGUI>().text = "";
@@ -21,7 +23,7 @@ public class BattleUIController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !disableMouseClick)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hitInfo = Physics2D.Raycast(ray.origin, ray.direction);
@@ -30,6 +32,7 @@ public class BattleUIController : MonoBehaviour
             if (hitInfo.collider != null && hitInfo.collider.CompareTag("Character") && BattleController.Instance.playerSelectedSpell.spellType == Spell.SpellType.Heal)
             {
                 BattleController.Instance.SelectTarget(hitInfo.collider.GetComponent<Character>());
+                StartCoroutine(DisableMouse());
             }
 
             // if target is enemy and attack spell or regular attack selected
@@ -37,8 +40,16 @@ public class BattleUIController : MonoBehaviour
                 && (BattleController.Instance.playerIsAttacking || BattleController.Instance.playerSelectedSpell.spellType == Spell.SpellType.Attack))
             {
                 BattleController.Instance.SelectTarget(hitInfo.collider.GetComponent<Character>());
+                StartCoroutine(DisableMouse());
             }
         }
+    }
+
+    private IEnumerator DisableMouse()
+    {
+        disableMouseClick = true;
+        yield return new WaitForSeconds(1f);
+        disableMouseClick = false;
     }
 
     public void ToggleSpellPanel(bool state)

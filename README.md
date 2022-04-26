@@ -19,13 +19,13 @@
 
 Spring Capstone 2022. An experimental demo made in Unity, featuring custom characters, dialogue system, turn-based battle system, saving/loading, etc. Use WASD/arrow keys for movement, spacebar to jump, and 'E' to interact with NPCs and the environment.
 
-The game only has one ending and may be played in the browser or downloaded as an executable. If there are any issues with the browser, it is suggested to download. 
+The game only has one ending and may be played in the browser or downloaded as an executable.
 
 Current Bugs:
 
-* player jumps after exiting dialogue (build only, editor is fine)
-* scenes sometimes don't load properly (ferryman scene), or player ends up in the wrong scene after a fight (build only, editor is fine) 
-  
+* scenes sometimes don't load properly, or player ends up in the wrong scene after a fight (often happens after first guard fight)
+* ending dialogue sometimes freezes on last frame, though there is no more content to see (.exe file only)
+
 Future Improvements:
 
 * battle logic is rudimentary, may add more complex math
@@ -36,6 +36,9 @@ Future Improvements:
 ![2](https://user-images.githubusercontent.com/91434717/164950128-17d4bfa3-864d-414e-ae62-dc86ed5c8027.png)
 ![3](https://user-images.githubusercontent.com/91434717/165167292-48f12b55-79b0-4d18-834c-a3770fec0abb.png)
 
+## Soundtrack
+
+https://user-images.githubusercontent.com/91434717/165409061-934831f2-3bef-40f9-b13a-c656d77c4463.mp4
 
 ## Credits
 

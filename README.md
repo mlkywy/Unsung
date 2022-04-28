@@ -36,7 +36,7 @@ Future Improvements:
 ![2](https://user-images.githubusercontent.com/91434717/164950128-17d4bfa3-864d-414e-ae62-dc86ed5c8027.png)
 ![3](https://user-images.githubusercontent.com/91434717/165167292-48f12b55-79b0-4d18-834c-a3770fec0abb.png)
 
-## Soundtrack
+## Custom Soundtrack
 
 https://user-images.githubusercontent.com/91434717/165409061-934831f2-3bef-40f9-b13a-c656d77c4463.mp4
 

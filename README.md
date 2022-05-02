@@ -31,6 +31,11 @@ Future Improvements:
 * battle logic is rudimentary, may add more complex math
 * scaling difficulty as necessary, making enemies harder or reducing player stats
 
+## Video
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=RDxRpKB3ReU" target="_blank">
+ <img src="http://img.youtube.com/vi/RDxRpKB3ReU/mqdefault.jpg" alt="Watch the video" width="auto" height="auto" border="auto" />
+</a>
+
 ## Screenshots
 ![1](https://user-images.githubusercontent.com/91434717/164950126-638da02e-31f8-4499-94dc-790d78906bff.png)
 ![2](https://user-images.githubusercontent.com/91434717/164950128-17d4bfa3-864d-414e-ae62-dc86ed5c8027.png)
